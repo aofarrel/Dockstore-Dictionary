@@ -21,15 +21,20 @@ class Gloss:
 			else:
 				f.write(f"{self.name}\n")
 			
+			# generate underline (excludes pronunciation, which will be problematic in RST)
+			for x in range(0,len(self.name)):
+				f.write("-")
+			f.write("\n")
+			
 
 			# print full form of acronym and see also
 			# for an acronym, seealso will replace the full form of the acronym
 			# maybe this means we don't need an acronym argument...
 			# but I don't want to commit until I have a good few entries
 			if self.acronym_full is not "" and self.seealso is not "":
-				f.write("   see %s\n" % [self.seealso])
+				f.write(f"   see {self.seealso}\n")
 			if self.acronym_full is not "" and self.seealso is "":
-				f.write("   %s\n" % [self.acronym_full])
+				f.write(f"   {self.acronym_full}\n")
 			else:
 				pass
 
@@ -37,14 +42,14 @@ class Gloss:
 			# this is by design... for now
 
 			if self.definition is not "":
-				f.write("%s\n" % self.definition)
+				f.write(f"{self.definition}\n")
 
 			if self.institute is not "":
-				f.write("This term as we define it here is associated with %s and may have different definitions in other contexts.\n" % self.institute)
+				f.write(f"This term as we define it here is associated with {self.institute} and may have different definitions in other contexts.\n")
 			
 
 			if self.furtherreading is not "":
-				f.write("Further reading: %s\n" % self.furtherreading)
+				f.write(f"Further reading: {self.furtherreading}\n")
 
 			f.write(self.updated.strftime("updated %Y-%m-%d\n"))
 
@@ -55,6 +60,7 @@ WDL = Gloss("WDL",
 	pronunciation='"widdle", rhymes with little',
 	seealso="Workflow Description Language")
 Workflow_Description_Language = Gloss("Workflow Description Language",
+	furtherreading="https://openwdl.org/",
 	definition="A workflow language managed by the Open WDL Project. Usually written as [WDL].",
 	seealso="WDL")
 
