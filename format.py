@@ -1,31 +1,70 @@
 import datetime
 
 class Gloss:
-	def __init__(self, name, acronym=False, acronym_full="", definition="", institute="", internal=False, pronunciation="", seealso=None, furtherinfo="", updated=datetime.date.today()):
+	def __init__(self, name, acronym_full="", definition="", furtherreading="", institute="", internal=False, pronunciation="", seealso="", updated=datetime.date.today()):
 		self.name = name
-		self.acronym = acronym
 		self.acronym_full = acronym_full
 		self.definition = definition
+		self.furtherreading = furtherreading
 		self.institute = institute
 		self.internal = internal
 		self.pronunciation = pronunciation
 		self.seealso = seealso
-		self.furtherinfo = furtherinfo
 		self.updated = updated
 
-	def generate_rst(self):
+	def generate_plaintext(self):
+		with open("gloss.txt", "a") as f:
+			f.write("\n\n")
+			# print name and prounciation
+			if self.pronunciation is not "":
+				f.write(f"{self.name}    (pronounced {self.pronunciation})\n")
+			else:
+				f.write(f"{self.name}\n")
+			
+
+			# print full form of acronym and see also
+			# for an acronym, seealso will replace the full form of the acronym
+			# maybe this means we don't need an acronym argument...
+			# but I don't want to commit until I have a good few entries
+			if self.acronym_full is not "" and self.seealso is not "":
+				f.write("   see %s\n" % [self.seealso])
+			if self.acronym_full is not "" and self.seealso is "":
+				f.write("   %s\n" % [self.acronym_full])
+			else:
+				pass
+
+			# currently seealso does not get printed if there is no acronym_full
+			# this is by design... for now
+
+			if self.definition is not "":
+				f.write("%s\n" % self.definition)
+
+			if self.institute is not "":
+				f.write("This term as we define it here is associated with %s and may have different definitions in other contexts.\n" % self.institute)
+			
+
+			if self.furtherreading is not "":
+				f.write("Further reading: %s\n" % self.furtherreading)
+
+			f.write(self.updated.strftime("updated %Y-%m-%d\n"))
 
 
-WDL = Gloss("WDL", acronym=True, acronym_full="Workflow Description Language", pronunciation="widdle (rhymes with little)")
-Workflow_Description_Language = Gloss("Workflow Description Language", definition="A workflow language managed by the Open WDL Project.", seealso=WDL)
 
-print(WDL)
+WDL = Gloss("WDL",
+	acronym_full="Workflow Description Language",
+	pronunciation='"widdle", rhymes with little',
+	seealso="Workflow Description Language")
+Workflow_Description_Language = Gloss("Workflow Description Language",
+	definition="A workflow language managed by the Open WDL Project. Usually written as [WDL].",
+	seealso="WDL")
+
+WDL.generate_plaintext()
+Workflow_Description_Language.generate_plaintext()
 
 
-
-
-# acronym (bool) - Is this an acronym?
-# acronym_full (string) - if acronym, what is the full name
+# name (string) - entry's name, make sure to use correct capitalization/lack thereof
+# acronym_full (string) - if acronym, what is the full name. if blank, assumed to not be an acronym
+# further_reading (string) - URL to a webpage, usually an "official" one associated with the term
 # institute (string) - optional, which institution is the phrase associated with, if any? For instance, Terra is associated with the Broad Institute. GCP is associated with Google. Does not necessarily imply a trademark or copyright.
 # internal (bool) - Is this only used internally? For acronyms this may imply the acronym is internal but the phrase it refers to is not (ex: gha - github app)
 # pronunciation (string) - optional pronunciation (ex: wdl - "widdle")
