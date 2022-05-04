@@ -1,7 +1,7 @@
 import datetime
 
 class Gloss:
-	def __init__(self, name, acronym=False, acronym_full="", definition="", institute="", internal=False, pronunciation="", seealso=None, updated=datetime.date.today()):
+	def __init__(self, name, acronym=False, acronym_full="", definition="", institute="", internal=False, pronunciation="", seealso=None, furtherinfo="", updated=datetime.date.today()):
 		self.name = name
 		self.acronym = acronym
 		self.acronym_full = acronym_full
@@ -10,9 +10,13 @@ class Gloss:
 		self.internal = internal
 		self.pronunciation = pronunciation
 		self.seealso = seealso
+		self.furtherinfo = furtherinfo
 		self.updated = updated
 
-WDL = Gloss("WDL", True, "Workflow Description Language")
+	def generate_rst(self):
+
+
+WDL = Gloss("WDL", acronym=True, acronym_full="Workflow Description Language", pronunciation="widdle (rhymes with little)")
 Workflow_Description_Language = Gloss("Workflow Description Language", definition="A workflow language managed by the Open WDL Project.", seealso=WDL)
 
 print(WDL)
