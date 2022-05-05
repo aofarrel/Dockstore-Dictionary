@@ -5,4 +5,4 @@ new_entry = Gloss("entry name",
 	institute="", 
 	internal=False, 
 	pronunciation="", 
-	seealso=None)
+	seealso="")

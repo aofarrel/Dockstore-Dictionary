@@ -37,17 +37,15 @@ class Gloss:
 
 			# print full form of acronym and see also
 			# for an acronym, seealso will replace the full form of the acronym
-			# maybe this means we don't need an acronym argument...
-			# but I don't want to commit until I have a good few entries
+			# currently seealso does not get printed if there is no acronym_full
+			# this is by design... for now
 			if self.acronym_full is not "" and self.seealso is not "":
 				f.write(f"   see {self.seealso}\n")
 			if self.acronym_full is not "" and self.seealso is "":
-				f.write(f"   {self.acronym_full}\n")
+				f.write(f"   acronym for {self.acronym_full}\n")
 			else:
 				pass
 
-			# currently seealso does not get printed if there is no acronym_full
-			# this is by design... for now
 
 			if self.definition is not "":
 				f.write(f"{self.definition}\n")
@@ -64,6 +62,51 @@ class Gloss:
 
 # please try to keep this in alphabetical order
 
+BDC = Gloss("BDC", 
+	acronym_full="Biodata Catalyst", 
+	definition="", 
+	furtherreading="", 
+	institute="", 
+	internal=False, 
+	pronunciation="", 
+	seealso="Biodata Catalyst")
+
+BDCat = Gloss("BDCat", 
+	acronym_full="BioData Catalyst", 
+	definition="", 
+	furtherreading="", 
+	institute="", 
+	internal=False, 
+	pronunciation="", 
+	seealso="Biodata Catalyst")
+
+BioDataCatalyst = Gloss("Biodata Catalyst", 
+	acronym_full="", 
+	definition="An initiative funded by NHLBI to connect several cloud-based bioinformatics platforms together to increase reproducibility in bioinformatics. Involves Dockstore, Terra, Seven Bridges, Gen3, and PIC-SURE.", 
+	furtherreading="https://biodatacatalyst.nhlbi.nih.gov/", 
+	institute="NIH", 
+	internal=False, 
+	pronunciation="", 
+	seealso="")
+
+CommonWorkflowLanguage = Gloss("Common Workflow Language", 
+	acronym_full="", 
+	definition="", 
+	furtherreading="https://www.commonwl.org/user_guide/", 
+	institute="", 
+	internal=False, 
+	pronunciation="", 
+	seealso="")
+
+CWL = Gloss("CWL", 
+	acronym_full="Common Workflow Language", 
+	definition="", 
+	furtherreading="", 
+	institute="", 
+	internal=False, 
+	pronunciation="", 
+	seealso="Common Workflow Language")
+
 Docker = Gloss("Docker", 
 	acronym_full="", 
 	definition="A program that can create [Docker images], which are somewhat similiar to virutal machines, as well as run those images. In the context of bioinformatics, this technology has two main benefits: First, a Docker image bundles up everything a given piece of software needs to run, meaning that someone who wants to run (for example) samtools via Docker only needs to install Docker, not samtools. Second, an instance of a Docker image (called a [Docker container]) is a relatively standardized environment even when running on different backends, meaning that two people running the same software in the same Docker image on two different computers are likely to get the exact same results. In other words, Docker is good for reproducibility and ease of use.", 
@@ -71,7 +114,7 @@ Docker = Gloss("Docker",
 	institute="", 
 	internal=False, 
 	pronunciation="", 
-	seealso=None)
+	seealso="")
 
 DockerContainer = Gloss("Docker container", 
 	acronym_full="", 
@@ -80,7 +123,7 @@ DockerContainer = Gloss("Docker container",
 	institute="", 
 	internal=False, 
 	pronunciation="", 
-	seealso=None)
+	seealso="")
 
 Dockerfile = Gloss("Dockerfile", 
 	acronym_full="", 
@@ -89,7 +132,7 @@ Dockerfile = Gloss("Dockerfile",
 	institute="", 
 	internal=False, 
 	pronunciation="", 
-	seealso=None)
+	seealso="")
 
 DockerImage = Gloss("Docker image", 
 	acronym_full="", 
@@ -107,7 +150,16 @@ DockerLayer = Gloss("layer",
 	institute="", 
 	internal=False, 
 	pronunciation="", 
-	seealso=None)
+	seealso="")
+
+OICR = Gloss("OICR", 
+	acronym_full="Ontario Institute for Cancer Research", 
+	definition="A non-profit research institute based in Toronto that is focused on cancer detection and treatment. One of the two institutes involved in the development of Dockstore, the other being [UCSC].", 
+	furtherreading="https://oicr.on.ca/", 
+	institute="", 
+	internal=False, 
+	pronunciation="", 
+	seealso="")
 
 WDL = Gloss("WDL",
 	acronym_full="Workflow Description Language",
@@ -119,12 +171,33 @@ Workflow_Description_Language = Gloss("Workflow Description Language",
 	definition="A workflow language managed by the Open WDL Project. Usually written as [WDL].",
 	seealso="WDL")
 
+UCSC = Gloss("UCSC", 
+	acronym_full="University of California, Santa Cruz", 
+	definition="A public university located in Santa Cruz that is focused on undergraduate and graduate education and research. The Genomics Institute, a branch of UCSC's engineering department, is one of the two institutes involved in the development of Dockstore, the other being [OICR].", 
+	furtherreading="https://ucsc.edu", 
+	institute="", 
+	internal=False, 
+	pronunciation="", 
+	seealso="")
+
+YAML = Gloss("YAML", 
+	acronym_full="YAML Ain't Markup Language", 
+	definition="Human-readable data-serialization lanaguage. Commonly used for configuration files.", 
+	furtherreading="https://yaml.org/", 
+	institute="", 
+	internal=False, 
+	pronunciation="", 
+	seealso="")
 
 
-
-
-
-for entry in [Docker, DockerContainer, Dockerfile, DockerImage, DockerLayer, WDL, Workflow_Description_Language]:
+for entry in [
+	BDC, BDCat, BioDataCatalyst,
+	CommonWorkflowLanguage, CWL,
+	Docker, DockerContainer, Dockerfile, DockerImage, DockerLayer, 
+	OICR,
+	WDL, Workflow_Description_Language, 
+	UCSC, 
+	YAML]:
 	entry.generate_plaintext()
 
 
