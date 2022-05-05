@@ -100,6 +100,24 @@ BioDataCatalyst = Gloss("Biodata Catalyst",
 	pronunciation="", 
 	seealso="")
 
+CancerGenomicsCloud = Gloss("Cancer Genomics Cloud", 
+	acronym_full="", 
+	definition="A cloud platform by [Seven Bridges] and funded by [NCI] for bioinformatics analysis.", 
+	furtherreading="", 
+	institute="", 
+	internal=False, 
+	pronunciation="", 
+	seealso="")
+
+CGC = Gloss("CGC", 
+	acronym_full="Cancer Genomics Cloud", 
+	definition="", 
+	furtherreading="", 
+	institute="", 
+	internal=False, 
+	pronunciation="", 
+	seealso="Cancer Genomics Cloud")
+
 CommonWorkflowLanguage = Gloss("Common Workflow Language", 
 	acronym_full="", 
 	definition="", 
@@ -126,6 +144,15 @@ CWL = Gloss("CWL",
 	internal=False, 
 	pronunciation="", 
 	seealso="Common Workflow Language")
+
+DAG = Gloss("DAG", 
+	acronym_full="Directed Acyclic Graph", 
+	definition="A directional graph like a flowchart that does not have any loops. On Dockstore we use DAGs to show the steps that a workflow takes.", 
+	furtherreading="https://cran.r-project.org/web/packages/ggdag/vignettes/intro-to-dags.html", 
+	institute="", 
+	internal=False, 
+	pronunciation="", 
+	seealso="")
 
 Docker = Gloss("Docker", 
 	acronym_full="", 
@@ -172,9 +199,18 @@ DockerLayer = Gloss("layer",
 	pronunciation="", 
 	seealso="")
 
-Dockstore CLI = Gloss("Dockstore CLI", 
+DockstoreCLI = Gloss("Dockstore CLI", 
 	acronym_full="Dockstore Command Line Interface", 
-	definition="", 
+	definition="A command-line program developed by Dockstore. It is not required to use Dockstore, but it has many features to make running and developing workflows easier.", 
+	furtherreading="https://docs.dockstore.org/en/stable/advanced-topics/dockstore-cli/dockstore-cli-faq.html", 
+	institute="", 
+	internal=False, 
+	pronunciation="", 
+	seealso="")
+
+DOI = Gloss("DOI", 
+	acronym_full="Digital Object Identifiers", 
+	definition="An identifier that provides a long-lasting link to some sort of digital object. On Docktore, you can use Zenodo to mint a DOI of your workflows and tools to increase reproducibility.", 
 	furtherreading="", 
 	institute="", 
 	internal=False, 
@@ -199,37 +235,37 @@ JSON = Gloss("JSON",
 	pronunciation='"jason"', 
 	seealso="")
 
-NHGRI = Gloss("NHGRI", 
+NCI = Gloss("NCI", 
 	acronym_full="", 
 	definition="", 
 	furtherreading="", 
+	institute="", 
+	internal=False, 
+	pronunciation="", 
+	seealso="")
+
+NHGRI = Gloss("NHGRI", 
+	acronym_full="National Human Genome Research Institute", 
+	definition="A division of the [NIH] that focus on genomics research. Funds the [AnVIL Project].", 
+	furtherreading="https://www.genome.gov/", 
 	institute="", 
 	internal=False, 
 	pronunciation="", 
 	seealso="")
 
 NHLBI = Gloss("NHLBI", 
-	acronym_full="", 
-	definition="", 
-	furtherreading="", 
+	acronym_full="National Heart, Lungs, and Blood Institute", 
+	definition="A division of the [NIH] that focuses on heart, lung, blood, and sleep health. Funds the [BioData Catalyst] platform.", 
+	furtherreading="https://www.nhlbi.nih.gov/", 
 	institute="", 
 	internal=False, 
 	pronunciation="", 
 	seealso="")
 
 NIH = Gloss("NIH", 
-	acronym_full="", 
-	definition="", 
-	furtherreading="", 
-	institute="", 
-	internal=False, 
-	pronunciation="", 
-	seealso="")
-
-Terra = Gloss("Terra", 
-	acronym_full="", 
-	definition="A cloud-based workflow execution platform developed by the Broad Institute. Terra supports the execution of [WDL] workflows, Jupyter/R notebooks, and integrated apps such as a DICOM-file viewer. The computational backend of Terra is based upon Google, allowing Google-specific features such as [preemptible] machines to be used in workflows. Dockstore supports directly importing [WDL] workflows into a Terra workspace. Terra is part of the [BioData Catalyst], [AnVIL Project], and [eLwazi] grants.", 
-	furtherreading="https://terra.bio", 
+	acronym_full="National Institute of Health", 
+	definition="An American government institution, part of the Department of Health and Human Services, that engages in medical research.", 
+	furtherreading="https://www.nih.gov/", 
 	institute="", 
 	internal=False, 
 	pronunciation="", 
@@ -239,6 +275,15 @@ OICR = Gloss("OICR",
 	acronym_full="Ontario Institute for Cancer Research", 
 	definition="A non-profit research institute based in Toronto that is focused on cancer detection and treatment. One of the two institutes involved in the development of Dockstore, the other being [UCSC].", 
 	furtherreading="https://oicr.on.ca/", 
+	institute="", 
+	internal=False, 
+	pronunciation="", 
+	seealso="")
+
+Terra = Gloss("Terra", 
+	acronym_full="", 
+	definition="A cloud-based workflow execution platform developed by the Broad Institute. Terra supports the execution of [WDL] workflows, Jupyter/R notebooks, and integrated apps such as a DICOM-file viewer. The computational backend of Terra is based upon Google, allowing Google-specific features such as [preemptible] machines to be used in workflows. Dockstore supports directly importing [WDL] workflows into a Terra workspace. Terra is part of the [BioData Catalyst], [AnVIL Project], and [eLwazi] grants.", 
+	furtherreading="https://terra.bio", 
 	institute="", 
 	internal=False, 
 	pronunciation="", 
@@ -272,14 +317,16 @@ YAML = Gloss("YAML",
 	pronunciation="", 
 	seealso="")
 
+# there's gotta be a way to do this automagically
 
 for entry in [
 	AnVIL,
 	BDC, BDCat, BioDataCatalyst,
-	CommonWorkflowLanguage, Cromwell, CWL,
-	Docker, DockerContainer, Dockerfile, DockerImage, DockerLayer, 
+	CancerGenomicsCloud, CGC, CommonWorkflowLanguage, Cromwell, CWL,
+	DAG, Docker, DockerContainer, Dockerfile, DockerImage, DockerLayer, DockstoreCLI, DOI,
 	Elwazi,
 	JSON,
+	NCI, NHGRI, NHLBI, NIH
 	OICR,
 	Terra,
 	WDL, Workflow_Description_Language, 
