@@ -26,8 +26,7 @@ class GlossEntry:
 
 			# print name and underline it
 			f.write(f"{self.name}\n")
-			for x in range(0,len(self.name)):
-				f.write("-")
+			`f.write("-" * len(self.name))`
 			f.write("\n")
 
 			# print pronunciation
