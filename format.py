@@ -23,33 +23,32 @@ class Gloss:
 	def generate_plaintext(self):
 		with open("gloss.txt", "a") as f:
 			f.write("\n\n")
-			# print name
-			f.write(f"{self.name}\n")
 
-			# print pronunciation
-			if self.pronunciation is not "":
-				f.write(f"[pronounced {self.pronunciation}]")
-			
-			# generate underline (excludes pronunciation, which will be problematic in RST)
+			# print name and underline it
+			f.write(f"{self.name}\n")
 			for x in range(0,len(self.name)):
 				f.write("-")
 			f.write("\n")
-			
 
-			# print full form of acronym and see also
+			# print pronunciation
+			if self.pronunciation is not "":
+				f.write(f"[pronounced {self.pronunciation}]\n")
+
+			# print full form of acronym or see also
 			# for an acronym, seealso will replace the full form of the acronym
-			# currently seealso does not get printed if there is no acronym_full
-			# this is by design... for now
+			# this section could probably be written cleaner
 			if self.acronym_full is not "" and self.seealso is not "":
-				f.write(f"   see {self.seealso}\n")
-			if self.acronym_full is not "" and self.seealso is "":
-				f.write(f"   acronym for {self.acronym_full}\n")
+				f.write(f"see {self.seealso}\n")
+			elif self.acronym_full is not "" and self.seealso is "":
+				f.write(f"abbreviation for {self.acronym_full}\n")
+			elif self.acronym_full is "" and self.seealso is not "":
+				f.write(f"see {self.seealso}\n")
 			else:
 				pass
 
 
 			if self.definition is not "":
-				f.write(f"{self.definition}\n")
+				f.write(f"	{self.definition}\n")
 
 			if self.institute is not "":
 				f.write(f"This term as we define it here is associated with {self.institute} and may have different definitions in other contexts.\n")
@@ -62,6 +61,17 @@ class Gloss:
 
 
 # please try to keep this in alphabetical order
+
+# this is starting to veer into the territory of just replacing BDC's dictionary...
+
+AnVIL = Gloss("AnVIL Project", 
+	acronym_full="Analysis Visualization and Informatics Labspace", 
+	definition="A cloud-based ecosystem funded by [NHGRI], bringing together Dockstore, [Gen3], [Terra], [NCPI], Galaxy, Jupyter, Seqr, and Bioconductor into an integrated platform. Sometimes refered to as just \"the AnVIL\" or \"AnVIL\".", 
+	furtherreading="https://anvilproject.org/", 
+	institute="", 
+	internal=False, 
+	pronunciation="", 
+	seealso="")
 
 BDC = Gloss("BDC", 
 	acronym_full="Biodata Catalyst", 
@@ -95,6 +105,15 @@ CommonWorkflowLanguage = Gloss("Common Workflow Language",
 	definition="", 
 	furtherreading="https://www.commonwl.org/user_guide/", 
 	institute="", 
+	internal=False, 
+	pronunciation="", 
+	seealso="")
+
+Cromwell = Gloss("Cromwell", 
+	acronym_full="", 
+	definition="An open-source [WDL] executor managed by the Broad Institute. Cromwell is the default executor for the [Dockstore CLI] and is the executor used by [Terra].", 
+	furtherreading="https://cromwell.readthedocs.io/en/stable/", 
+	institute="Broad Institute", 
 	internal=False, 
 	pronunciation="", 
 	seealso="")
@@ -142,12 +161,75 @@ DockerImage = Gloss("Docker image",
 	institute="", 
 	internal=False, 
 	pronunciation="", 
-	seealso=None)
+	seealso="")
 
 DockerLayer = Gloss("layer", 
 	acronym_full="", 
 	definition="In the context of Docker, a layer is a component of a Docker image. Each `RUN`, `COPY`, and `ADD` instruction in a [Dockerfile] will lead to the creation of a layer.", 
 	furtherreading="", 
+	institute="", 
+	internal=False, 
+	pronunciation="", 
+	seealso="")
+
+Dockstore CLI = Gloss("Dockstore CLI", 
+	acronym_full="Dockstore Command Line Interface", 
+	definition="", 
+	furtherreading="", 
+	institute="", 
+	internal=False, 
+	pronunciation="", 
+	seealso="")
+
+Elwazi = Gloss("eLwazi", 
+	acronym_full="", 
+	definition="An African-lead open data science platform funded as part of the [NIH]'s [DSI-Africa] program. Leverages [Gen3] and [Terra].", 
+	furtherreading="https://elwazi.org/",
+	institute="", 
+	internal=False, 
+	pronunciation='"el-woz-ee", derived from Xhosa word for knowledge', 
+	seealso="")
+
+JSON = Gloss("JSON", 
+	acronym_full="JavaScript Object Notation", 
+	definition="A human-readible file format that orginated in JavaScript, but is now used by a variety of applications. Dockstore supports the inclusion of JSON and [YAML] files in entries to provide sample inputs for workflow and tool entries. Some workflow executors, such as [Cromwell], can use these files to configure their inputs rather than having to manually listing every input when calling the workflow on the command line.", 
+	furtherreading="https://www.json.org/json-en.html", 
+	institute="", 
+	internal=False, 
+	pronunciation='"jason"', 
+	seealso="")
+
+NHGRI = Gloss("NHGRI", 
+	acronym_full="", 
+	definition="", 
+	furtherreading="", 
+	institute="", 
+	internal=False, 
+	pronunciation="", 
+	seealso="")
+
+NHLBI = Gloss("NHLBI", 
+	acronym_full="", 
+	definition="", 
+	furtherreading="", 
+	institute="", 
+	internal=False, 
+	pronunciation="", 
+	seealso="")
+
+NIH = Gloss("NIH", 
+	acronym_full="", 
+	definition="", 
+	furtherreading="", 
+	institute="", 
+	internal=False, 
+	pronunciation="", 
+	seealso="")
+
+Terra = Gloss("Terra", 
+	acronym_full="", 
+	definition="A cloud-based workflow execution platform developed by the Broad Institute. Terra supports the execution of [WDL] workflows, Jupyter/R notebooks, and integrated apps such as a DICOM-file viewer. The computational backend of Terra is based upon Google, allowing Google-specific features such as [preemptible] machines to be used in workflows. Dockstore supports directly importing [WDL] workflows into a Terra workspace. Terra is part of the [BioData Catalyst], [AnVIL Project], and [eLwazi] grants.", 
+	furtherreading="https://terra.bio", 
 	institute="", 
 	internal=False, 
 	pronunciation="", 
@@ -192,10 +274,14 @@ YAML = Gloss("YAML",
 
 
 for entry in [
+	AnVIL,
 	BDC, BDCat, BioDataCatalyst,
-	CommonWorkflowLanguage, CWL,
+	CommonWorkflowLanguage, Cromwell, CWL,
 	Docker, DockerContainer, Dockerfile, DockerImage, DockerLayer, 
+	Elwazi,
+	JSON,
 	OICR,
+	Terra,
 	WDL, Workflow_Description_Language, 
 	UCSC, 
 	YAML]:
