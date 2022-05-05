@@ -23,11 +23,12 @@ class Gloss:
 	def generate_plaintext(self):
 		with open("gloss.txt", "a") as f:
 			f.write("\n\n")
-			# print name and prounciation
+			# print name
+			f.write(f"{self.name}\n")
+
+			# print pronounciation
 			if self.pronunciation is not "":
-				f.write(f"{self.name}    (pronounced {self.pronunciation})\n")
-			else:
-				f.write(f"{self.name}\n")
+				f.write(f"[pronounced {self.pronunciation}]")
 			
 			# generate underline (excludes pronunciation, which will be problematic in RST)
 			for x in range(0,len(self.name)):
