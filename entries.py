@@ -128,15 +128,6 @@ DockerImage = GlossEntry("Docker image",
 	pronunciation="", 
 	seealso="")
 
-DockerLayer = GlossEntry("layer", 
-	acronym_full="", 
-	definition="In the context of Docker, a layer is a component of a Docker image. Each `RUN`, `COPY`, and `ADD` instruction in a [Dockerfile] will lead to the creation of a layer.", 
-	furtherreading="", 
-	institute="", 
-	internal=False, 
-	pronunciation="", 
-	seealso="")
-
 DockstoreCLI = GlossEntry("Dockstore CLI", 
 	acronym_full="Dockstore Command Line Interface", 
 	definition="A command-line program developed by Dockstore. It is not required to use Dockstore, but it has many features to make running and developing workflows easier.", 
@@ -171,6 +162,15 @@ JSON = GlossEntry("JSON",
 	institute="", 
 	internal=False, 
 	pronunciation='"jason"', 
+	seealso="")
+
+layer = GlossEntry("layer", 
+	acronym_full="", 
+	definition="In the context of Docker, a layer is a component of a Docker image. Each `RUN`, `COPY`, and `ADD` instruction in a [Dockerfile] will lead to the creation of a layer.", 
+	furtherreading="", 
+	institute="", 
+	internal=False, 
+	pronunciation="", 
 	seealso="")
 
 NCI = GlossEntry("NCI", 
