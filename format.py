@@ -26,7 +26,7 @@ class Gloss:
 			# print name
 			f.write(f"{self.name}\n")
 
-			# print pronounciation
+			# print pronunciation
 			if self.pronunciation is not "":
 				f.write(f"[pronounced {self.pronunciation}]")
 			
