@@ -3,6 +3,5 @@ new_entry = Gloss("entryname",
 	definition="", 
 	furtherreading="", 
 	institute="", 
-	internal=False, 
 	pronunciation="", 
 	seealso="")
