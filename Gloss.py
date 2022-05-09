@@ -1,20 +1,23 @@
 import datetime
 
 class GlossEntry:
-	def __init__(self, name, acronym_full="", definition="", furtherreading="", institute="", internal=False, pronunciation="", seealso="", updated=datetime.date.today()):
+	def __init__(self, name, acronym_full="", definition="", furtherreading="", institute="", pronunciation="", seealso="", updated=datetime.date.today()):
 		# name - entry's name, make sure to use correct capitalization/lack thereof
-		# acronym_full - if acronym, what is the full name. if blank, assumed to not be an acronym
+		# acronym_full - if acronym, what is the full name. if blank, assumed to not be an acronym.
+		# 	if acronym_full contains [brackets], then the acronym's explanation should link to another
+		#	entry instead of having its own definition.
 		# further_reading - URL to a webpage, usually an "official" one associated with the term
-		# institute - optional, which institution is the phrase associated with, if any? For instance, Terra is associated with the Broad Institute. GCP is associated with Google. Does not necessarily imply a trademark or copyright.
-		# internal- Is this only used internally? For acronyms this may imply the acronym is internal but the phrase it refers to is not(ex: gha - github app)
+		# institute - optional, which institution is the phrase associated with, if any?
+		#	for instance, Terra is associated with the Broad Institute. GCP is associated with Google.
 		# pronunciation - optional pronunciation (ex: wdl - "widdle")
+		# seealso - related but not equivalent entries, such as CLI being related to Dockstore CLI. 
+		#	should not be included if the entry lacks a definition (ie has acronym_full linking to another entry.)
 		# updated - when the entry was last updated
 		self.name: str = name
 		self.acronym_full: str = acronym_full
 		self.definition: str = definition
 		self.furtherreading: str = furtherreading
 		self.institute: bool = institute
-		self.internal: str = internal
 		self.pronunciation: str = pronunciation
 		self.seealso: str = seealso
 		self.updated: datetime = updated
