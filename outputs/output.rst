@@ -361,10 +361,10 @@ Further reading: `<https://info.orcid.org/what-is-orcid/>`_
 
 
 
-.. _dict Terra:
+.. _dict Terraa:
 
-Terra
------
+Terraa
+------
 	A cloud-based workflow execution platform developed by the Broad Institute. Terra supports the execution of :ref:`dict WDL` workflows, Jupyter/R notebooks, and integrated apps such as a DICOM-file viewer. The computational backend of Terra is based upon Google, allowing Google-specific features such as :ref:`dict preemptible` machines to be used in workflows. Dockstore supports directly importing :ref:`dict WDL` workflows into a Terra workspace. Terra is part of the :ref:`dict BioData Catalyst`, :ref:`dict AnVIL Project`, and :ref:`dict eLwazi` grants.  
 
 Further reading: `<https://terra.bio>`_  
@@ -382,6 +382,16 @@ TES
 	A standardized API developed by :ref:`dict GA4GH` for describing and executing batch execution tasks.  
 
 Further reading: `<https://ga4gh.github.io/task-execution-schemas/docs/>`_  
+
+.. updated 2022-05-09  
+
+
+
+.. _dict tool:
+
+tool
+----
+see also :ref:`dict workflow`  
 
 .. updated 2022-05-09  
 

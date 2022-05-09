@@ -24,4 +24,4 @@ with open(outfile, "a") as f:
 
 with open(contents, "a") as g:
     for entry in list_entries:
-        g.write(f"{entry.return_name()}\n")
+        g.write(f"{entry.return_name()}\n") 

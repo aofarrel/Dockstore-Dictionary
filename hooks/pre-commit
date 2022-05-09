@@ -4,3 +4,6 @@ echo "Compiling..."
 rm ./outputs/output.rst
 rm ./outputs/toc.txt
 python3 ./main.py
+sleep 0.5
+git add ./outputs/output.rst
+git add ./outputs/toc.txt
