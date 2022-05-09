@@ -59,7 +59,6 @@ class GlossEntry:
 		'''Generate plaintext output of this entry'''
 		plaintext = []
 		plaintext.append(self.text_entry_title())
-		print(plaintext)
 		if self.pronunciation != "":
 			plaintext.append(self.text_pronunciation())
 		if self.acronym_full != "":
@@ -73,7 +72,25 @@ class GlossEntry:
 		if self.furtherreading != "":
 			plaintext.append(self.text_furtherreading())
 		plaintext.append(self.text_updated())
-		print(plaintext)
 		return "".join(plaintext)
+
+	def generate_RST(self):
+		'''Generate RST output of this entry'''
+		rst = []
+		rst.append(self.text_entry_title())
+		if self.pronunciation != "":
+			rst.append(self.text_pronunciation())
+		if self.acronym_full != "":
+			rst.append(self.text_acronym())
+		if self.definition != "":
+			rst.append(self.text_definition())
+		if self.institute != "":
+			rst.append(self.text_institute())
+		if self.seealso != "":
+			rst.append(self.text_seealso())
+		if self.furtherreading != "":
+			rst.append(self.text_furtherreading())
+		rst.append(self.text_updated())
+		return "".join(rst)
 
 
