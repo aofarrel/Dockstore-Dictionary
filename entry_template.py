@@ -1,4 +1,4 @@
-new_entry = Gloss("entryname", 
+new_entry = GlossEntry("entryname", 
 	acronym_full="", 
 	definition="", 
 	furtherreading="", 

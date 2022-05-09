@@ -50,6 +50,14 @@ CGC = GlossEntry("CGC",
 	pronunciation="", 
 	seealso="Cancer Genomics Cloud")
 
+CLI = GlossEntry("CLI", 
+	acronym_full="Command Line Interface", 
+	definition="A program that can be interacted with on the command line, usually via \"Terminal\" on MacOS and Linux or \"cmd\"/Command Prompt on Windows. CLI programs generally do not have a graphical user interface.", 
+	furtherreading="https://en.wikipedia.org/wiki/Command-line_interface", 
+	institute="", 
+	pronunciation="", 
+	seealso="")
+
 CommonWorkflowLanguage = GlossEntry("Common Workflow Language", 
 	acronym_full="", 
 	definition="A workflow language that describes how to run command-line tools. CWL is based on Java and can use Java commands within its own commands. [WDL] and CWL are relatively similiar in principle, and code written in one language can often be translated into the other with some workarounds, but they are two different standards and each have unique features.", 
@@ -138,7 +146,7 @@ Elwazi = GlossEntry("eLwazi",
 	pronunciation='"el-woz-ee", derived from Xhosa word for knowledge', 
 	seealso="")
 
-GCP = Gloss("GCP", 
+GCP = GlossEntry("GCP", 
 	acronym_full="Google Cloud Platform", 
 	definition="A backend used for cloud computing and cloud storage. Terra is an example of a system that runs on a GCP backend. When running workflows on these backends, make sure to account for the storage needed for your workflow, as GCP compute backends do not automatically scale their storage size at runtime. GCP backends allow you to make use of Google's preemptible feature, which may reduce the cost of running workflows.", 
 	furtherreading="https://cloud.google.com/gcp", 
@@ -202,7 +210,7 @@ OICR = GlossEntry("OICR",
 	pronunciation="", 
 	seealso="")
 
-ORCID = Gloss("ORCID", 
+ORCID = GlossEntry("ORCID", 
 	acronym_full="Open Researcher and Contributor ID", 
 	definition="ID used to identify researchers and their work in a way that doesn't solely rely on names.", 
 	furtherreading="https://info.orcid.org/what-is-orcid/", 
@@ -210,7 +218,7 @@ ORCID = Gloss("ORCID",
 	pronunciation='"or-kid", rhymes with kid', 
 	seealso="")
 
-TES = Gloss("TES", 
+TES = GlossEntry("TES", 
 	acronym_full="Task Execution Service", 
 	definition="A standardized API developed by [GA4GH] for describing and executing batch execution tasks.", 
 	furtherreading="https://ga4gh.github.io/task-execution-schemas/docs/", 
