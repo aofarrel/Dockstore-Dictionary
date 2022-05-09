@@ -1,6 +1,8 @@
 from entries import * 
 import gc
 
+outfile = "output.rst"
+
 list_entries = []
 for glossary_object in gc.get_objects():
     if isinstance(glossary_object, GlossEntry):
@@ -8,14 +10,10 @@ for glossary_object in gc.get_objects():
 
 list_entries.sort(key=lambda x: x.name.upper())
 
-# generate RST page title
-print("Dockstore Dictionary")
-print("====================")
-
-# generate TOC
-for entry in list_entries:
-    print(entry.return_name())
-
-# generate main body text
-for entry in list_entries:
-    entry.generate_plaintext()
+with open(outfile, "a") as f:
+    # generate RST page title
+    f.write("Dockstore Dictionary\n")
+    f.write("====================\n")
+    # generate main body text
+    for entry in list_entries:
+        f.write(entry.generate_RST())

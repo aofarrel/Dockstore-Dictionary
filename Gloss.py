@@ -19,42 +19,87 @@ class GlossEntry:
 		self.seealso: str = seealso
 		self.updated: datetime = updated
 
+	def return_name(self): # for TOC
+		return self.name
+
+	def text_entry_title(self):
+		'''Return underlined title. Same in RST, Markdown, and plaintext.'''
+		entry_title = []
+		entry_title.append("\n\n")               # space between entries
+		entry_title.append(f"{self.name}\n")     # name
+		entry_title.append("-" * len(self.name)) # underline of name
+		entry_title.append("\n")                 # another newline
+		return "".join(entry_title)
+
+	def text_pronunciation(self):
+		return f"[pronounced {self.pronunciation}]\n"
+
+	def text_acronym(self, format="txt"):
+		'''Return acronym's full form, in italics if RST'''
+		if format == "txt":
+			return f"abbreviation for {self.acronym_full}\n"
+		elif format == "rst":
+			return f"*abbreviation for* {self.acronym_full}\n"
+
+	def text_definition(self):
+		return f"	{self.definition}\n"
+
+	def text_institute(self):
+		return f"This term as we define it here is associated with {self.institute} and may have different definitions in other contexts.\n"
+
+	def text_seealso(self):
+		return f"see also {self.seealso}\n"
+
+	def text_furtherreading(self, format="txt"):
+		if format == "txt":
+			return f"Further reading: {self.furtherreading}\n"
+		elif format == "rst":
+			return f"Further reading: `<{self.furtherreading}>`_\n"
+
+	def text_updated(self, format="txt"):
+		'''Ideally, should print when entry was last updated visibly if plaintext, as a comment if RST.
+		But the current implementation of entries.py gives all entries the same timestamp.'''
+		if format == "txt":
+			return self.updated.strftime("updated %Y-%m-%d\n")
+		elif format == "rst":
+			return self.updated.strftime(".. updated %Y-%m-%d")
+	
 	def generate_plaintext(self):
-		with open("output.txt", "a") as f:
-			f.write("\n\n")
+		'''Generate plaintext output of this entry'''
+		plaintext = []
+		plaintext.append(self.text_entry_title())
+		if self.pronunciation != "":
+			plaintext.append(self.text_pronunciation())
+		if self.acronym_full != "":
+			plaintext.append(self.text_acronym())
+		if self.definition != "":
+			plaintext.append(self.text_definition())
+		if self.institute != "":
+			plaintext.append(self.text_institute())
+		if self.seealso != "":
+			plaintext.append(self.text_seealso())
+		if self.furtherreading != "":
+			plaintext.append(self.text_furtherreading())
+		plaintext.append(self.text_updated())
+		return "".join(plaintext)
 
-			# print name and underline it
-			f.write(f"{self.name}\n")
-			f.write("-" * len(self.name))
-			f.write("\n")
-
-			# print pronunciation
-			if self.pronunciation != "":
-				f.write(f"[pronounced {self.pronunciation}]\n")
-
-			# print full form of acronym or see also
-			# for an acronym, seealso will replace the full form of the acronym
-			# this section could probably be written cleaner
-			if self.acronym_full != "" and self.seealso != "":
-				f.write(f"see {self.seealso}\n")
-			elif self.acronym_full != "" and self.seealso == "":
-				f.write(f"abbreviation for {self.acronym_full}\n")
-			elif self.acronym_full == "" and self.seealso != "":
-				f.write(f"see {self.seealso}\n")
-			else:
-				pass
-
-
-			if self.definition != "":
-				f.write(f"	{self.definition}\n")
-
-			if self.institute != "":
-				f.write(f"This term as we define it here is associated with {self.institute} and may have different definitions in other contexts.\n")
-			
-
-			if self.furtherreading != "":
-				f.write(f"Further reading: {self.furtherreading}\n")
-
-			f.write(self.updated.strftime("updated %Y-%m-%d\n"))
+	def generate_RST(self):
+		'''Generate RST output of this entry'''
+		rst = []
+		rst.append(self.text_entry_title())
+		if self.pronunciation != "":
+			rst.append(self.text_pronunciation())
+		if self.acronym_full != "":
+			rst.append(self.text_acronym(format="rst"))
+		if self.definition != "":
+			rst.append(self.text_definition())
+		if self.institute != "":
+			rst.append(self.text_institute())
+		if self.seealso != "":
+			rst.append(self.text_seealso())
+		if self.furtherreading != "":
+			rst.append(self.text_furtherreading(format="rst"))
+		rst.append(self.text_updated(format="rst"))
+		return "".join(rst)
 
 

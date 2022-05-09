@@ -3,5 +3,5 @@ new_entry = GlossEntry("entryname",
 	definition="", 
 	furtherreading="", 
 	institute="", 
-	pronunciation="", 
+	pronunciation='', 
 	seealso="")
