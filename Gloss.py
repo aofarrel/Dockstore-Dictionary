@@ -1,4 +1,5 @@
 import datetime
+import re
 
 class GlossEntry:
 	def __init__(self, name, acronym_full="", definition="", furtherreading="", institute="", pronunciation="", seealso="", updated=datetime.date.today()):
@@ -62,7 +63,7 @@ class GlossEntry:
 
 	def text_definition(self, format="txt"):
 		'''If RST, we need to make the [references to other entries] into internal links.
-		Limitations: Brackets followed by punctuation besides , or . currently not supported.'''
+		Limitations: RST does not support letters coming after a link without a puncuation mark.'''
 
 		if format == "txt":
 			return f"	{self.definition}\n"
@@ -71,83 +72,30 @@ class GlossEntry:
 			words_processed = []
 			multi_word_flag = False
 			for word in words:
-				if word.startswith("["):
-					# This is the beginning of an internal RST link
-
+				if re.search("][a-zA-Z]+", word):
+					print(f"Warning: {self.return_name()} will have an invalid internal link due RST limitations. Put some sort of whitespace or punctuation before any additional letters after the ending bracket. Problematic word: {word}")
+				
+				# This is the beginning of an internal RST link
+				elif word.startswith("["):
 					word = word[1:]  # strip [
-
-					# [WDL]
-					if word.endswith("]"):
+					if "]" in word:
 						multi_word_flag = False
-						word = word[:-1]
-						word = f":ref:`dict {word}`"
-
-					# [WDL],
-					elif word.endswith("],"):
-						multi_word_flag = False
-						word = word[:-2]
-						word = f":ref:`dict {word}`,"
-					
-					# [WDL].
-					elif word.endswith("]."):
-						multi_word_flag = False
-						word = word[:-2]
-						word = f":ref:`dict {word}`."
-
-					# [WDL]'s
-					elif word.endswith("]'s"):
-						multi_word_flag = False
-						word = word[:-3]
-						word = f":ref:`dict {word}`'s"
-
-					# [WDL]s
-					elif word.endswith("]s"):
-						multi_word_flag = False
-						word = word[:-2]
-						word = f":ref:`dict {word}`s"
-
-					# [Seven 
-					# (i.e., this word plus the next forms [Seven Bridges])
+						word = word.replace("]", "`")
+						word = f":ref:`dict {word}"
 					else:
 						multi_word_flag = True
 						word = f":ref:`dict {word}"
 					
 					words_processed.append(word)
 				
+				# This is a continuation of a previous word's RST link
+				 # will break on [Seven Br]idges] but that's not my problem
 				elif multi_word_flag == True:
-					# This is a continuation of a previous word's RST link
 
-					# Bridges]
-					if word.endswith("]"):
+					if "]" in word:
 						multi_word_flag = False
-						word = word.replace("]", "`")  # will break on [Seven Br]idges] but that's not my problem
-
-					# Bridges],
-					elif word.endswith("],"):
-						multi_word_flag = False
-						word = word[:-2]
-						word = f"{word}`,"
-					
-					# Bridges].
-					elif word.endswith("]."):
-						multi_word_flag = False
-						word = word[:-2]
-						word = f"{word}`."
-
-					# Bridges]'s
-					elif word.endswith("]'s"):
-						multi_word_flag = False
-						word = word[:-3]
-						word = f"{word}`'s"
-
-					# Bridges]'s
-					elif word.endswith("]s"):
-						multi_word_flag = False
-						word = word[:-2]
-						word = f"{word}`s"
-
-					# Bridges 
-					# (i.e., [Seven Bridges executor])
+						word = word.replace("]", "`")
+						word = f"{word}"
 					else:
 						word = f"{word}"
 					
@@ -155,6 +103,7 @@ class GlossEntry:
 
 				else:
 					words_processed.append(word)
+			
 			final = " ".join(words_processed)
 			return f"	{final}  \n\n"
 
