@@ -14,6 +14,8 @@ with open(outfile, "a") as f:
     # generate RST page title
     f.write("Dockstore Dictionary\n")
     f.write("====================\n")
+    # tell RST to make a local TOC
+    f.write(".. contents:: Table of Contents\n\t:local:\n\n")
     # generate main body text
     for entry in list_entries:
         f.write(entry.generate_RST())

@@ -4,7 +4,7 @@ from Gloss import GlossEntry
 
 AnVIL = GlossEntry("AnVIL Project", 
 	acronym_full="Analysis Visualization and Informatics Labspace", 
-	definition="A cloud-based ecosystem funded by [NHGRI], bringing together Dockstore, [Gen3], [Terra], [NCPI], Galaxy, Jupyter, Seqr, and Bioconductor into an integrated platform. Sometimes refered to as just \"the AnVIL\" or \"AnVIL\".", 
+	definition="A cloud-based ecosystem funded by [NHGRI], bringing together Dockstore, Gen3, [Terra], [NCPI], Galaxy, Jupyter, Seqr, and Bioconductor into an integrated platform. Sometimes refered to as just \"the AnVIL\" or \"AnVIL\".", 
 	furtherreading="https://anvilproject.org/", 
 	institute="", 
 	pronunciation="", 
@@ -20,7 +20,7 @@ BDCat = GlossEntry("BDCat",
 
 BioDataCatalyst = GlossEntry("Biodata Catalyst", 
 	acronym_full="", 
-	definition="An initiative funded by NHLBI to connect several cloud-based bioinformatics platforms together to increase reproducibility in bioinformatics. Involves Dockstore, Terra, Seven Bridges, Gen3, and PIC-SURE.", 
+	definition="An initiative funded by [NHLBI] to connect several cloud-based bioinformatics platforms together to increase reproducibility in bioinformatics. Involves Dockstore, [Terra], Seven Bridges, Gen3, and PIC-SURE.", 
 	furtherreading="https://biodatacatalyst.nhlbi.nih.gov/", 
 	institute="NIH", 
 	pronunciation="", 
@@ -51,7 +51,7 @@ CommonWorkflowLanguage = GlossEntry("Common Workflow Language",
 	furtherreading="https://www.commonwl.org/user_guide/", 
 	institute="", 
 	pronunciation="", 
-	seealso="[CWL]")
+	seealso="CWL")
 
 Cromwell = GlossEntry("Cromwell", 
 	acronym_full="", 
@@ -110,7 +110,7 @@ DockstoreCLI = GlossEntry("Dockstore CLI",
 	furtherreading="https://docs.dockstore.org/en/stable/advanced-topics/dockstore-cli/dockstore-cli-faq.html", 
 	institute="", 
 	pronunciation="", 
-	seealso="[CLI]")
+	seealso="CLI")
 
 DOI = GlossEntry("DOI", 
 	acronym_full="Digital Object Identifier", 
@@ -142,7 +142,7 @@ JSON = GlossEntry("JSON",
 	furtherreading="https://www.json.org/json-en.html", 
 	institute="", 
 	pronunciation='"jason"', 
-	seealso="[YAML]")
+	seealso="YAML")
 
 layer = GlossEntry("layer", 
 	acronym_full="", 
@@ -223,7 +223,7 @@ WDL = GlossEntry("WDL",
 Workflow_Description_Language = GlossEntry("Workflow Description Language",
 	furtherreading="https://openwdl.org/",
 	definition="A workflow language managed by the Open WDL Project that is designed to describe command-line tools. Usually written as [WDL]. WDL and [CWL] are relatively similiar in principle, and code written in one language can often be translated into the other with some workarounds, but they are two different standards and each have unique features.",
-	seealso="[WDL]")
+	seealso="WDL")
 
 UCSC = GlossEntry("UCSC", 
 	acronym_full="University of California, Santa Cruz", 
@@ -239,4 +239,4 @@ YAML = GlossEntry("YAML",
 	furtherreading="https://yaml.org/", 
 	institute="", 
 	pronunciation="", 
-	seealso="[JSON]")
+	seealso="JSON")
