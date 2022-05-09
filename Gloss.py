@@ -19,31 +19,43 @@ class GlossEntry:
 		self.seealso: str = seealso
 		self.updated: datetime = updated
 
+	def return_name(self): # for TOC
+		return self.name
+
+	def text_entry_title(self):
+		entry_title = []
+		entry_title.append("\n\n")               # space between entries
+		entry_title.append(f"{self.name}\n")     # name
+		entry_title.append("-" * len(self.name)) # underline of name
+		entry_title.append("\n")                 # another newline
+		return "".join(entry_title)
+
+	def text_pronunciation(self):
+		return f"[pronounced {self.pronunciation}]\n"
+
+	def text_acronymseealso(self):
+		if self.acronym_full != "" and self.seealso != "":
+			return(f"see {self.seealso}\n")
+		elif self.acronym_full != "" and self.seealso == "":
+			return(f"abbreviation for {self.acronym_full}\n")
+		elif self.acronym_full == "" and self.seealso != "":
+			return(f"see {self.seealso}\n")
+		else:
+			pass # should never happen
+	
 	def generate_plaintext(self):
 		with open("output.txt", "a") as f:
-			f.write("\n\n")
-
-			# print name and underline it
-			f.write(f"{self.name}\n")
-			f.write("-" * len(self.name))
-			f.write("\n")
+			f.write(self.text_entry_title())
 
 			# print pronunciation
 			if self.pronunciation != "":
-				f.write(f"[pronounced {self.pronunciation}]\n")
+				f.write(self.text_pronunciation())
 
 			# print full form of acronym or see also
 			# for an acronym, seealso will replace the full form of the acronym
 			# this section could probably be written cleaner
-			if self.acronym_full != "" and self.seealso != "":
-				f.write(f"see {self.seealso}\n")
-			elif self.acronym_full != "" and self.seealso == "":
-				f.write(f"abbreviation for {self.acronym_full}\n")
-			elif self.acronym_full == "" and self.seealso != "":
-				f.write(f"see {self.seealso}\n")
-			else:
-				pass
-
+			if self.acronym_full != "" or self.seealso != "":
+				f.write(self.text_acronymseealso())
 
 			if self.definition != "":
 				f.write(f"	{self.definition}\n")
