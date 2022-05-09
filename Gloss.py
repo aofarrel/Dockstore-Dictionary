@@ -34,30 +34,42 @@ class GlossEntry:
 		entry_title.append("\n")                 # another newline
 		return "".join(entry_title)
 
-	def text_pronunciation(self):
-		return f"[pronounced {self.pronunciation}]\n"
+	def text_pronunciation(self, format="txt"):
+		if format == "txt":
+			return f"[pronounced {self.pronunciation}]\n"
+		elif format == "rst":
+			return f"pronounced {self.pronunciation}  \n"
 
 	def text_acronym(self, format="txt"):
 		'''Return acronym's full form, in italics if RST'''
 		if format == "txt":
 			return f"abbreviation for {self.acronym_full}\n"
 		elif format == "rst":
-			return f"*abbreviation for* {self.acronym_full}\n"
+			return f"*abbreviation for* {self.acronym_full}\n" # space don't seem to be needed unlike pronunciation; is it treating this as a header?
 
-	def text_definition(self):
-		return f"	{self.definition}\n"
+	def text_definition(self, format="txt"):
+		if format == "txt":
+			return f"	{self.definition}\n"
+		elif format == "rst":
+			return f"	{self.definition}  \n\n"
 
-	def text_institute(self):
-		return f"This term as we define it here is associated with {self.institute} and may have different definitions in other contexts.\n"
-
-	def text_seealso(self):
-		return f"see also {self.seealso}\n"
+	def text_institute(self, format="txt"):
+		if format == "txt":
+			return f"This term as we define it here is associated with {self.institute} and may have different definitions in other contexts.\n"
+		elif format == "rst":
+			return f"This term as we define it here is associated with {self.institute} and may have different definitions in other contexts.  \n"
+		
+	def text_seealso(self, format="txt"):
+		if format == "txt":
+			return f"see also {self.seealso}\n"
+		elif format == "rst":
+			return f"see also {self.seealso}  \n"
 
 	def text_furtherreading(self, format="txt"):
 		if format == "txt":
 			return f"Further reading: {self.furtherreading}\n"
 		elif format == "rst":
-			return f"Further reading: `<{self.furtherreading}>`_\n"
+			return f"Further reading: `<{self.furtherreading}>`_  \n"
 
 	def text_updated(self, format="txt"):
 		'''Ideally, should print when entry was last updated visibly if plaintext, as a comment if RST.
@@ -65,7 +77,7 @@ class GlossEntry:
 		if format == "txt":
 			return self.updated.strftime("updated %Y-%m-%d\n")
 		elif format == "rst":
-			return self.updated.strftime(".. updated %Y-%m-%d")
+			return self.updated.strftime(".. updated %Y-%m-%d  ")
 	
 	def generate_plaintext(self):
 		'''Generate plaintext output of this entry'''
