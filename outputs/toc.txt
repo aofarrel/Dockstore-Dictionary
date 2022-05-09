@@ -1,0 +1,33 @@
+AnVIL Project
+BDC
+BDCat
+Biodata Catalyst
+Cancer Genomics Cloud
+CGC
+CLI
+Common Workflow Language
+Cromwell
+CWL
+DAG
+Docker
+Docker container
+Docker image
+Dockerfile
+Dockstore CLI
+DOI
+eLwazi
+GCP
+JSON
+layer
+NCI
+NHGRI
+NHLBI
+NIH
+OICR
+ORCID
+Terra
+TES
+UCSC
+WDL
+Workflow Description Language
+YAML

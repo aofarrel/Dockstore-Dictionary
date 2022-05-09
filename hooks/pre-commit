@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo "Compiling..."
+rm ./outputs/output.rst
+rm ./outputs/toc.txt
+python3 ./main.py
