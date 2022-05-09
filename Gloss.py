@@ -80,27 +80,37 @@ class GlossEntry:
 					if word.endswith("]"):
 						multi_word_flag = False
 						word = word[:-1]
+						word = f":ref:`dict {word}`"
 
 					# [WDL],
 					elif word.endswith("],"):
+						multi_word_flag = False
 						word = word[:-2]
 						word = f":ref:`dict {word}`,"
 					
 					# [WDL].
 					elif word.endswith("]."):
+						multi_word_flag = False
 						word = word[:-2]
 						word = f":ref:`dict {word}`."
 
 					# [WDL]'s
 					elif word.endswith("]'s"):
+						multi_word_flag = False
 						word = word[:-3]
 						word = f":ref:`dict {word}`'s"
+
+					# [WDL]s
+					elif word.endswith("]s"):
+						multi_word_flag = False
+						word = word[:-2]
+						word = f":ref:`dict {word}`s"
 
 					# [Seven 
 					# (i.e., this word plus the next forms [Seven Bridges])
 					else:
-						word = f":ref:`dict {word}"
 						multi_word_flag = True
+						word = f":ref:`dict {word}"
 					
 					words_processed.append(word)
 				
@@ -130,15 +140,21 @@ class GlossEntry:
 						word = word[:-3]
 						word = f"{word}`'s"
 
+					# Bridges]'s
+					elif word.endswith("]s"):
+						multi_word_flag = False
+						word = word[:-2]
+						word = f"{word}`s"
+
 					# Bridges 
 					# (i.e., [Seven Bridges executor])
 					else:
 						word = f"{word}"
+					
 					words_processed.append(word)
 
 				else:
 					words_processed.append(word)
-			
 			final = " ".join(words_processed)
 			return f"	{final}  \n\n"
 
