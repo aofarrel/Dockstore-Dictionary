@@ -138,6 +138,14 @@ Elwazi = GlossEntry("eLwazi",
 	pronunciation='"el-woz-ee", derived from Xhosa word for knowledge', 
 	seealso="")
 
+GCP = Gloss("GCP", 
+	acronym_full="Google Cloud Platform", 
+	definition="A backend used for cloud computing and cloud storage. Terra is an example of a system that runs on a GCP backend. When running workflows on these backends, make sure to account for the storage needed for your workflow, as GCP compute backends do not automatically scale their storage size at runtime. GCP backends allow you to make use of Google's preemptible feature, which may reduce the cost of running workflows.", 
+	furtherreading="https://cloud.google.com/gcp", 
+	institute="", 
+	pronunciation="", 
+	seealso="")
+
 JSON = GlossEntry("JSON", 
 	acronym_full="JavaScript Object Notation", 
 	definition="A human-readible file format that orginated in JavaScript, but is now used by a variety of applications. Dockstore supports the inclusion of JSON and [YAML] files in entries to provide sample inputs for workflow and tool entries. Some workflow executors, such as [Cromwell], can use these files to configure their inputs rather than having to manually listing every input when calling the workflow on the command line.", 
@@ -190,6 +198,22 @@ OICR = GlossEntry("OICR",
 	acronym_full="Ontario Institute for Cancer Research", 
 	definition="A non-profit research institute based in Toronto that is focused on cancer detection and treatment. One of the two institutes involved in the development of Dockstore, the other being [UCSC].", 
 	furtherreading="https://oicr.on.ca/", 
+	institute="", 
+	pronunciation="", 
+	seealso="")
+
+ORCID = Gloss("ORCID", 
+	acronym_full="Open Researcher and Contributor ID", 
+	definition="ID used to identify researchers and their work in a way that doesn't solely rely on names.", 
+	furtherreading="https://info.orcid.org/what-is-orcid/", 
+	institute="", 
+	pronunciation='"or-kid", rhymes with kid', 
+	seealso="")
+
+TES = Gloss("TES", 
+	acronym_full="Task Execution Service", 
+	definition="A standardized API developed by [GA4GH] for describing and executing batch execution tasks.", 
+	furtherreading="https://ga4gh.github.io/task-execution-schemas/docs/", 
 	institute="", 
 	pronunciation="", 
 	seealso="")
