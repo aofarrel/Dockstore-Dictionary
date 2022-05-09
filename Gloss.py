@@ -63,35 +63,82 @@ class GlossEntry:
 	def text_definition(self, format="txt"):
 		'''If RST, we need to make the [references to other entries] into internal links.
 		Limitations: Brackets followed by punctuation besides , or . currently not supported.'''
+
 		if format == "txt":
 			return f"	{self.definition}\n"
 		elif format == "rst":
 			words = self.definition.split()
 			words_processed = []
+			multi_word_flag = False
 			for word in words:
 				if word.startswith("["):
+					# This is the beginning of an internal RST link
+
 					word = word[1:]  # strip [
 
-					# This is where things get icky. The sentence "WDL is sometimes compared to [CWL]." will
-					# split into ["[WDL]", "is", "sometimes", "compared", "to", "[CWL]."]
-					# "[WDL]" could be handled by word = word[1:-1], but "[CWL]." would just strip the period.
-					# So we have to do this instead (or rstrip, but this is a little clearer)
-					word = word.replace("]", "")
+					# [WDL]
+					if word.endswith("]"):
+						multi_word_flag = False
+						word = word[:-1]
 
-					# But "[CWL]." is now "CWL." which will not match the "dict CWL" RST bookmark,
-					# so we have to account for commas and periods. Instead of just deleting them,
-					# we shove them after the :ref: in order to keep the definition's punctuation.
-					if word.endswith(","):
-						word = word[:-1]
+					# [WDL],
+					elif word.endswith("],"):
+						word = word[:-2]
 						word = f":ref:`dict {word}`,"
-					elif word.endswith("."):
-						word = word[:-1]
+					
+					# [WDL].
+					elif word.endswith("]."):
+						word = word[:-2]
 						word = f":ref:`dict {word}`."
+
+					# [WDL]'s
+					elif word.endswith("]'s"):
+						word = word[:-3]
+						word = f":ref:`dict {word}`'s"
+
+					# [Seven 
+					# (i.e., this word plus the next forms [Seven Bridges])
 					else:
-						word = f":ref:`dict {word}`"
+						word = f":ref:`dict {word}"
+						multi_word_flag = True
+					
 					words_processed.append(word)
+				
+				elif multi_word_flag == True:
+					# This is a continuation of a previous word's RST link
+
+					# Bridges]
+					if word.endswith("]"):
+						multi_word_flag = False
+						word = word.replace("]", "`")  # will break on [Seven Br]idges] but that's not my problem
+
+					# Bridges],
+					elif word.endswith("],"):
+						multi_word_flag = False
+						word = word[:-2]
+						word = f"{word}`,"
+					
+					# Bridges].
+					elif word.endswith("]."):
+						multi_word_flag = False
+						word = word[:-2]
+						word = f"{word}`."
+
+					# Bridges]'s
+					elif word.endswith("]'s"):
+						multi_word_flag = False
+						word = word[:-3]
+						word = f"{word}`'s"
+
+					# Bridges 
+					# (i.e., [Seven Bridges executor])
+					else:
+						word = f"{word}"
+					words_processed.append(word)
+
 				else:
 					words_processed.append(word)
+			
 			final = " ".join(words_processed)
 			return f"	{final}  \n\n"
 
