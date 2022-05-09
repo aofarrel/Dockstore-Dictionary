@@ -10,6 +10,22 @@ AnVIL = GlossEntry("AnVIL Project",
 	pronunciation="", 
 	seealso="")
 
+API = GlossEntry("API", 
+	acronym_full="Application Programmer Interfaces", 
+	definition="Application Programmer Interface technologies serve as software-based intermediaries to exchange data.", 
+	furtherreading="", 
+	institute="", 
+	pronunciation="", 
+	seealso="")
+
+AWS = GlossEntry("AWS", 
+	acronym_full="Amazon Web Services", 
+	definition="A provider of cloud services available on-demand.", 
+	furtherreading="", 
+	institute="", 
+	pronunciation="", 
+	seealso="")
+
 BDC = GlossEntry("BDC", 
 	acronym_full="Biodata Catalyst", 
 	definition="", 
@@ -18,7 +34,7 @@ BDC = GlossEntry("BDC",
 	pronunciation="", 
 	seealso="Biodata Catalyst")
 
-BDCat = GlossEntry("BDCat", 
+BDCat = GlossEntry("BD Catalyst", 
 	acronym_full="BioData Catalyst", 
 	definition="", 
 	furtherreading="", 
@@ -146,10 +162,34 @@ Elwazi = GlossEntry("eLwazi",
 	pronunciation='"el-woz-ee", derived from Xhosa word for knowledge', 
 	seealso="")
 
+FAIR = GlossEntry("FAIR", 
+	acronym_full="", 
+	definition="A set of guidelines to improve the Findability, Accessibility, Interoperability, and Reuse of digital assets", 
+	furtherreading="https://www.go-fair.org/fair-principles/",
+	institute="", 
+	pronunciation='', 
+	seealso="")
+
+GA4GH = GlossEntry("GA4GH", 
+	acronym_full="Global Alliance For Genomics and Health", 
+	definition="The Global Alliance for Genomics and Health aims to accelerate progress in genomic research and human health by cultivating a common framework of standards and harmonized approaches for effective and responsible genomic and health-related data sharing.", 
+	furtherreading="https://www.ga4gh.org/", 
+	institute="", 
+	pronunciation="", 
+	seealso="")
+
 GCP = GlossEntry("GCP", 
 	acronym_full="Google Cloud Platform", 
 	definition="A backend used for cloud computing and cloud storage. Terra is an example of a system that runs on a GCP backend. When running workflows on these backends, make sure to account for the storage needed for your workflow, as GCP compute backends do not automatically scale their storage size at runtime. GCP backends allow you to make use of Google's preemptible feature, which may reduce the cost of running workflows.", 
 	furtherreading="https://cloud.google.com/gcp", 
+	institute="", 
+	pronunciation="", 
+	seealso="")
+
+Interoperable = GlossEntry("Interoperable", 
+	acronym_full="", 
+	definition="The ability of data or tools from multiple resources to effectively integrate data, or operate processes, across all systems with a moderate degree of effort.", 
+	furtherreading="", 
 	institute="", 
 	pronunciation="", 
 	seealso="")
@@ -233,6 +273,11 @@ Terra = GlossEntry("Terra",
 	institute="", 
 	pronunciation="", 
 	seealso="")
+
+WES = GlossEntry("Workflow Execution Service",
+	furtherreading="",
+	definition="A standardized API developed by [GA4GH] for describing a standard programmatic way to run and manage workflows.",
+	seealso="https://ga4gh.github.io/workflow-execution-service-schemas/")
 
 WDL = GlossEntry("WDL",
 	acronym_full="Workflow Description Language",
