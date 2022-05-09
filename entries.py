@@ -212,7 +212,7 @@ TES = GlossEntry("TES",
 	pronunciation="", 
 	seealso="")
 
-Terra = GlossEntry("Terraa", 
+Terra = GlossEntry("Terra", 
 	acronym_full="", 
 	definition="A cloud-based workflow execution platform developed by the Broad Institute. Terra supports the execution of [WDL] workflows, Jupyter/R notebooks, and integrated apps such as a DICOM-file viewer. The computational backend of Terra is based upon Google, allowing Google-specific features such as [preemptible] machines to be used in workflows. Dockstore supports directly importing [WDL] workflows into a Terra workspace. Terra is part of the [BioData Catalyst], [AnVIL Project], and [eLwazi] grants.", 
 	furtherreading="https://terra.bio", 

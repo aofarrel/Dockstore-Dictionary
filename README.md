@@ -6,7 +6,7 @@
 
  The "definition" argument in GlossEntry can reference other entries. To do so, encapsulate the entry title you which to reference with brackets, such as "[WDL]", which will become a working internal link when outputting to RST.
 
- Upon committing, outputs/output.rst and output/toc.txt will be updated.
+ Upon committing, `outputs/output.rst` and `output/toc.txt` will be updated.
 
 ## Future Plans
  Fix bugs
