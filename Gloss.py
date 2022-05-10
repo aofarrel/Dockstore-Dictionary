@@ -121,16 +121,20 @@ class GlossEntry:
 		if format == "txt":
 			return f"see also {self.seealso}\n"
 		elif format == "rst":
-			return f"see also :ref:`dict {self.seealso}`  \n"
+			if self.institute == "":
+				return f"see also :ref:`dict {self.seealso}`  \n"
+			else:  # not strictly necessary to render correctly, but without this warning will be thrown
+				return f"\nsee also :ref:`dict {self.seealso}`  \n"
 
 	def text_furtherreading(self, format="txt"):
 		'''If there is a see also, we need an extra newline. If not, avoid the extra newline.'''
 		if format == "txt":
 			return f"Further reading: {self.furtherreading}\n"
-		elif format == "rst" and self.seealso == "":
-			return f"Further reading: `<{self.furtherreading}>`_  \n"
-		elif format == "rst" and self.seealso != "":
-			return f"\nFurther reading: `<{self.furtherreading}>`_  \n"
+		elif format == "rst":
+			if self.seealso == "" and self.institute == "":
+				return f"Further reading: `<{self.furtherreading}>`_  \n"
+			else:
+				return f"\nFurther reading: `<{self.furtherreading}>`_  \n"
 
 	def text_updated(self, format="txt"):
 		'''Ideally, should print when entry was last updated visibly if plaintext, as a comment if RST.

@@ -30,7 +30,7 @@ Dockstore Dictionary
 	* :ref:`dict GA4GH`
 	* :ref:`dict GCP`
 	* :ref:`dict immutable`
-	* :ref:`dict Interoperable`
+	* :ref:`dict interoperable`
 	* :ref:`dict JSON`
 	* :ref:`dict layer`
 	* :ref:`dict NCI`
@@ -126,6 +126,7 @@ Biodata Catalyst
 	An initiative funded by :ref:`dict NHLBI` to connect several cloud-based bioinformatics platforms together to increase reproducibility in bioinformatics. Involves Dockstore, :ref:`dict Terra`, Seven Bridges, Gen3, and PIC-SURE.  
 
 .. note:: This term as we define it here is associated with NIH and may have different definitions in other contexts.  
+
 Further reading: `<https://biodatacatalyst.nhlbi.nih.gov/>`_  
 
 .. updated 2022-05-10  
@@ -201,6 +202,7 @@ Cromwell
 	An open-source :ref:`dict WDL` executor managed by the Broad Institute. Cromwell is the default executor for the :ref:`dict Dockstore CLI` and is the executor used by :ref:`dict Terra`.  
 
 .. note:: This term as we define it here is associated with Broad Institute and may have different definitions in other contexts.  
+
 Further reading: `<https://cromwell.readthedocs.io/en/stable/>`_  
 
 .. updated 2022-05-10  
@@ -406,9 +408,9 @@ immutable
 
 
 
-.. _dict Interoperable:
+.. _dict interoperable:
 
-Interoperable
+interoperable
 -------------
 	The ability of data or tools from multiple resources to effectively integrate data, or operate processes, across all systems with a moderate degree of effort.  
 
@@ -549,6 +551,7 @@ preemptible
 	A type of :ref:`dict GCP` :ref:`dict VM` which may have its running jobs interrupted at any given time, and will be shut down if running for more than 24 hours. A preemptible machine is significantly cheaper than a standard VM, at the cost of possibly stopping before your computational work is finish. You can use preemptible machines when running workflows on GCP backends to save on compute costs.  
 
 .. note:: This term as we define it here is associated with Google and may have different definitions in other contexts.  
+
 see also :ref:`dict spot instance`  
 
 Further reading: `<https://cloud.google.com/compute/docs/instances/preemptible>`_  
@@ -564,6 +567,7 @@ Spot Instance
 	A type of :ref:`dict EC2` instance which is usually much cheaper than the typical on-demand EC2 cost. A spot instance is not guranteed to be available at any given time, as it is based upon currently unused EC2 availablility.  
 
 .. note:: This term as we define it here is associated with Amazon and may have different definitions in other contexts.  
+
 see also :ref:`dict preemptible`  
 
 Further reading: `<https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html>`_  
@@ -673,7 +677,7 @@ Workflow Execution Service
 --------------------------
 	A standardized API developed by :ref:`dict GA4GH` for describing a standard programmatic way to run and manage workflows.  
 
-see also :ref:`dict https://ga4gh.github.io/workflow-execution-service-schemas/`  
+Further reading: `<https://ga4gh.github.io/workflow-execution-service-schemas/>`_  
 
 .. updated 2022-05-10  
 

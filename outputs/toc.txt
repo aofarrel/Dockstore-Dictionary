@@ -25,7 +25,7 @@ FAIR
 GA4GH
 GCP
 immutable
-Interoperable
+interoperable
 JSON
 layer
 NCI

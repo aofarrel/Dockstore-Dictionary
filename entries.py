@@ -203,7 +203,7 @@ Immutable = GlossEntry("immutable",
 	pronunciation='', 
 	seealso="")
 
-Interoperable = GlossEntry("Interoperable", 
+Interoperable = GlossEntry("interoperable", 
 	acronym_full="", 
 	definition="The ability of data or tools from multiple resources to effectively integrate data, or operate processes, across all systems with a moderate degree of effort.", 
 	furtherreading="", 
@@ -328,9 +328,8 @@ WDL = GlossEntry("WDL",
 	pronunciation='"widdle", rhymes with little')
 
 WES = GlossEntry("Workflow Execution Service",
-	furtherreading="",
 	definition="A standardized API developed by [GA4GH] for describing a standard programmatic way to run and manage workflows.",
-	seealso="https://ga4gh.github.io/workflow-execution-service-schemas/")
+	furtherreading="https://ga4gh.github.io/workflow-execution-service-schemas/")
 
 Workflow = GlossEntry("workflow", 
 	acronym_full="", 

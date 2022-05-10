@@ -8,5 +8,19 @@
 
  Upon committing, `outputs/output.rst` and `output/toc.txt` will be updated; see `hooks/pre-commit`
 
+## Style Guide
+ * Every GlossEntry object variable name should be capitalized, and may be referred to with shorthand, such as:
+    * GCP
+    * AnVIL
+    * Elwazi
+    * SpotInstance
+    * Container
+ * The actual name of each term should follow the official capitalization for the word they represent, such as:
+    * GCP <-- acronym that Google writes as capitalized
+    * AnVIL Project <-- entire thing is a proper noun, first word is an acronym officially written in this manner
+    * eLwazi <-- officially written in this manner; follows non-English capitalization rules
+    * Spot Instance <-- trademark that Amazon writes as capitalized
+    * container <-- not a proper noun nor a trademark, so not capitalized
+
 ## Future Plans
- Fix bugs
+ Get acronym internal links working
