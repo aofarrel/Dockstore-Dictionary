@@ -19,6 +19,7 @@ Docker image
 Dockerfile
 Dockstore CLI
 DOI
+DS-I Africa
 EC2
 eLwazi
 FAIR
@@ -29,6 +30,7 @@ interoperable
 JSON
 layer
 NCI
+NCPI
 NHGRI
 NHLBI
 NIH

@@ -24,6 +24,7 @@ Dockstore Dictionary
 	* :ref:`dict Dockerfile`
 	* :ref:`dict Dockstore CLI`
 	* :ref:`dict DOI`
+	* :ref:`dict DS-I Africa`
 	* :ref:`dict EC2`
 	* :ref:`dict eLwazi`
 	* :ref:`dict FAIR`
@@ -34,6 +35,7 @@ Dockstore Dictionary
 	* :ref:`dict JSON`
 	* :ref:`dict layer`
 	* :ref:`dict NCI`
+	* :ref:`dict NCPI`
 	* :ref:`dict NHGRI`
 	* :ref:`dict NHLBI`
 	* :ref:`dict NIH`
@@ -59,7 +61,7 @@ AnVIL Project
 -------------
 *abbreviation for* Analysis Visualization and Informatics Labspace  
 
-	A cloud-based ecosystem funded by :ref:`dict NHGRI`, bringing together Dockstore, Gen3, :ref:`dict Terra`, :ref:`dict NCPI`, Galaxy, Jupyter, Seqr, and Bioconductor into an integrated platform. Sometimes refered to as just "the AnVIL" or "AnVIL".  
+	A cloud-based ecosystem funded by :ref:`dict NHGRI`, bringing together Dockstore, Gen3, :ref:`dict Terra`, :ref:`dict NCPI`, Galaxy, Jupyter, Seqr, and Bioconductor into an integrated platform. Sometimes referred to as just "the AnVIL" or "AnVIL".  
 
 Further reading: `<https://anvilproject.org/>`_  
 
@@ -186,7 +188,7 @@ Further reading: `<https://en.wikipedia.org/wiki/Cloud_computing>`_
 
 Common Workflow Language
 ------------------------
-	A workflow language that describes how to run command-line tools. CWL is based on Java and can use Java commands within its own commands. :ref:`dict WDL` and CWL are relatively similiar in principle, and code written in one language can often be translated into the other with some workarounds, but they are two different standards and each have unique features.  
+	A workflow language that describes how to run command-line tools. CWL is based on Java and can use Java commands within its own commands. :ref:`dict WDL` and CWL are relatively similar in principle, and code written in one language can often be translated into the other with some workarounds, but they are two different standards and each have unique features.  
 
 see also :ref:`dict CWL`  
 
@@ -252,7 +254,7 @@ Docker
 ------
 pronounced "daw-ker", rhymes with walker  
 
-	A program that can create "images" which are somewhat similiar to virutal machines, as well as run those images. In the context of bioinformatics, this technology has two main benefits: First, a :ref:`dict Docker image` bundles up everything a given piece of software needs to run, meaning that someone who wants to run (for example) samtools via Docker only needs to install Docker, not samtools. Second, an instance of a Docker image is a relatively standardized environment even when running on different backends, meaning that two people running the same software in the same Docker image on two different computers are likely to get the exact same results. In other words, Docker is good for reproducibility and ease of use.  
+	A program that can create "images" which are somewhat similar to virtual machines, as well as run those images. In the context of bioinformatics, this technology has two main benefits: First, a :ref:`dict Docker image` bundles up everything a given piece of software needs to run, meaning that someone who wants to run (for example) samtools via Docker only needs to install Docker, not samtools. Second, an instance of a Docker image is a relatively standardized environment even when running on different backends, meaning that two people running the same software in the same Docker image on two different computers are likely to get the exact same results. In other words, Docker is good for reproducibility and ease of use.  
 
 Further reading: `<https://docker-curriculum.com/>`_  
 
@@ -264,7 +266,7 @@ Further reading: `<https://docker-curriculum.com/>`_
 
 Docker container
 ----------------
-	In order to actually use the software inside a :ref:`dict Docker image` using the `docker run` command, the Docker program creates a writeable :ref:`dict layer` on top of the image, which leads to the creation of a :ref:`dict Docker container`. You can think of a Docker image as an unchanging template, and a Docker container as a writeable instance generated from that template. A Docker image can exist on its own, but a Docker container requires a Docker image.  
+	In order to actually use the software inside a :ref:`dict Docker image` using the `docker run` command, the Docker program creates a writable :ref:`dict layer` on top of the image, which leads to the creation of a :ref:`dict Docker container`. You can think of a Docker image as an unchanging template, and a Docker container as a writable instance generated from that template. A Docker image can exist on its own, but a Docker container requires a Docker image.  
 
 Further reading: `<https://www.docker.com/resources/what-container/>`_  
 
@@ -276,7 +278,7 @@ Further reading: `<https://www.docker.com/resources/what-container/>`_
 
 Docker image
 ------------
-	A read-only file that represents a filesystem that contains some sort of code and that code's depedencies. A Docker image can be created using the `docker build` command in conjunction with a :ref:`dict Dockerfile`. If a workflow language references a Docker image, then the workflow executor will download that Docker image (unless was already downloaded previously) and add a writeable layer onto the Docker image, which results in the creation of a :ref:`dict Docker container`.  
+	A read-only file that represents a filesystem that contains some sort of code and that code's dependencies. A Docker image can be created using the `docker build` command in conjunction with a :ref:`dict Dockerfile`. If a workflow language references a Docker image, then the workflow executor will download that Docker image (unless was already downloaded previously) and add a writable layer onto the Docker image, which results in the creation of a :ref:`dict Docker container`.  
 
 
 .. updated 2022-05-10  
@@ -317,8 +319,22 @@ DOI
 ---
 *abbreviation for* Digital Object Identifier  
 
-	An identifier that provides a long-lasting link to some sort of :ref:`dict immutable` digital object. On Docktore, you can use Zenodo to mint a DOI of your workflows and tools to increase reproducibility.  
+	An identifier that provides a long-lasting link to some sort of :ref:`dict immutable` digital object. On Dockstore, you can use Zenodo to mint a DOI of your workflows and tools to increase reproducibility.  
 
+
+.. updated 2022-05-10  
+
+
+
+.. _dict DS-I Africa:
+
+DS-I Africa
+-----------
+*abbreviation for* Data Science for health discovery and Innovation in Africa  
+
+	An :ref:`dict NIH` initiative to leverage data science to address the African continent's public health needs.  
+
+Further reading: `<https://commonfund.nih.gov/africadata>`_  
 
 .. updated 2022-05-10  
 
@@ -344,7 +360,7 @@ eLwazi
 ------
 pronounced "el-woz-ee", derived from Xhosa word for knowledge  
 
-	An African-lead open data science platform funded as part of the :ref:`dict NIH`'s :ref:`dict DSI-Africa` program. Leverages :ref:`dict Gen3` and :ref:`dict Terra`.  
+	An African-lead open data science platform funded as part of the :ref:`dict NIH`'s :ref:`dict DS-I Africa` program. Leverages :ref:`dict Gen3` and :ref:`dict Terra`.  
 
 Further reading: `<https://elwazi.org/>`_  
 
@@ -428,7 +444,7 @@ pronounced "jason"
 
 *abbreviation for* JavaScript Object Notation  
 
-	A human-readible file format that orginated in JavaScript, but is now used by a variety of applications. Dockstore supports the inclusion of JSON and :ref:`dict YAML` files in entries to provide sample inputs for workflow and tool entries. Some workflow executors, such as :ref:`dict Cromwell`, can use these files to configure their inputs rather than having to manually listing every input when calling the workflow on the command line.  
+	A human-readable file format that originated in JavaScript, but is now used by a variety of applications. Dockstore supports the inclusion of JSON and :ref:`dict YAML` files in entries to provide sample inputs for workflow and tool entries. Some workflow executors, such as :ref:`dict Cromwell`, can use these files to configure their inputs rather than having to manually listing every input when calling the workflow on the command line.  
 
 see also :ref:`dict YAML`  
 
@@ -444,6 +460,7 @@ layer
 -----
 	In the context of Docker, a layer is a component of a Docker image. Each `RUN`, `COPY`, and `ADD` instruction in a :ref:`dict Dockerfile` will lead to the creation of a layer.  
 
+.. note:: This term as we define it here is associated with Docker and may have different definitions in other contexts.  
 
 .. updated 2022-05-10  
 
@@ -457,6 +474,25 @@ NCI
 
 	A division of the :ref:`dict NIH` focused on cancer research.  
 
+.. note:: This term as we define it here is associated with NIH and may have different definitions in other contexts.  
+
+Further reading: `<https://www.nih.gov/about-nih/what-we-do/nih-almanac/national-cancer-institute-nci>`_  
+
+.. updated 2022-05-10  
+
+
+
+.. _dict NCPI:
+
+NCPI
+----
+*abbreviation for* NIH Cloud Platform Interoperability  
+
+	An effort to connect five :ref:`dict NIH` cloud projects and ensure they are interoperable. The five projects covered under this are the :ref:`dict AnVIL Project`, :ref:`dict BioData Catalyst`, Cancer Research Data Commons, Kids First, and the National Center for Biotechnology Information.  
+
+.. note:: This term as we define it here is associated with NIH and may have different definitions in other contexts.  
+
+Further reading: `<https://datascience.nih.gov/nih-cloud-platform-interoperability-effort>`_  
 
 .. updated 2022-05-10  
 
@@ -496,7 +532,7 @@ NIH
 ---
 *abbreviation for* National Institute of Health  
 
-	An American government institution, part of the Department of Health and Human Services, that engages in medical research.  
+	An American government institution, part of the Department of Health and Human Services (HHS), that engages in medical research.  
 
 Further reading: `<https://www.nih.gov/>`_  
 
@@ -565,7 +601,7 @@ Further reading: `<https://cloud.google.com/compute/docs/instances/preemptible>`
 
 Spot Instance
 -------------
-	A type of :ref:`dict EC2` instance which is usually much cheaper than the typical on-demand EC2 cost. A spot instance is not guranteed to be available at any given time, as it is based upon currently unused EC2 availablility.  
+	A type of :ref:`dict EC2` instance which is usually much cheaper than the typical on-demand EC2 cost. A spot instance is not guaranteed to be available at any given time, as it is based upon currently unused EC2 availability.  
 
 .. note:: This term as we define it here is associated with Amazon and may have different definitions in other contexts.  
 
@@ -676,7 +712,7 @@ Further reading: `<https://docs.dockstore.org/en/stable/getting-started/intro-to
 
 Workflow Description Language
 -----------------------------
-	A workflow language managed by the Open WDL Project that is designed to describe command-line tools. Usually written as :ref:`dict WDL`. WDL and :ref:`dict CWL` are relatively similiar in principle, and code written in one language can often be translated into the other with some workarounds, but they are two different standards and each have unique features.  
+	A workflow language managed by the Open WDL Project that is designed to describe command-line tools. Usually written as :ref:`dict WDL`. WDL and :ref:`dict CWL` are relatively similar in principle, and code written in one language can often be translated into the other with some workarounds, but they are two different standards and each have unique features.  
 
 see also :ref:`dict WDL`  
 
@@ -704,7 +740,7 @@ YAML
 ----
 *abbreviation for* YAML Ain't Markup Language  
 
-	Human-readable data-serialization lanaguage. Commonly used for configuration files.  
+	Human-readable data-serialization language. Commonly used for configuration files.  
 
 see also :ref:`dict JSON`  
 
