@@ -18,6 +18,7 @@ with open(outfile, "a") as f:
     f.write("====================\n")
     # tell RST to make a local TOC
     f.write(".. contents:: Table of Contents\n\t:local:\n\n")
+    #f.write(".. hlist:: \n\t:columns: 3\n\n\t* A list of\n\t* short items\n\t* to display horizontally\n\n")
     # generate main body text
     for entry in list_entries:
         f.write(entry.generate_RST())

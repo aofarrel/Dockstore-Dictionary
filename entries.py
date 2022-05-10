@@ -49,6 +49,14 @@ CLI = GlossEntry("CLI",
 	pronunciation="", 
 	seealso="")
 
+CloudComputing = GlossEntry("cloud computing", 
+	acronym_full="", 
+	definition="Doing computational tasks on a remote machine that is made available on-demand without the user having to manage all aspects of it. Generally implies that the user is essentially renting computational resources from someone else. Well-known cloud providers include [GCP], [AWS], Microsoft Azure, and Alibaba Cloud.", 
+	furtherreading="https://en.wikipedia.org/wiki/Cloud_computing", 
+	institute="", 
+	pronunciation='', 
+	seealso="")
+
 CommonWorkflowLanguage = GlossEntry("Common Workflow Language", 
 	acronym_full="", 
 	definition="A workflow language that describes how to run command-line tools. CWL is based on Java and can use Java commands within its own commands. [WDL] and CWL are relatively similiar in principle, and code written in one language can often be translated into the other with some workarounds, but they are two different standards and each have unique features.", 
@@ -74,6 +82,14 @@ DAG = GlossEntry("DAG",
 	furtherreading="https://cran.r-project.org/web/packages/ggdag/vignettes/intro-to-dags.html", 
 	institute="", 
 	pronunciation="", 
+	seealso="")
+
+DescriptorFile = GlossEntry("descriptor file", 
+	acronym_full="", 
+	definition="A file used to programmatically describe a tool or workflow. This file represents the instructions that will actually be executed. On Dockstore, we support .ga, .cwl, .wdl, and .nfl file extensions for [Galaxy], [CWL], [WDL], and [Nextflow] respectively.", 
+	furtherreading="", 
+	institute="", 
+	pronunciation='', 
 	seealso="")
 
 Docker = GlossEntry("Docker", 
@@ -118,11 +134,19 @@ DockstoreCLI = GlossEntry("Dockstore CLI",
 
 DOI = GlossEntry("DOI", 
 	acronym_full="Digital Object Identifier", 
-	definition="An identifier that provides a long-lasting link to some sort of digital object. On Docktore, you can use Zenodo to mint a DOI of your workflows and tools to increase reproducibility.", 
+	definition="An identifier that provides a long-lasting link to some sort of [immutable] digital object. On Docktore, you can use Zenodo to mint a DOI of your workflows and tools to increase reproducibility.", 
 	furtherreading="", 
 	institute="", 
 	pronunciation="", 
 	seealso="")
+
+EC2 = GlossEntry("EC2", 
+	acronym_full="Elastic Compute Cloud", 
+	definition="A backend for cloud computing and cloud storage hosted by Amazon. [Seven Bridges] is an example of a system that runs on an EC2 backend. When running workflows on these backends, disk size will scale with your workflow requirements automatically. EC2 instances allow you to make use of Amazon's [spot instance] feature, which may reduce the cost of running workflows.", 
+	furtherreading="https://docs.aws.amazon.com/ec2/index.html", 
+	institute="", 
+	pronunciation='', 
+	seealso="GCP")
 
 Elwazi = GlossEntry("eLwazi", 
 	acronym_full="", 
@@ -134,10 +158,18 @@ Elwazi = GlossEntry("eLwazi",
 
 GCP = GlossEntry("GCP", 
 	acronym_full="Google Cloud Platform", 
-	definition="A backend used for cloud computing and cloud storage. Terra is an example of a system that runs on a GCP backend. When running workflows on these backends, make sure to account for the storage needed for your workflow, as GCP compute backends do not automatically scale their storage size at runtime. GCP backends allow you to make use of Google's preemptible feature, which may reduce the cost of running workflows.", 
+	definition="A backend used for cloud computing and cloud storage hosted by Google. [Terra] is an example of a system that runs on a GCP backend. When running workflows on these backends, make sure to account for the storage needed for your workflow, as GCP compute backends do not automatically scale their storage size at runtime. GCP backends allow you to make use of Google's [preemptible] feature, which may reduce the cost of running workflows.", 
 	furtherreading="https://cloud.google.com/gcp", 
 	institute="", 
 	pronunciation="", 
+	seealso="EC2")
+
+Immutable = GlossEntry("immutable", 
+	acronym_full="", 
+	definition="Unchanging, unable to be modified. Immutability implies that an object cannot be updated.", 
+	furtherreading="", 
+	institute="", 
+	pronunciation='', 
 	seealso="")
 
 JSON = GlossEntry("JSON", 
@@ -203,6 +235,30 @@ ORCID = GlossEntry("ORCID",
 	institute="", 
 	pronunciation='"or-kid", rhymes with kid', 
 	seealso="")
+
+ParameterFile = GlossEntry("parameter file", 
+	acronym_full="", 
+	definition="A [JSON] or [YAML] file that describes the inputs to a workflow. This usually includes internal links, or links to data in a Google or S3 bucket.", 
+	furtherreading="", 
+	institute="", 
+	pronunciation='', 
+	seealso="")
+
+Preemptible = GlossEntry("preemptible", 
+	acronym_full="", 
+	definition="A type of [GCP] [VM] which may have its running jobs interrupted at any given time, and will be shut down if running for more than 24 hours. A preemptible machine is significantly cheaper than a standard VM, at the cost of possibly stopping before your computational work is finish. You can use preemptible machines when running workflows on GCP backends to save on compute costs.", 
+	furtherreading="https://cloud.google.com/compute/docs/instances/preemptible", 
+	institute="Google", 
+	pronunciation='', 
+	seealso="spot instance")
+
+SpotInstance = GlossEntry("Spot Instance", 
+	acronym_full="", 
+	definition="A type of [EC2] instance which is usually much cheaper than the typical on-demand EC2 cost. A spot instance is not guranteed to be available at any given time, as it is based upon currently unused EC2 availablility.", 
+	furtherreading="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html", 
+	institute="Amazon", 
+	pronunciation='', 
+	seealso="preemptible")
 
 TES = GlossEntry("TES", 
 	acronym_full="Task Execution Service", 

@@ -13,7 +13,7 @@ AnVIL Project
 
 Further reading: `<https://anvilproject.org/>`_  
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
 
 
 
@@ -26,7 +26,7 @@ pronounced "bee-dee-see"
 *abbreviation for* [Biodata Catalyst]  
 
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
 
 
 
@@ -39,7 +39,7 @@ pronounced "bee-dee-cat"
 *abbreviation for* [BioData Catalyst]  
 
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
 
 
 
@@ -52,7 +52,7 @@ Biodata Catalyst
 This term as we define it here is associated with NIH and may have different definitions in other contexts.  
 Further reading: `<https://biodatacatalyst.nhlbi.nih.gov/>`_  
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
 
 
 
@@ -63,7 +63,7 @@ Cancer Genomics Cloud
 	A cloud platform by :ref:`dict Seven Bridges` and funded by :ref:`dict NCI` for bioinformatics analysis.  
 
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
 
 
 
@@ -74,7 +74,7 @@ CGC
 *abbreviation for* [Cancer Genomics Cloud]  
 
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
 
 
 
@@ -88,7 +88,19 @@ CLI
 
 Further reading: `<https://en.wikipedia.org/wiki/Command-line_interface>`_  
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
+
+
+
+.. _dict cloud computing:
+
+cloud computing
+---------------
+	Doing computational tasks on a remote machine that is made available on-demand without the user having to manage all aspects of it. Generally implies that the user is essentially renting computational resources from someone else. Well-known cloud providers include :ref:`dict GCP`, :ref:`dict AWS`, Microsoft Azure, and Alibaba Cloud.  
+
+Further reading: `<https://en.wikipedia.org/wiki/Cloud_computing>`_  
+
+.. updated 2022-05-10  
 
 
 
@@ -101,7 +113,7 @@ Common Workflow Language
 see also :ref:`dict CWL`  
 Further reading: `<https://www.commonwl.org/user_guide/>`_  
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
 
 
 
@@ -114,7 +126,7 @@ Cromwell
 This term as we define it here is associated with Broad Institute and may have different definitions in other contexts.  
 Further reading: `<https://cromwell.readthedocs.io/en/stable/>`_  
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
 
 
 
@@ -125,7 +137,7 @@ CWL
 *abbreviation for* [Common Workflow Language]  
 
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
 
 
 
@@ -139,7 +151,18 @@ DAG
 
 Further reading: `<https://cran.r-project.org/web/packages/ggdag/vignettes/intro-to-dags.html>`_  
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
+
+
+
+.. _dict descriptor file:
+
+descriptor file
+---------------
+	A file used to programmatically describe a tool or workflow. This file represents the instructions that will actually be executed. On Dockstore, we support .ga, .cwl, .wdl, and .nfl file extensions for :ref:`dict Galaxy`, :ref:`dict CWL`, :ref:`dict WDL`, and :ref:`dict Nextflow` respectively.  
+
+
+.. updated 2022-05-10  
 
 
 
@@ -153,7 +176,7 @@ pronounced "daw-ker", rhymes with walker
 
 Further reading: `<https://docker-curriculum.com/>`_  
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
 
 
 
@@ -165,7 +188,7 @@ Docker container
 
 Further reading: `<https://www.docker.com/resources/what-container/>`_  
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
 
 
 
@@ -176,7 +199,7 @@ Docker image
 	A read-only file that represents a filesystem that contains some sort of code and that code's depedencies. A Docker image can be created using the `docker build` command in conjunction with a :ref:`dict Dockerfile`. If a workflow language references a Docker image, then the workflow executor will download that Docker image (unless was already downloaded previously) and add a writeable layer onto the Docker image, which results in the creation of a :ref:`dict Docker container`.  
 
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
 
 
 
@@ -188,7 +211,7 @@ Dockerfile
 
 Further reading: `<https://docs.docker.com/engine/reference/builder/>`_  
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
 
 
 
@@ -203,7 +226,7 @@ Dockstore CLI
 see also :ref:`dict CLI`  
 Further reading: `<https://docs.dockstore.org/en/stable/advanced-topics/dockstore-cli/dockstore-cli-faq.html>`_  
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
 
 
 
@@ -213,10 +236,25 @@ DOI
 ---
 *abbreviation for* Digital Object Identifier  
 
-	An identifier that provides a long-lasting link to some sort of digital object. On Docktore, you can use Zenodo to mint a DOI of your workflows and tools to increase reproducibility.  
+	An identifier that provides a long-lasting link to some sort of :ref:`dict immutable` digital object. On Docktore, you can use Zenodo to mint a DOI of your workflows and tools to increase reproducibility.  
 
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
+
+
+
+.. _dict EC2:
+
+EC2
+---
+*abbreviation for* Elastic Compute Cloud  
+
+	A backend for cloud computing and cloud storage hosted by Amazon. :ref:`dict Seven Bridges` is an example of a system that runs on an EC2 backend. When running workflows on these backends, disk size will scale with your workflow requirements automatically. EC2 instances allow you to make use of Amazon's :ref:`dict spot instance` feature, which may reduce the cost of running workflows.  
+
+see also :ref:`dict GCP`  
+Further reading: `<https://docs.aws.amazon.com/ec2/index.html>`_  
+
+.. updated 2022-05-10  
 
 
 
@@ -230,7 +268,7 @@ pronounced "el-woz-ee", derived from Xhosa word for knowledge
 
 Further reading: `<https://elwazi.org/>`_  
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
 
 
 
@@ -240,11 +278,23 @@ GCP
 ---
 *abbreviation for* Google Cloud Platform  
 
-	A backend used for cloud computing and cloud storage. Terra is an example of a system that runs on a GCP backend. When running workflows on these backends, make sure to account for the storage needed for your workflow, as GCP compute backends do not automatically scale their storage size at runtime. GCP backends allow you to make use of Google's preemptible feature, which may reduce the cost of running workflows.  
+	A backend used for cloud computing and cloud storage hosted by Google. :ref:`dict Terra` is an example of a system that runs on a GCP backend. When running workflows on these backends, make sure to account for the storage needed for your workflow, as GCP compute backends do not automatically scale their storage size at runtime. GCP backends allow you to make use of Google's :ref:`dict preemptible` feature, which may reduce the cost of running workflows.  
 
+see also :ref:`dict EC2`  
 Further reading: `<https://cloud.google.com/gcp>`_  
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
+
+
+
+.. _dict immutable:
+
+immutable
+---------
+	Unchanging, unable to be modified. Immutability implies that an object cannot be updated.  
+
+
+.. updated 2022-05-10  
 
 
 
@@ -261,7 +311,7 @@ pronounced "jason"
 see also :ref:`dict YAML`  
 Further reading: `<https://www.json.org/json-en.html>`_  
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
 
 
 
@@ -272,7 +322,7 @@ layer
 	In the context of Docker, a layer is a component of a Docker image. Each `RUN`, `COPY`, and `ADD` instruction in a :ref:`dict Dockerfile` will lead to the creation of a layer.  
 
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
 
 
 
@@ -285,7 +335,7 @@ NCI
 	A division of the :ref:`dict NIH` focused on cancer research.  
 
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
 
 
 
@@ -299,7 +349,7 @@ NHGRI
 
 Further reading: `<https://www.genome.gov/>`_  
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
 
 
 
@@ -313,7 +363,7 @@ NHLBI
 
 Further reading: `<https://www.nhlbi.nih.gov/>`_  
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
 
 
 
@@ -327,7 +377,7 @@ NIH
 
 Further reading: `<https://www.nih.gov/>`_  
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
 
 
 
@@ -341,7 +391,7 @@ OICR
 
 Further reading: `<https://oicr.on.ca/>`_  
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
 
 
 
@@ -357,7 +407,46 @@ pronounced "or-kid", rhymes with kid
 
 Further reading: `<https://info.orcid.org/what-is-orcid/>`_  
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
+
+
+
+.. _dict parameter file:
+
+parameter file
+--------------
+	A :ref:`dict JSON` or :ref:`dict YAML` file that describes the inputs to a workflow. This usually includes internal links, or links to data in a Google or S3 bucket.  
+
+
+.. updated 2022-05-10  
+
+
+
+.. _dict preemptible:
+
+preemptible
+-----------
+	A type of :ref:`dict GCP` :ref:`dict VM` which may have its running jobs interrupted at any given time, and will be shut down if running for more than 24 hours. A preemptible machine is significantly cheaper than a standard VM, at the cost of possibly stopping before your computational work is finish. You can use preemptible machines when running workflows on GCP backends to save on compute costs.  
+
+This term as we define it here is associated with Google and may have different definitions in other contexts.  
+see also :ref:`dict spot instance`  
+Further reading: `<https://cloud.google.com/compute/docs/instances/preemptible>`_  
+
+.. updated 2022-05-10  
+
+
+
+.. _dict Spot Instance:
+
+Spot Instance
+-------------
+	A type of :ref:`dict EC2` instance which is usually much cheaper than the typical on-demand EC2 cost. A spot instance is not guranteed to be available at any given time, as it is based upon currently unused EC2 availablility.  
+
+This term as we define it here is associated with Amazon and may have different definitions in other contexts.  
+see also :ref:`dict preemptible`  
+Further reading: `<https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html>`_  
+
+.. updated 2022-05-10  
 
 
 
@@ -369,7 +458,7 @@ Terra
 
 Further reading: `<https://terra.bio>`_  
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
 
 
 
@@ -383,7 +472,7 @@ TES
 
 Further reading: `<https://ga4gh.github.io/task-execution-schemas/docs/>`_  
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
 
 
 
@@ -396,7 +485,7 @@ tool
 see also :ref:`dict workflow`  
 Further reading: `<https://docs.dockstore.org/en/stable/getting-started/intro-to-dockstore-tools-and-workflows.html>`_  
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
 
 
 
@@ -410,7 +499,7 @@ UCSC
 
 Further reading: `<https://ucsc.edu>`_  
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
 
 
 
@@ -423,7 +512,7 @@ pronounced "widdle", rhymes with little
 *abbreviation for* [Workflow Description Language]  
 
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
 
 
 
@@ -436,7 +525,7 @@ workflow
 see also :ref:`dict tool`  
 Further reading: `<https://docs.dockstore.org/en/stable/getting-started/intro-to-dockstore-tools-and-workflows.html>`_  
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
 
 
 
@@ -449,7 +538,7 @@ Workflow Description Language
 see also :ref:`dict WDL`  
 Further reading: `<https://openwdl.org/>`_  
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
 
 
 
@@ -464,7 +553,7 @@ YAML
 see also :ref:`dict JSON`  
 Further reading: `<https://yaml.org/>`_  
 
-.. updated 2022-05-09  
+.. updated 2022-05-10  
 
 
 
