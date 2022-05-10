@@ -176,15 +176,15 @@ FAIR = GlossEntry("FAIR",
 	definition="A set of guidelines to improve the Findability, Accessibility, Interoperability, and Reuse of digital assets. This concept is often applied to data, but can be applied to other assets such as workflows.", 
 	furtherreading="https://www.go-fair.org/fair-principles/",
 	institute="", 
-	pronunciation='', 
+	pronunciation='"fair", rhymes with pear', 
 	seealso="")
 
 GA4GH = GlossEntry("GA4GH", 
 	acronym_full="Global Alliance For Genomics and Health", 
-	definition="The Global Alliance for Genomics and Health aims to accelerate progress in genomic research and human health by cultivating a common framework of standards and harmonized approaches for effective and responsible genomic and health-related data sharing.", 
+	definition="A network of public and private institutions which aims to accelerate progress in genomic research and human health by cultivating a common framework of standards and harmonized approaches for effective and responsible genomic and health-related data sharing.", 
 	furtherreading="https://www.ga4gh.org/", 
 	institute="", 
-	pronunciation="", 
+	pronunciation='', 
 	seealso="")
 
 GCP = GlossEntry("GCP", 

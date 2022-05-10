@@ -1,6 +1,8 @@
 AnVIL Project
+API
+AWS
+BD Catalyst
 BDC
-BDCat
 Biodata Catalyst
 Cancer Genomics Cloud
 CGC
@@ -19,8 +21,11 @@ Dockstore CLI
 DOI
 EC2
 eLwazi
+FAIR
+GA4GH
 GCP
 immutable
+Interoperable
 JSON
 layer
 NCI
@@ -39,4 +44,5 @@ UCSC
 WDL
 workflow
 Workflow Description Language
+Workflow Execution Service
 YAML

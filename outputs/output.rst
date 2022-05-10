@@ -17,6 +17,45 @@ Further reading: `<https://anvilproject.org/>`_
 
 
 
+.. _dict API:
+
+API
+---
+*abbreviation for* Application Programmer Interface  
+
+	A software-based intermediary used to exchange data, often between two different platforms. Communication between different cloud platforms is mediated by various APIs, such as :ref:`dict TES`.  
+
+
+.. updated 2022-05-10  
+
+
+
+.. _dict AWS:
+
+AWS
+---
+*abbreviation for* Amazon Web Services  
+
+	A provider of cloud services, most notably cloud computing and cloud storage, available on-demand and hosted by Amazon. :ref:`dict Seven Bridges` is an example of a system that is powered by AWS, and can launch workflows on :ref:`dict EC2` instances.  
+
+see also :ref:`dict GCP`  
+Further reading: `<https://docs.aws.amazon.com/index.html?nc2=h_ql_doc_do>`_  
+
+.. updated 2022-05-10  
+
+
+
+.. _dict BD Catalyst:
+
+BD Catalyst
+-----------
+*abbreviation for* [BioData Catalyst]  
+
+
+.. updated 2022-05-10  
+
+
+
 .. _dict BDC:
 
 BDC
@@ -24,19 +63,6 @@ BDC
 pronounced "bee-dee-see"  
 
 *abbreviation for* [Biodata Catalyst]  
-
-
-.. updated 2022-05-10  
-
-
-
-.. _dict BDCat:
-
-BDCat
------
-pronounced "bee-dee-cat"  
-
-*abbreviation for* [BioData Catalyst]  
 
 
 .. updated 2022-05-10  
@@ -249,9 +275,8 @@ EC2
 ---
 *abbreviation for* Elastic Compute Cloud  
 
-	A backend for cloud computing and cloud storage hosted by Amazon. :ref:`dict Seven Bridges` is an example of a system that runs on an EC2 backend. When running workflows on these backends, disk size will scale with your workflow requirements automatically. EC2 instances allow you to make use of Amazon's :ref:`dict spot instance` feature, which may reduce the cost of running workflows.  
+	The cloud computing side of :ref:`dict AWS`. When running workflows on these backends, disk size will scale with your workflow requirements automatically. EC2 instances allow you to make use of Amazon's :ref:`dict spot instance` feature, which may reduce the cost of running workflows.  
 
-see also :ref:`dict GCP`  
 Further reading: `<https://docs.aws.amazon.com/ec2/index.html>`_  
 
 .. updated 2022-05-10  
@@ -267,6 +292,36 @@ pronounced "el-woz-ee", derived from Xhosa word for knowledge
 	An African-lead open data science platform funded as part of the :ref:`dict NIH`'s :ref:`dict DSI-Africa` program. Leverages :ref:`dict Gen3` and :ref:`dict Terra`.  
 
 Further reading: `<https://elwazi.org/>`_  
+
+.. updated 2022-05-10  
+
+
+
+.. _dict FAIR:
+
+FAIR
+----
+pronounced "fair", rhymes with pear  
+
+*abbreviation for* Findable, Accessible, Interoperable, and Reusable  
+
+	A set of guidelines to improve the Findability, Accessibility, Interoperability, and Reuse of digital assets. This concept is often applied to data, but can be applied to other assets such as workflows.  
+
+Further reading: `<https://www.go-fair.org/fair-principles/>`_  
+
+.. updated 2022-05-10  
+
+
+
+.. _dict GA4GH:
+
+GA4GH
+-----
+*abbreviation for* Global Alliance For Genomics and Health  
+
+	A network of public and private institutions which aims to accelerate progress in genomic research and human health by cultivating a common framework of standards and harmonized approaches for effective and responsible genomic and health-related data sharing.  
+
+Further reading: `<https://www.ga4gh.org/>`_  
 
 .. updated 2022-05-10  
 
@@ -292,6 +347,17 @@ Further reading: `<https://cloud.google.com/gcp>`_
 immutable
 ---------
 	Unchanging, unable to be modified. Immutability implies that an object cannot be updated.  
+
+
+.. updated 2022-05-10  
+
+
+
+.. _dict Interoperable:
+
+Interoperable
+-------------
+	The ability of data or tools from multiple resources to effectively integrate data, or operate processes, across all systems with a moderate degree of effort.  
 
 
 .. updated 2022-05-10  
@@ -537,6 +603,18 @@ Workflow Description Language
 
 see also :ref:`dict WDL`  
 Further reading: `<https://openwdl.org/>`_  
+
+.. updated 2022-05-10  
+
+
+
+.. _dict Workflow Execution Service:
+
+Workflow Execution Service
+--------------------------
+	A standardized API developed by :ref:`dict GA4GH` for describing a standard programmatic way to run and manage workflows.  
+
+see also :ref:`dict https://ga4gh.github.io/workflow-execution-service-schemas/`  
 
 .. updated 2022-05-10  
 
