@@ -124,6 +124,14 @@ DOI = GlossEntry("DOI",
 	pronunciation="", 
 	seealso="")
 
+EC2 = GlossEntry("EC2", 
+	acronym_full="Elastic Compute Cloud", 
+	definition="A backend for cloud computing and cloud storage hosted by Amazon. [Seven Bridges] is an example of a system that runs on an EC2 backend. When running workflows on these backends, disk size will scale with your workflow requirements automatically. EC2 instances allow you to make use of Amazon's [spot instance] feature, which may reduce the cost of running workflows.", 
+	furtherreading="https://docs.aws.amazon.com/ec2/index.html", 
+	institute="", 
+	pronunciation='', 
+	seealso="GCP")
+
 Elwazi = GlossEntry("eLwazi", 
 	acronym_full="", 
 	definition="An African-lead open data science platform funded as part of the [NIH]'s [DSI-Africa] program. Leverages [Gen3] and [Terra].", 
@@ -134,11 +142,11 @@ Elwazi = GlossEntry("eLwazi",
 
 GCP = GlossEntry("GCP", 
 	acronym_full="Google Cloud Platform", 
-	definition="A backend used for cloud computing and cloud storage. Terra is an example of a system that runs on a GCP backend. When running workflows on these backends, make sure to account for the storage needed for your workflow, as GCP compute backends do not automatically scale their storage size at runtime. GCP backends allow you to make use of Google's preemptible feature, which may reduce the cost of running workflows.", 
+	definition="A backend used for cloud computing and cloud storage hosted by Google. [Terra] is an example of a system that runs on a GCP backend. When running workflows on these backends, make sure to account for the storage needed for your workflow, as GCP compute backends do not automatically scale their storage size at runtime. GCP backends allow you to make use of Google's [preemptible] feature, which may reduce the cost of running workflows.", 
 	furtherreading="https://cloud.google.com/gcp", 
 	institute="", 
 	pronunciation="", 
-	seealso="")
+	seealso="EC2")
 
 JSON = GlossEntry("JSON", 
 	acronym_full="JavaScript Object Notation", 
@@ -203,6 +211,22 @@ ORCID = GlossEntry("ORCID",
 	institute="", 
 	pronunciation='"or-kid", rhymes with kid', 
 	seealso="")
+
+Preemptible = GlossEntry("preemptible", 
+	acronym_full="", 
+	definition="A type of [GCP] [VM] which may have its running jobs interrupted at any given time, and will be shut down if running for more than 24 hours. A preemptible machine is significantly cheaper than a standard VM, at the cost of possibly stopping before your computational work is finish. You can use preemptible machines when running workflows on GCP backends to save on compute costs.", 
+	furtherreading="https://cloud.google.com/compute/docs/instances/preemptible", 
+	institute="Google", 
+	pronunciation='', 
+	seealso="spot instance")
+
+SpotInstance = GlossEntry("Spot Instance", 
+	acronym_full="", 
+	definition="A type of [EC2] instance which is usually much cheaper than the typical on-demand EC2 cost. A spot instance is not guranteed to be available at any given time, as it is based upon currently unused EC2 availablility.", 
+	furtherreading="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html", 
+	institute="Amazon", 
+	pronunciation='', 
+	seealso="preemptible")
 
 TES = GlossEntry("TES", 
 	acronym_full="Task Execution Service", 

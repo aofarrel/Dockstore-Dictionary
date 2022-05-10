@@ -220,6 +220,21 @@ DOI
 
 
 
+.. _dict EC2:
+
+EC2
+---
+*abbreviation for* Elastic Compute Cloud  
+
+	A backend for cloud computing and cloud storage hosted by Amazon. :ref:`dict Seven Bridges` is an example of a system that runs on an EC2 backend. When running workflows on these backends, disk size will scale with your workflow requirements automatically. EC2 instances allow you to make use of Amazon's :ref:`dict spot instance` feature, which may reduce the cost of running workflows.  
+
+see also :ref:`dict GCP`  
+Further reading: `<https://docs.aws.amazon.com/ec2/index.html>`_  
+
+.. updated 2022-05-09  
+
+
+
 .. _dict eLwazi:
 
 eLwazi
@@ -240,8 +255,9 @@ GCP
 ---
 *abbreviation for* Google Cloud Platform  
 
-	A backend used for cloud computing and cloud storage. Terra is an example of a system that runs on a GCP backend. When running workflows on these backends, make sure to account for the storage needed for your workflow, as GCP compute backends do not automatically scale their storage size at runtime. GCP backends allow you to make use of Google's preemptible feature, which may reduce the cost of running workflows.  
+	A backend used for cloud computing and cloud storage hosted by Google. :ref:`dict Terra` is an example of a system that runs on a GCP backend. When running workflows on these backends, make sure to account for the storage needed for your workflow, as GCP compute backends do not automatically scale their storage size at runtime. GCP backends allow you to make use of Google's :ref:`dict preemptible` feature, which may reduce the cost of running workflows.  
 
+see also :ref:`dict EC2`  
 Further reading: `<https://cloud.google.com/gcp>`_  
 
 .. updated 2022-05-09  
@@ -356,6 +372,34 @@ pronounced "or-kid", rhymes with kid
 	ID used to identify researchers and their work in a way that doesn't solely rely on names.  
 
 Further reading: `<https://info.orcid.org/what-is-orcid/>`_  
+
+.. updated 2022-05-09  
+
+
+
+.. _dict preemptible:
+
+preemptible
+-----------
+	A type of :ref:`dict GCP` :ref:`dict VM` which may have its running jobs interrupted at any given time, and will be shut down if running for more than 24 hours. A preemptible machine is significantly cheaper than a standard VM, at the cost of possibly stopping before your computational work is finish. You can use preemptible machines when running workflows on GCP backends to save on compute costs.  
+
+This term as we define it here is associated with Google and may have different definitions in other contexts.  
+see also :ref:`dict spot instance`  
+Further reading: `<https://cloud.google.com/compute/docs/instances/preemptible>`_  
+
+.. updated 2022-05-09  
+
+
+
+.. _dict Spot Instance:
+
+Spot Instance
+-------------
+	A type of :ref:`dict EC2` instance which is usually much cheaper than the typical on-demand EC2 cost. A spot instance is not guranteed to be available at any given time, as it is based upon currently unused EC2 availablility.  
+
+This term as we define it here is associated with Amazon and may have different definitions in other contexts.  
+see also :ref:`dict preemptible`  
+Further reading: `<https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html>`_  
 
 .. updated 2022-05-09  
 
