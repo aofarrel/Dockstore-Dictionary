@@ -318,10 +318,18 @@ Terra = GlossEntry("Terra",
 Tool = GlossEntry("tool", 
 	acronym_full="", 
 	definition="A single command line program wrapped in a descriptor language.  Languages that formally describe tools (such as [CWL]) may chain them together into a [workflow].", 
-	furtherreading="https://docs.dockstore.org/en/stable/getting-started/intro-to-dockstore-tools-and-workflows.html", 
+	furtherreading="https://docs.dockstore.org/en/stable/getting-started/intro-to-dockstore-tools-and-workflows.html",
 	institute="", 
 	pronunciation='', 
 	seealso="workflow")
+
+VM = GlossEntry("VM", 
+	acronym_full="virtual machine", 
+	definition="An emulated computer system that runs on another computer system. Usually implies that an entire operating system(s) (the guest OS) is being run on top of another operating system (the host OS) via the host's hypervisor. The hypervisor manages the execution of processes of the guest operating system. This is in contrast to a [container], which do not involve hypervisors nor run entire guest operating systems.", 
+	furtherreading="", 
+	institute="", 
+	pronunciation='', 
+	seealso="container")
 
 WDL = GlossEntry("WDL",
 	acronym_full="[Workflow Description Language]",

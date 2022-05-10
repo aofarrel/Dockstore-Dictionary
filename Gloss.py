@@ -35,6 +35,45 @@ class GlossEntry:
 				processed_characters.append(character)
 			return "".join(processed_characters)
 
+	def _process_internal_link_brackets_(self, words:list):
+		'''For RST formatting, process internal hyperlinks, marked in entries.py as [this]'''
+		words_processed = []
+		multi_word_flag = False
+		for word in words:
+			if re.search("][a-zA-Z]+", word):
+				print(f"Warning: {self.return_name()} will have an invalid internal link due RST limitations. Put some sort of whitespace or punctuation before any additional letters after the ending bracket. Problematic word: {word}")
+			
+			# This is the beginning of an internal RST link
+			elif word.startswith("["):
+				word = word[1:]  # strip [
+				if "]" in word:
+					multi_word_flag = False
+					word = word.replace("]", "`")
+					word = f":ref:`dict {word}"
+				else:
+					multi_word_flag = True
+					word = f":ref:`dict {word}"
+				
+				words_processed.append(word)
+			
+			# This is a continuation of a previous word's RST link
+			# will break on [Seven Br]idges] but that's not my problem
+			elif multi_word_flag == True:
+
+				if "]" in word:
+					multi_word_flag = False
+					word = word.replace("]", "`")
+					word = f"{word}"
+				else:
+					word = f"{word}"
+				
+				words_processed.append(word)
+
+			else:
+				words_processed.append(word)
+		
+		return " ".join(words_processed)
+
 	def text_rst_bookmark(self):
 		'''Generates an RST bookmark for the entry'''
 		return f".. _dict {self.return_name(nospaces=False)}:"
@@ -69,43 +108,8 @@ class GlossEntry:
 			return f"	{self.definition}\n"
 		elif format == "rst":
 			words = self.definition.split()
-			words_processed = []
-			multi_word_flag = False
-			for word in words:
-				if re.search("][a-zA-Z]+", word):
-					print(f"Warning: {self.return_name()} will have an invalid internal link due RST limitations. Put some sort of whitespace or punctuation before any additional letters after the ending bracket. Problematic word: {word}")
-				
-				# This is the beginning of an internal RST link
-				elif word.startswith("["):
-					word = word[1:]  # strip [
-					if "]" in word:
-						multi_word_flag = False
-						word = word.replace("]", "`")
-						word = f":ref:`dict {word}"
-					else:
-						multi_word_flag = True
-						word = f":ref:`dict {word}"
-					
-					words_processed.append(word)
-				
-				# This is a continuation of a previous word's RST link
-				 # will break on [Seven Br]idges] but that's not my problem
-				elif multi_word_flag == True:
-
-					if "]" in word:
-						multi_word_flag = False
-						word = word.replace("]", "`")
-						word = f"{word}"
-					else:
-						word = f"{word}"
-					
-					words_processed.append(word)
-
-				else:
-					words_processed.append(word)
-			
-			final = " ".join(words_processed)
-			return f"	{final}  \n\n"
+			procssed_with_links = self._process_internal_link_brackets_(words)
+			return f"	{procssed_with_links}  \n\n"
 
 	def text_institute(self, format="txt"):
 		'''In RST form this becomes a note block.'''

@@ -46,6 +46,7 @@ Dockstore Dictionary
 	* :ref:`dict TES`
 	* :ref:`dict tool`
 	* :ref:`dict UCSC`
+	* :ref:`dict VM`
 	* :ref:`dict WDL`
 	* :ref:`dict workflow`
 	* :ref:`dict Workflow Description Language`
@@ -625,6 +626,20 @@ UCSC
 	A public university located in Santa Cruz that is focused on undergraduate and graduate education and research. The Genomics Institute, a branch of UCSC's engineering department, is one of the two institutes involved in the development of Dockstore, the other being :ref:`dict OICR`.  
 
 Further reading: `<https://ucsc.edu>`_  
+
+.. updated 2022-05-10  
+
+
+
+.. _dict VM:
+
+VM
+--
+*abbreviation for* virtual machine  
+
+	An emulated computer system that runs on another computer system. Usually implies that an entire operating system(s) (the guest OS) is being run on top of another operating system (the host OS) via the host's hypervisor. The hypervisor manages the execution of processes of the guest operating system. This is in contrast to a :ref:`dict container`, which do not involve hypervisors nor run entire guest operating systems.  
+
+see also :ref:`dict container`  
 
 .. updated 2022-05-10  
 

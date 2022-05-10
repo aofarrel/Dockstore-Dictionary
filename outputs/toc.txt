@@ -41,6 +41,7 @@ Terra
 TES
 tool
 UCSC
+VM
 WDL
 workflow
 Workflow Description Language
