@@ -18,6 +18,7 @@ DOI
 EC2
 eLwazi
 GCP
+immutable
 JSON
 layer
 NCI

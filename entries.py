@@ -118,7 +118,7 @@ DockstoreCLI = GlossEntry("Dockstore CLI",
 
 DOI = GlossEntry("DOI", 
 	acronym_full="Digital Object Identifier", 
-	definition="An identifier that provides a long-lasting link to some sort of digital object. On Docktore, you can use Zenodo to mint a DOI of your workflows and tools to increase reproducibility.", 
+	definition="An identifier that provides a long-lasting link to some sort of [immutable] digital object. On Docktore, you can use Zenodo to mint a DOI of your workflows and tools to increase reproducibility.", 
 	furtherreading="", 
 	institute="", 
 	pronunciation="", 
@@ -147,6 +147,14 @@ GCP = GlossEntry("GCP",
 	institute="", 
 	pronunciation="", 
 	seealso="EC2")
+
+Immutable = GlossEntry("immutable", 
+	acronym_full="", 
+	definition="Unchanging.", 
+	furtherreading="", 
+	institute="", 
+	pronunciation='', 
+	seealso="")
 
 JSON = GlossEntry("JSON", 
 	acronym_full="JavaScript Object Notation", 

@@ -213,7 +213,7 @@ DOI
 ---
 *abbreviation for* Digital Object Identifier  
 
-	An identifier that provides a long-lasting link to some sort of digital object. On Docktore, you can use Zenodo to mint a DOI of your workflows and tools to increase reproducibility.  
+	An identifier that provides a long-lasting link to some sort of :ref:`dict immutable` digital object. On Docktore, you can use Zenodo to mint a DOI of your workflows and tools to increase reproducibility.  
 
 
 .. updated 2022-05-09  
@@ -259,6 +259,17 @@ GCP
 
 see also :ref:`dict EC2`  
 Further reading: `<https://cloud.google.com/gcp>`_  
+
+.. updated 2022-05-09  
+
+
+
+.. _dict immutable:
+
+immutable
+---------
+	Unchanging.  
+
 
 .. updated 2022-05-09  
 
