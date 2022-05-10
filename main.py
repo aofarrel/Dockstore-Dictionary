@@ -1,8 +1,10 @@
 from entries import * 
 import gc
 
-outfile = "output.rst"
+outfile  = "outputs/output.rst"
+contents = "outputs/toc.txt"
 
+# this feels dodgy, but it hasn't failed yet
 list_entries = []
 for glossary_object in gc.get_objects():
     if isinstance(glossary_object, GlossEntry):
@@ -19,3 +21,7 @@ with open(outfile, "a") as f:
     # generate main body text
     for entry in list_entries:
         f.write(entry.generate_RST())
+
+with open(contents, "a") as g:
+    for entry in list_entries:
+        g.write(f"{entry.return_name()}\n") 

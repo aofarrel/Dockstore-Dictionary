@@ -220,6 +220,14 @@ Terra = GlossEntry("Terra",
 	pronunciation="", 
 	seealso="")
 
+Tool = GlossEntry("tool", 
+	acronym_full="", 
+	definition="", 
+	furtherreading="", 
+	institute="", 
+	pronunciation='', 
+	seealso="workflow")
+
 WDL = GlossEntry("WDL",
 	acronym_full="[Workflow Description Language]",
 	pronunciation='"widdle", rhymes with little')
