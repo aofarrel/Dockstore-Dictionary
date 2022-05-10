@@ -14,13 +14,28 @@ AnVIL = GlossEntry("AnVIL Project",
 	pronunciation="", 
 	seealso="")
 
+API = GlossEntry("API", 
+	acronym_full="Application Programmer Interface", 
+	definition="A software-based intermediary used to exchange data, often between two different platforms. Communication between different cloud platforms is mediated by various APIs, such as [TES].", 
+	furtherreading="", 
+	institute="", 
+	pronunciation="", 
+	seealso="")
+
+AWS = GlossEntry("AWS", 
+	acronym_full="Amazon Web Services", 
+	definition="A provider of cloud services, most notably cloud computing and cloud storage, available on-demand and hosted by Amazon. [Seven Bridges] is an example of a system that is powered by AWS, and can launch workflows on [EC2] instances.", 
+	furtherreading="https://docs.aws.amazon.com/index.html?nc2=h_ql_doc_do", 
+	institute="", 
+	pronunciation="", 
+	seealso="GCP")
+
 BDC = GlossEntry("BDC", 
 	acronym_full="[Biodata Catalyst]", 
 	pronunciation='"bee-dee-see"')
 
-BDCat = GlossEntry("BDCat", 
-	acronym_full="[BioData Catalyst]", 
-	pronunciation='"bee-dee-cat"')
+BDCatalyst = GlossEntry("BD Catalyst", 
+	acronym_full="[BioData Catalyst]")
 
 BioDataCatalyst = GlossEntry("Biodata Catalyst", 
 	acronym_full="", 
@@ -142,11 +157,11 @@ DOI = GlossEntry("DOI",
 
 EC2 = GlossEntry("EC2", 
 	acronym_full="Elastic Compute Cloud", 
-	definition="A backend for cloud computing and cloud storage hosted by Amazon. [Seven Bridges] is an example of a system that runs on an EC2 backend. When running workflows on these backends, disk size will scale with your workflow requirements automatically. EC2 instances allow you to make use of Amazon's [spot instance] feature, which may reduce the cost of running workflows.", 
+	definition="The cloud computing side of [AWS]. When running workflows on these backends, disk size will scale with your workflow requirements automatically. EC2 instances allow you to make use of Amazon's [spot instance] feature, which may reduce the cost of running workflows.", 
 	furtherreading="https://docs.aws.amazon.com/ec2/index.html", 
 	institute="", 
 	pronunciation='', 
-	seealso="GCP")
+	seealso="")
 
 Elwazi = GlossEntry("eLwazi", 
 	acronym_full="", 
@@ -154,6 +169,22 @@ Elwazi = GlossEntry("eLwazi",
 	furtherreading="https://elwazi.org/",
 	institute="", 
 	pronunciation='"el-woz-ee", derived from Xhosa word for knowledge', 
+	seealso="")
+
+FAIR = GlossEntry("FAIR", 
+	acronym_full="Findable, Accessible, Interoperable, and Reusable", 
+	definition="A set of guidelines to improve the Findability, Accessibility, Interoperability, and Reuse of digital assets. This concept is often applied to data, but can be applied to other assets such as workflows.", 
+	furtherreading="https://www.go-fair.org/fair-principles/",
+	institute="", 
+	pronunciation='', 
+	seealso="")
+
+GA4GH = GlossEntry("GA4GH", 
+	acronym_full="Global Alliance For Genomics and Health", 
+	definition="The Global Alliance for Genomics and Health aims to accelerate progress in genomic research and human health by cultivating a common framework of standards and harmonized approaches for effective and responsible genomic and health-related data sharing.", 
+	furtherreading="https://www.ga4gh.org/", 
+	institute="", 
+	pronunciation="", 
 	seealso="")
 
 GCP = GlossEntry("GCP", 
@@ -170,6 +201,14 @@ Immutable = GlossEntry("immutable",
 	furtherreading="", 
 	institute="", 
 	pronunciation='', 
+	seealso="")
+
+Interoperable = GlossEntry("Interoperable", 
+	acronym_full="", 
+	definition="The ability of data or tools from multiple resources to effectively integrate data, or operate processes, across all systems with a moderate degree of effort.", 
+	furtherreading="", 
+	institute="", 
+	pronunciation="", 
 	seealso="")
 
 JSON = GlossEntry("JSON", 
@@ -287,6 +326,11 @@ Tool = GlossEntry("tool",
 WDL = GlossEntry("WDL",
 	acronym_full="[Workflow Description Language]",
 	pronunciation='"widdle", rhymes with little')
+
+WES = GlossEntry("Workflow Execution Service",
+	furtherreading="",
+	definition="A standardized API developed by [GA4GH] for describing a standard programmatic way to run and manage workflows.",
+	seealso="https://ga4gh.github.io/workflow-execution-service-schemas/")
 
 Workflow = GlossEntry("workflow", 
 	acronym_full="", 
