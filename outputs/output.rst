@@ -88,6 +88,7 @@ AWS
 	A provider of cloud services, most notably cloud computing and cloud storage, available on-demand and hosted by Amazon. :ref:`dict Seven Bridges` is an example of a system that is powered by AWS, and can launch workflows on :ref:`dict EC2` instances.  
 
 see also :ref:`dict GCP`  
+
 Further reading: `<https://docs.aws.amazon.com/index.html?nc2=h_ql_doc_do>`_  
 
 .. updated 2022-05-10  
@@ -124,7 +125,7 @@ Biodata Catalyst
 ----------------
 	An initiative funded by :ref:`dict NHLBI` to connect several cloud-based bioinformatics platforms together to increase reproducibility in bioinformatics. Involves Dockstore, :ref:`dict Terra`, Seven Bridges, Gen3, and PIC-SURE.  
 
-This term as we define it here is associated with NIH and may have different definitions in other contexts.  
+.. note:: This term as we define it here is associated with NIH and may have different definitions in other contexts.  
 Further reading: `<https://biodatacatalyst.nhlbi.nih.gov/>`_  
 
 .. updated 2022-05-10  
@@ -186,6 +187,7 @@ Common Workflow Language
 	A workflow language that describes how to run command-line tools. CWL is based on Java and can use Java commands within its own commands. :ref:`dict WDL` and CWL are relatively similiar in principle, and code written in one language can often be translated into the other with some workarounds, but they are two different standards and each have unique features.  
 
 see also :ref:`dict CWL`  
+
 Further reading: `<https://www.commonwl.org/user_guide/>`_  
 
 .. updated 2022-05-10  
@@ -198,7 +200,7 @@ Cromwell
 --------
 	An open-source :ref:`dict WDL` executor managed by the Broad Institute. Cromwell is the default executor for the :ref:`dict Dockstore CLI` and is the executor used by :ref:`dict Terra`.  
 
-This term as we define it here is associated with Broad Institute and may have different definitions in other contexts.  
+.. note:: This term as we define it here is associated with Broad Institute and may have different definitions in other contexts.  
 Further reading: `<https://cromwell.readthedocs.io/en/stable/>`_  
 
 .. updated 2022-05-10  
@@ -299,6 +301,7 @@ Dockstore CLI
 	A command-line program developed by Dockstore. It is not required to use Dockstore, but it has many features to make running and developing workflows easier.  
 
 see also :ref:`dict CLI`  
+
 Further reading: `<https://docs.dockstore.org/en/stable/advanced-topics/dockstore-cli/dockstore-cli-faq.html>`_  
 
 .. updated 2022-05-10  
@@ -385,6 +388,7 @@ GCP
 	A backend used for cloud computing and cloud storage hosted by Google. :ref:`dict Terra` is an example of a system that runs on a GCP backend. When running workflows on these backends, make sure to account for the storage needed for your workflow, as GCP compute backends do not automatically scale their storage size at runtime. GCP backends allow you to make use of Google's :ref:`dict preemptible` feature, which may reduce the cost of running workflows.  
 
 see also :ref:`dict EC2`  
+
 Further reading: `<https://cloud.google.com/gcp>`_  
 
 .. updated 2022-05-10  
@@ -424,6 +428,7 @@ pronounced "jason"
 	A human-readible file format that orginated in JavaScript, but is now used by a variety of applications. Dockstore supports the inclusion of JSON and :ref:`dict YAML` files in entries to provide sample inputs for workflow and tool entries. Some workflow executors, such as :ref:`dict Cromwell`, can use these files to configure their inputs rather than having to manually listing every input when calling the workflow on the command line.  
 
 see also :ref:`dict YAML`  
+
 Further reading: `<https://www.json.org/json-en.html>`_  
 
 .. updated 2022-05-10  
@@ -543,8 +548,9 @@ preemptible
 -----------
 	A type of :ref:`dict GCP` :ref:`dict VM` which may have its running jobs interrupted at any given time, and will be shut down if running for more than 24 hours. A preemptible machine is significantly cheaper than a standard VM, at the cost of possibly stopping before your computational work is finish. You can use preemptible machines when running workflows on GCP backends to save on compute costs.  
 
-This term as we define it here is associated with Google and may have different definitions in other contexts.  
+.. note:: This term as we define it here is associated with Google and may have different definitions in other contexts.  
 see also :ref:`dict spot instance`  
+
 Further reading: `<https://cloud.google.com/compute/docs/instances/preemptible>`_  
 
 .. updated 2022-05-10  
@@ -557,8 +563,9 @@ Spot Instance
 -------------
 	A type of :ref:`dict EC2` instance which is usually much cheaper than the typical on-demand EC2 cost. A spot instance is not guranteed to be available at any given time, as it is based upon currently unused EC2 availablility.  
 
-This term as we define it here is associated with Amazon and may have different definitions in other contexts.  
+.. note:: This term as we define it here is associated with Amazon and may have different definitions in other contexts.  
 see also :ref:`dict preemptible`  
+
 Further reading: `<https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html>`_  
 
 .. updated 2022-05-10  
@@ -598,6 +605,7 @@ tool
 	A single command line program wrapped in a descriptor language. Languages that formally describe tools (such as :ref:`dict CWL`) may chain them together into a :ref:`dict workflow`.  
 
 see also :ref:`dict workflow`  
+
 Further reading: `<https://docs.dockstore.org/en/stable/getting-started/intro-to-dockstore-tools-and-workflows.html>`_  
 
 .. updated 2022-05-10  
@@ -638,6 +646,7 @@ workflow
 	A command line program wrapped in a descriptor language, which usually has multiple steps. In :ref:`dict CWL`, a workflow is usually made up of multiple tools. Other languages consider a workflow to be the basic unit.  
 
 see also :ref:`dict tool`  
+
 Further reading: `<https://docs.dockstore.org/en/stable/getting-started/intro-to-dockstore-tools-and-workflows.html>`_  
 
 .. updated 2022-05-10  
@@ -651,6 +660,7 @@ Workflow Description Language
 	A workflow language managed by the Open WDL Project that is designed to describe command-line tools. Usually written as :ref:`dict WDL`. WDL and :ref:`dict CWL` are relatively similiar in principle, and code written in one language can often be translated into the other with some workarounds, but they are two different standards and each have unique features.  
 
 see also :ref:`dict WDL`  
+
 Further reading: `<https://openwdl.org/>`_  
 
 .. updated 2022-05-10  
@@ -678,6 +688,7 @@ YAML
 	Human-readable data-serialization lanaguage. Commonly used for configuration files.  
 
 see also :ref:`dict JSON`  
+
 Further reading: `<https://yaml.org/>`_  
 
 .. updated 2022-05-10  

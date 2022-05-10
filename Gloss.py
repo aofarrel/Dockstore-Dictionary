@@ -108,10 +108,11 @@ class GlossEntry:
 			return f"	{final}  \n\n"
 
 	def text_institute(self, format="txt"):
+		'''In RST form this becomes a note block.'''
 		if format == "txt":
 			return f"This term as we define it here is associated with {self.institute} and may have different definitions in other contexts.\n"
 		elif format == "rst":
-			return f"This term as we define it here is associated with {self.institute} and may have different definitions in other contexts.  \n"
+			return f".. note:: This term as we define it here is associated with {self.institute} and may have different definitions in other contexts.  \n"
 		
 	def text_seealso(self, format="txt"):
 		'''There is a supposedly simplier way to do this with sphinx.ext.autosectionlabel, via:
@@ -129,7 +130,7 @@ class GlossEntry:
 		elif format == "rst" and self.seealso == "":
 			return f"Further reading: `<{self.furtherreading}>`_  \n"
 		elif format == "rst" and self.seealso != "":
-			return f"Further reading: `<{self.furtherreading}>`_  \n"
+			return f"\nFurther reading: `<{self.furtherreading}>`_  \n"
 
 	def text_updated(self, format="txt"):
 		'''Ideally, should print when entry was last updated visibly if plaintext, as a comment if RST.
