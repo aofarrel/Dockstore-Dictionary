@@ -30,5 +30,6 @@ TES
 tool
 UCSC
 WDL
+workflow
 Workflow Description Language
 YAML

@@ -391,7 +391,10 @@ Further reading: `<https://ga4gh.github.io/task-execution-schemas/docs/>`_
 
 tool
 ----
+	A single command line program wrapped in a descriptor language. Languages that formally describe tools (such as :ref:`dict CWL`) may chain them together into a :ref:`dict workflow`.  
+
 see also :ref:`dict workflow`  
+Further reading: `<https://docs.dockstore.org/en/stable/getting-started/intro-to-dockstore-tools-and-workflows.html>`_  
 
 .. updated 2022-05-09  
 
@@ -419,6 +422,19 @@ pronounced "widdle", rhymes with little
 
 *abbreviation for* [Workflow Description Language]  
 
+
+.. updated 2022-05-09  
+
+
+
+.. _dict workflow:
+
+workflow
+--------
+	A command line program wrapped in a descriptor language, which usually has multiple steps. In :ref:`dict CWL`, a workflow is usually made up of multiple tools. Other languages consider a workflow to be the basic unit.  
+
+see also :ref:`dict tool`  
+Further reading: `<https://docs.dockstore.org/en/stable/getting-started/intro-to-dockstore-tools-and-workflows.html>`_  
 
 .. updated 2022-05-09  
 

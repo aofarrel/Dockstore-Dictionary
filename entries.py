@@ -222,8 +222,8 @@ Terra = GlossEntry("Terra",
 
 Tool = GlossEntry("tool", 
 	acronym_full="", 
-	definition="", 
-	furtherreading="", 
+	definition="A single command line program wrapped in a descriptor language.  Languages that formally describe tools (such as [CWL]) may chain them together into a [workflow].", 
+	furtherreading="https://docs.dockstore.org/en/stable/getting-started/intro-to-dockstore-tools-and-workflows.html", 
 	institute="", 
 	pronunciation='', 
 	seealso="workflow")
@@ -231,6 +231,14 @@ Tool = GlossEntry("tool",
 WDL = GlossEntry("WDL",
 	acronym_full="[Workflow Description Language]",
 	pronunciation='"widdle", rhymes with little')
+
+Workflow = GlossEntry("workflow", 
+	acronym_full="", 
+	definition="A command line program wrapped in a descriptor language, which usually has multiple steps. In [CWL], a workflow is usually made up of multiple tools. Other languages consider a workflow to be the basic unit.", 
+	furtherreading="https://docs.dockstore.org/en/stable/getting-started/intro-to-dockstore-tools-and-workflows.html", 
+	institute="", 
+	pronunciation='', 
+	seealso="tool")
 
 Workflow_Description_Language = GlossEntry("Workflow Description Language",
 	furtherreading="https://openwdl.org/",
