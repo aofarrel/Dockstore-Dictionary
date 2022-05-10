@@ -4,9 +4,9 @@
 ## Usage
  Add entries to entries.py using template in entry_template.py, making sure to keep them in alphabetical order. To generate the actual glossary, run `python3 main.py` to generate RST output as output.txt
 
- The "definition" argument in GlossEntry can reference other entries. To do so, encapsulate the entry title you which to reference with brackets, such as "[WDL]", which will become a working internal link when outputting to RST.
+ The "definition" argument in GlossEntry can reference other entries. To do so, encapsulate the entry title you which to reference with brackets, such as "[WDL]", which will become a working internal link when outputting to RST. Do not put any alphanumeric characters immediately before or after either bracket.
 
- Upon committing, `outputs/output.rst` and `output/toc.txt` will be updated.
+ Upon committing, `outputs/output.rst` and `output/toc.txt` will be updated; see `hooks/pre-commit`
 
 ## Future Plans
  Fix bugs

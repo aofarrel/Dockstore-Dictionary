@@ -5,10 +5,12 @@ Biodata Catalyst
 Cancer Genomics Cloud
 CGC
 CLI
+cloud computing
 Common Workflow Language
 Cromwell
 CWL
 DAG
+descriptor file
 Docker
 Docker container
 Docker image
@@ -27,6 +29,7 @@ NHLBI
 NIH
 OICR
 ORCID
+parameter file
 preemptible
 Spot Instance
 Terra

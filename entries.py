@@ -49,6 +49,14 @@ CLI = GlossEntry("CLI",
 	pronunciation="", 
 	seealso="")
 
+CloudComputing = GlossEntry("cloud computing", 
+	acronym_full="", 
+	definition="Doing computational tasks on a remote machine that is made available on-demand without the user having to manage all aspects of it. Generally implies that the user is essentially renting computational resources from someone else. Well-known cloud providers include [GCP], [AWS], Microsoft Azure, and Alibaba Cloud.", 
+	furtherreading="https://en.wikipedia.org/wiki/Cloud_computing", 
+	institute="", 
+	pronunciation='', 
+	seealso="")
+
 CommonWorkflowLanguage = GlossEntry("Common Workflow Language", 
 	acronym_full="", 
 	definition="A workflow language that describes how to run command-line tools. CWL is based on Java and can use Java commands within its own commands. [WDL] and CWL are relatively similiar in principle, and code written in one language can often be translated into the other with some workarounds, but they are two different standards and each have unique features.", 
@@ -74,6 +82,14 @@ DAG = GlossEntry("DAG",
 	furtherreading="https://cran.r-project.org/web/packages/ggdag/vignettes/intro-to-dags.html", 
 	institute="", 
 	pronunciation="", 
+	seealso="")
+
+DescriptorFile = GlossEntry("descriptor file", 
+	acronym_full="", 
+	definition="A file used to programmatically describe a tool or workflow. This file represents the instructions that will actually be executed. On Dockstore, we support .ga, .cwl, .wdl, and .nfl file extensions for [Galaxy], [CWL], [WDL], and [Nextflow] respectively.", 
+	furtherreading="", 
+	institute="", 
+	pronunciation='', 
 	seealso="")
 
 Docker = GlossEntry("Docker", 
@@ -150,7 +166,7 @@ GCP = GlossEntry("GCP",
 
 Immutable = GlossEntry("immutable", 
 	acronym_full="", 
-	definition="Unchanging.", 
+	definition="Unchanging, unable to be modified. Immutability implies that an object cannot be updated.", 
 	furtherreading="", 
 	institute="", 
 	pronunciation='', 
@@ -218,6 +234,14 @@ ORCID = GlossEntry("ORCID",
 	furtherreading="https://info.orcid.org/what-is-orcid/", 
 	institute="", 
 	pronunciation='"or-kid", rhymes with kid', 
+	seealso="")
+
+ParameterFile = GlossEntry("parameter file", 
+	acronym_full="", 
+	definition="A [JSON] or [YAML] file that describes the inputs to a workflow. This usually includes internal links, or links to data in a Google or S3 bucket.", 
+	furtherreading="", 
+	institute="", 
+	pronunciation='', 
 	seealso="")
 
 Preemptible = GlossEntry("preemptible", 
