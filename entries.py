@@ -1,18 +1,22 @@
 # please try to keep this in alphabetical order
 
+# due to RST limitations, do not make internal links plural
+# acceptable: [WDL] [WDL], [WDL]. [WDL]'s [Seven Bridges] [Seven Bridges], [Seven Bridges]. [Seven Bridges]'s
+# will break: [WDL]s [Seven Bridges]s
+
 from Gloss import GlossEntry
 
 AnVIL = GlossEntry("AnVIL Project", 
 	acronym_full="Analysis Visualization and Informatics Labspace", 
-	definition="A cloud-based ecosystem funded by [NHGRI], bringing together Dockstore, [Gen3], [Terra], [NCPI], Galaxy, Jupyter, Seqr, and Bioconductor into an integrated platform. Sometimes refered to as just \"the AnVIL\" or \"AnVIL\".", 
+	definition="A cloud-based ecosystem funded by [NHGRI], bringing together Dockstore, Gen3, [Terra], [NCPI], Galaxy, Jupyter, Seqr, and Bioconductor into an integrated platform. Sometimes refered to as just \"the AnVIL\" or \"AnVIL\".", 
 	furtherreading="https://anvilproject.org/", 
 	institute="", 
 	pronunciation="", 
 	seealso="")
 
 API = GlossEntry("API", 
-	acronym_full="Application Programmer Interfaces", 
-	definition="Application Programmer Interface technologies serve as software-based intermediaries to exchange data.", 
+	acronym_full="Application Programmer Interface", 
+	definition="A software-based intermediary used to exchange data, often between two different platforms. Communication between different cloud platforms is mediated by various APIs, such as [TES].", 
 	furtherreading="", 
 	institute="", 
 	pronunciation="", 
@@ -20,31 +24,22 @@ API = GlossEntry("API",
 
 AWS = GlossEntry("AWS", 
 	acronym_full="Amazon Web Services", 
-	definition="A provider of cloud services available on-demand.", 
-	furtherreading="", 
+	definition="A provider of cloud services, most notably cloud computing and cloud storage, available on-demand and hosted by Amazon. [Seven Bridges] is an example of a system that is powered by AWS, and can launch workflows on [EC2] instances.", 
+	furtherreading="https://docs.aws.amazon.com/index.html?nc2=h_ql_doc_do", 
 	institute="", 
 	pronunciation="", 
-	seealso="")
+	seealso="GCP")
 
 BDC = GlossEntry("BDC", 
-	acronym_full="Biodata Catalyst", 
-	definition="", 
-	furtherreading="", 
-	institute="", 
-	pronunciation="", 
-	seealso="Biodata Catalyst")
+	acronym_full="[Biodata Catalyst]", 
+	pronunciation='"bee-dee-see"')
 
-BDCat = GlossEntry("BD Catalyst", 
-	acronym_full="BioData Catalyst", 
-	definition="", 
-	furtherreading="", 
-	institute="", 
-	pronunciation="", 
-	seealso="Biodata Catalyst")
+BDCatalyst = GlossEntry("BD Catalyst", 
+	acronym_full="[BioData Catalyst]")
 
 BioDataCatalyst = GlossEntry("Biodata Catalyst", 
 	acronym_full="", 
-	definition="An initiative funded by NHLBI to connect several cloud-based bioinformatics platforms together to increase reproducibility in bioinformatics. Involves Dockstore, Terra, Seven Bridges, Gen3, and PIC-SURE.", 
+	definition="An initiative funded by [NHLBI] to connect several cloud-based bioinformatics platforms together to increase reproducibility in bioinformatics. Involves Dockstore, [Terra], Seven Bridges, Gen3, and PIC-SURE.", 
 	furtherreading="https://biodatacatalyst.nhlbi.nih.gov/", 
 	institute="NIH", 
 	pronunciation="", 
@@ -59,12 +54,7 @@ CancerGenomicsCloud = GlossEntry("Cancer Genomics Cloud",
 	seealso="")
 
 CGC = GlossEntry("CGC", 
-	acronym_full="Cancer Genomics Cloud", 
-	definition="", 
-	furtherreading="", 
-	institute="", 
-	pronunciation="", 
-	seealso="Cancer Genomics Cloud")
+	acronym_full="[Cancer Genomics Cloud]")
 
 CLI = GlossEntry("CLI", 
 	acronym_full="Command Line Interface", 
@@ -74,13 +64,21 @@ CLI = GlossEntry("CLI",
 	pronunciation="", 
 	seealso="")
 
+CloudComputing = GlossEntry("cloud computing", 
+	acronym_full="", 
+	definition="Doing computational tasks on a remote machine that is made available on-demand without the user having to manage all aspects of it. Generally implies that the user is essentially renting computational resources from someone else. Well-known cloud providers include [GCP], [AWS], Microsoft Azure, and Alibaba Cloud.", 
+	furtherreading="https://en.wikipedia.org/wiki/Cloud_computing", 
+	institute="", 
+	pronunciation='', 
+	seealso="")
+
 CommonWorkflowLanguage = GlossEntry("Common Workflow Language", 
 	acronym_full="", 
 	definition="A workflow language that describes how to run command-line tools. CWL is based on Java and can use Java commands within its own commands. [WDL] and CWL are relatively similiar in principle, and code written in one language can often be translated into the other with some workarounds, but they are two different standards and each have unique features.", 
 	furtherreading="https://www.commonwl.org/user_guide/", 
 	institute="", 
 	pronunciation="", 
-	seealso="")
+	seealso="CWL")
 
 Cromwell = GlossEntry("Cromwell", 
 	acronym_full="", 
@@ -91,12 +89,7 @@ Cromwell = GlossEntry("Cromwell",
 	seealso="")
 
 CWL = GlossEntry("CWL", 
-	acronym_full="Common Workflow Language", 
-	definition="", 
-	furtherreading="", 
-	institute="", 
-	pronunciation="", 
-	seealso="Common Workflow Language")
+	acronym_full="[Common Workflow Language]")
 
 DAG = GlossEntry("DAG", 
 	acronym_full="Directed Acyclic Graph", 
@@ -106,9 +99,17 @@ DAG = GlossEntry("DAG",
 	pronunciation="", 
 	seealso="")
 
+DescriptorFile = GlossEntry("descriptor file", 
+	acronym_full="", 
+	definition="A file used to programmatically describe a tool or workflow. This file represents the instructions that will actually be executed. On Dockstore, we support .ga, .cwl, .wdl, and .nfl file extensions for [Galaxy], [CWL], [WDL], and [Nextflow] respectively.", 
+	furtherreading="", 
+	institute="", 
+	pronunciation='', 
+	seealso="")
+
 Docker = GlossEntry("Docker", 
 	acronym_full="", 
-	definition="A program that can create [Docker images], which are somewhat similiar to virutal machines, as well as run those images. In the context of bioinformatics, this technology has two main benefits: First, a Docker image bundles up everything a given piece of software needs to run, meaning that someone who wants to run (for example) samtools via Docker only needs to install Docker, not samtools. Second, an instance of a Docker image (called a [Docker container]) is a relatively standardized environment even when running on different backends, meaning that two people running the same software in the same Docker image on two different computers are likely to get the exact same results. In other words, Docker is good for reproducibility and ease of use.", 
+	definition="A program that can create \"images\" which are somewhat similiar to virutal machines, as well as run those images. In the context of bioinformatics, this technology has two main benefits: First, a [Docker image] bundles up everything a given piece of software needs to run, meaning that someone who wants to run (for example) samtools via Docker only needs to install Docker, not samtools. Second, an instance of a Docker image is a relatively standardized environment even when running on different backends, meaning that two people running the same software in the same Docker image on two different computers are likely to get the exact same results. In other words, Docker is good for reproducibility and ease of use.", 
 	furtherreading="https://docker-curriculum.com/", 
 	institute="", 
 	pronunciation='"daw-ker", rhymes with walker', 
@@ -124,7 +125,7 @@ DockerContainer = GlossEntry("Docker container",
 
 Dockerfile = GlossEntry("Dockerfile", 
 	acronym_full="", 
-	definition="A file describing the creation of a [Docker image] by running commands that form [layer]s.", 
+	definition="A file describing the creation of a [Docker image] by running commands that each form a [layer].", 
 	furtherreading="https://docs.docker.com/engine/reference/builder/", 
 	institute="", 
 	pronunciation="", 
@@ -144,14 +145,22 @@ DockstoreCLI = GlossEntry("Dockstore CLI",
 	furtherreading="https://docs.dockstore.org/en/stable/advanced-topics/dockstore-cli/dockstore-cli-faq.html", 
 	institute="", 
 	pronunciation="", 
-	seealso="")
+	seealso="CLI")
 
 DOI = GlossEntry("DOI", 
 	acronym_full="Digital Object Identifier", 
-	definition="An identifier that provides a long-lasting link to some sort of digital object. On Docktore, you can use Zenodo to mint a DOI of your workflows and tools to increase reproducibility.", 
+	definition="An identifier that provides a long-lasting link to some sort of [immutable] digital object. On Docktore, you can use Zenodo to mint a DOI of your workflows and tools to increase reproducibility.", 
 	furtherreading="", 
 	institute="", 
 	pronunciation="", 
+	seealso="")
+
+EC2 = GlossEntry("EC2", 
+	acronym_full="Elastic Compute Cloud", 
+	definition="The cloud computing side of [AWS]. When running workflows on these backends, disk size will scale with your workflow requirements automatically. EC2 instances allow you to make use of Amazon's [spot instance] feature, which may reduce the cost of running workflows.", 
+	furtherreading="https://docs.aws.amazon.com/ec2/index.html", 
+	institute="", 
+	pronunciation='', 
 	seealso="")
 
 Elwazi = GlossEntry("eLwazi", 
@@ -163,8 +172,8 @@ Elwazi = GlossEntry("eLwazi",
 	seealso="")
 
 FAIR = GlossEntry("FAIR", 
-	acronym_full="", 
-	definition="A set of guidelines to improve the Findability, Accessibility, Interoperability, and Reuse of digital assets", 
+	acronym_full="Findable, Accessible, Interoperable, and Reusable", 
+	definition="A set of guidelines to improve the Findability, Accessibility, Interoperability, and Reuse of digital assets. This concept is often applied to data, but can be applied to other assets such as workflows.", 
 	furtherreading="https://www.go-fair.org/fair-principles/",
 	institute="", 
 	pronunciation='', 
@@ -180,10 +189,18 @@ GA4GH = GlossEntry("GA4GH",
 
 GCP = GlossEntry("GCP", 
 	acronym_full="Google Cloud Platform", 
-	definition="A backend used for cloud computing and cloud storage. Terra is an example of a system that runs on a GCP backend. When running workflows on these backends, make sure to account for the storage needed for your workflow, as GCP compute backends do not automatically scale their storage size at runtime. GCP backends allow you to make use of Google's preemptible feature, which may reduce the cost of running workflows.", 
+	definition="A backend used for cloud computing and cloud storage hosted by Google. [Terra] is an example of a system that runs on a GCP backend. When running workflows on these backends, make sure to account for the storage needed for your workflow, as GCP compute backends do not automatically scale their storage size at runtime. GCP backends allow you to make use of Google's [preemptible] feature, which may reduce the cost of running workflows.", 
 	furtherreading="https://cloud.google.com/gcp", 
 	institute="", 
 	pronunciation="", 
+	seealso="EC2")
+
+Immutable = GlossEntry("immutable", 
+	acronym_full="", 
+	definition="Unchanging, unable to be modified. Immutability implies that an object cannot be updated.", 
+	furtherreading="", 
+	institute="", 
+	pronunciation='', 
 	seealso="")
 
 Interoperable = GlossEntry("Interoperable", 
@@ -200,7 +217,7 @@ JSON = GlossEntry("JSON",
 	furtherreading="https://www.json.org/json-en.html", 
 	institute="", 
 	pronunciation='"jason"', 
-	seealso="")
+	seealso="YAML")
 
 layer = GlossEntry("layer", 
 	acronym_full="", 
@@ -258,6 +275,30 @@ ORCID = GlossEntry("ORCID",
 	pronunciation='"or-kid", rhymes with kid', 
 	seealso="")
 
+ParameterFile = GlossEntry("parameter file", 
+	acronym_full="", 
+	definition="A [JSON] or [YAML] file that describes the inputs to a workflow. This usually includes internal links, or links to data in a Google or S3 bucket.", 
+	furtherreading="", 
+	institute="", 
+	pronunciation='', 
+	seealso="")
+
+Preemptible = GlossEntry("preemptible", 
+	acronym_full="", 
+	definition="A type of [GCP] [VM] which may have its running jobs interrupted at any given time, and will be shut down if running for more than 24 hours. A preemptible machine is significantly cheaper than a standard VM, at the cost of possibly stopping before your computational work is finish. You can use preemptible machines when running workflows on GCP backends to save on compute costs.", 
+	furtherreading="https://cloud.google.com/compute/docs/instances/preemptible", 
+	institute="Google", 
+	pronunciation='', 
+	seealso="spot instance")
+
+SpotInstance = GlossEntry("Spot Instance", 
+	acronym_full="", 
+	definition="A type of [EC2] instance which is usually much cheaper than the typical on-demand EC2 cost. A spot instance is not guranteed to be available at any given time, as it is based upon currently unused EC2 availablility.", 
+	furtherreading="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html", 
+	institute="Amazon", 
+	pronunciation='', 
+	seealso="preemptible")
+
 TES = GlossEntry("TES", 
 	acronym_full="Task Execution Service", 
 	definition="A standardized API developed by [GA4GH] for describing and executing batch execution tasks.", 
@@ -274,15 +315,30 @@ Terra = GlossEntry("Terra",
 	pronunciation="", 
 	seealso="")
 
+Tool = GlossEntry("tool", 
+	acronym_full="", 
+	definition="A single command line program wrapped in a descriptor language.  Languages that formally describe tools (such as [CWL]) may chain them together into a [workflow].", 
+	furtherreading="https://docs.dockstore.org/en/stable/getting-started/intro-to-dockstore-tools-and-workflows.html", 
+	institute="", 
+	pronunciation='', 
+	seealso="workflow")
+
+WDL = GlossEntry("WDL",
+	acronym_full="[Workflow Description Language]",
+	pronunciation='"widdle", rhymes with little')
+
 WES = GlossEntry("Workflow Execution Service",
 	furtherreading="",
 	definition="A standardized API developed by [GA4GH] for describing a standard programmatic way to run and manage workflows.",
 	seealso="https://ga4gh.github.io/workflow-execution-service-schemas/")
 
-WDL = GlossEntry("WDL",
-	acronym_full="Workflow Description Language",
-	pronunciation='"widdle", rhymes with little',
-	seealso="Workflow Description Language")
+Workflow = GlossEntry("workflow", 
+	acronym_full="", 
+	definition="A command line program wrapped in a descriptor language, which usually has multiple steps. In [CWL], a workflow is usually made up of multiple tools. Other languages consider a workflow to be the basic unit.", 
+	furtherreading="https://docs.dockstore.org/en/stable/getting-started/intro-to-dockstore-tools-and-workflows.html", 
+	institute="", 
+	pronunciation='', 
+	seealso="tool")
 
 Workflow_Description_Language = GlossEntry("Workflow Description Language",
 	furtherreading="https://openwdl.org/",
@@ -303,4 +359,4 @@ YAML = GlossEntry("YAML",
 	furtherreading="https://yaml.org/", 
 	institute="", 
 	pronunciation="", 
-	seealso="")
+	seealso="JSON")
