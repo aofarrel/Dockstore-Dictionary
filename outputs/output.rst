@@ -3,13 +3,6 @@ Dockstore Dictionary
 .. contents:: Table of Contents
 	:local:
 
-.. hlist:: 
-	:columns: 3
-
-	* A list of
-	* short items
-	* to display horizontally
-
 .. _dict AnVIL Project:
 
 AnVIL Project
