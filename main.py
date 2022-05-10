@@ -1,8 +1,16 @@
 from entries import * 
 import gc
 
+## debug ##
+import os
 outfile  = "outputs/output.rst"
 contents = "outputs/toc.txt"
+try:
+    os.remove(outfile)
+    os.remove(contents)
+except FileNotFoundError:
+    pass
+
 
 # this feels dodgy, but it hasn't failed yet
 list_entries = []

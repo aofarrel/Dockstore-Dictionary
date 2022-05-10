@@ -98,7 +98,8 @@ class GlossEntry:
 		if format == "txt":
 			return f"abbreviation for {self.acronym_full}\n"
 		elif format == "rst":
-			return f"*abbreviation for* {self.acronym_full}  \n\n"
+			words = self.acronym_full.split()
+			return f"*abbreviation for* {self._process_internal_link_brackets_(words)}  \n\n"
 
 	def text_definition(self, format="txt"):
 		'''If RST, we need to make the [references to other entries] into internal links.
@@ -108,8 +109,8 @@ class GlossEntry:
 			return f"	{self.definition}\n"
 		elif format == "rst":
 			words = self.definition.split()
-			procssed_with_links = self._process_internal_link_brackets_(words)
-			return f"	{procssed_with_links}  \n\n"
+			processed_with_links = self._process_internal_link_brackets_(words)
+			return f"	{processed_with_links}  \n\n"
 
 	def text_institute(self, format="txt"):
 		'''In RST form this becomes a note block.'''

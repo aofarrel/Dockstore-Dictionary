@@ -100,7 +100,7 @@ Further reading: `<https://docs.aws.amazon.com/index.html?nc2=h_ql_doc_do>`_
 
 BD Catalyst
 -----------
-*abbreviation for* [BioData Catalyst]  
+*abbreviation for* :ref:`dict BioData Catalyst`  
 
 
 .. updated 2022-05-10  
@@ -113,7 +113,7 @@ BDC
 ---
 pronounced "bee-dee-see"  
 
-*abbreviation for* [Biodata Catalyst]  
+*abbreviation for* :ref:`dict Biodata Catalyst`  
 
 
 .. updated 2022-05-10  
@@ -149,7 +149,7 @@ Cancer Genomics Cloud
 
 CGC
 ---
-*abbreviation for* [Cancer Genomics Cloud]  
+*abbreviation for* :ref:`dict Cancer Genomics Cloud`  
 
 
 .. updated 2022-05-10  
@@ -214,7 +214,7 @@ Further reading: `<https://cromwell.readthedocs.io/en/stable/>`_
 
 CWL
 ---
-*abbreviation for* [Common Workflow Language]  
+*abbreviation for* :ref:`dict Common Workflow Language`  
 
 
 .. updated 2022-05-10  
@@ -453,7 +453,7 @@ layer
 
 NCI
 ---
-*abbreviation for* National Cancer Institute   
+*abbreviation for* National Cancer Institute  
 
 	A division of the :ref:`dict NIH` focused on cancer research.  
 
@@ -651,7 +651,7 @@ WDL
 ---
 pronounced "widdle", rhymes with little  
 
-*abbreviation for* [Workflow Description Language]  
+*abbreviation for* :ref:`dict Workflow Description Language`  
 
 
 .. updated 2022-05-10  
