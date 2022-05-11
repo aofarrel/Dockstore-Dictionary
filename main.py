@@ -1,4 +1,5 @@
 from entries import * 
+from Gloss import *
 import gc
 
 ## debug ##
@@ -13,12 +14,14 @@ except FileNotFoundError:
 
 
 # this feels dodgy, but it hasn't failed yet
-list_entries = []
+dockstore_dictionary = GreatGloss("Dockstore Dictionary")
 for glossary_object in gc.get_objects():
     if isinstance(glossary_object, GlossEntry):
-        list_entries.append(glossary_object)
+        dockstore_dictionary.add_entry(glossary_object)
 
-list_entries.sort(key=lambda x: x.name.upper())
+dockstore_dictionary.sort_entries()
+
+dockstore_dictionary.write_toc(contents)
 
 with open(contents, "a") as f:
     for entry in list_entries:

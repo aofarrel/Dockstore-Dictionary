@@ -1,7 +1,5 @@
 import datetime
 import re
-import os
-
 
 class GlossEntry:
 	'''Object for an individual glossary entry'''
@@ -81,6 +79,7 @@ class GlossEntry:
 		return " ".join(words_processed)
 
 	def _underline_text_(self, text:str, underlinechar="-"):
+		'''Underlines text in a RST-supported way'''
 		return [f"{text}\n", underlinechar * len(text)+"\n"]
 
 	def text_rst_bookmark(self):
@@ -198,15 +197,21 @@ class GlossEntry:
 
 class GreatGloss:
 	'''Object for an entire glossary'''
-	def __init__(self, title, outfile, outtoc, updated=datetime.date.today()):
+	def __init__(self, title, outfile="", outtoc="", updated=datetime.date.today()):
 		self.title: str = title
 		self.outfile: str = outfile
 		self.outtoc: str = outtoc
 		self.updated: datetime = updated
 		self.glosslist: list = []
+		self._gentries_ = self._generate_entries_()
 
 	def add_entry(self, entry:GlossEntry):
 		self.glosslist.append(entry)
+
+	def _generate_entries_(self):
+		'''Return a human-readible plaintext list of all entries'''
+		for entry in self.glosslist:
+			yield f"{entry.return_name()}\n"
 
 	def sort_entries(self, ignorecase=True):
 		if ignorecase:
@@ -214,8 +219,15 @@ class GreatGloss:
 		else:
 			self.glosslist.sort(key=lambda x: x.name)
 
+	def write_toc(self, outtoc):
+		if outtoc=="" and self.outtoc=="":
+			raise RuntimeError("No output TOC specified")
+		with open(outtoc if outtoc!="" else self.outtoc, "a") as f:
+			for entry in self._gentries_:
+				f.write(entry)
+
 	def text_glossary_title(self):
-		return "\n".join(self._underline_text_(self.title))
+		return self._underline_text_(self.name)
 
 	def _underline_text_(self, text:str, underlinechar="="):
 		return [f"{text}\n", underlinechar * len(text)+"\n"]
