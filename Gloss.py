@@ -1,6 +1,12 @@
 import datetime
 import re
 
+# Questions about best practices
+#
+# I want the user to be able to initalize objects without specifying all possible variables. Is it
+# more correct to initalize the variables as None and later check if they are None, or to initalize
+# them as empty strings (all are str type) and later check if they == ""?
+
 class GlossEntry:
 	'''Object for an individual glossary entry'''
 	def __init__(self, name, acronym_full="", definition="", furtherreading="", institute="", pronunciation="", seealso="", updated=datetime.date.today()):
@@ -202,14 +208,13 @@ class GreatGloss:
 		self.outfile: str = outfile
 		self.outtoc: str = outtoc
 		self.updated: datetime = updated
-		self.glosslist: list = []
-		self._gentries_ = self._generate_entries_()
+		self.glosslist: list[GlossEntry] = []
+		self._gentries_: generator = self._generate_entries_()
 
 	def add_entry(self, entry:GlossEntry):
 		self.glosslist.append(entry)
 
-	def _generate_entries_(self):
-		'''Return a human-readible plaintext list of all entries'''
+	def _generate_entries_(self, asRSTlinks=False):
 		for entry in self.glosslist:
 			yield f"{entry.return_name()}\n"
 
@@ -219,15 +224,32 @@ class GreatGloss:
 		else:
 			self.glosslist.sort(key=lambda x: x.name)
 
-	def write_toc(self, outtoc):
+	def write_glossary(self, outfile="", format="RST", skipTOC=False):
+		'''write a glossary to a file, in plaintext or RST formatting'''
+		if outfile=="" and self.outfile=="":
+			raise RuntimeError("No output file for glossary specified")
+		with open(outfile if outfile!="" else self.outfile, "a") as f:
+			f.write("".join(self.text_glossary_title()))
+			if not skipTOC:
+				#
+				#
+				# toc stuff
+				#
+				#
+				f.write("\n")  # needed to keep RST from getting mad
+			for entry in self.glosslist:
+				entry.generate_RST()
+
+	def write_toc(self, outtoc=""):
+		'''write a human-readiable plaintext TOC to a file'''
 		if outtoc=="" and self.outtoc=="":
-			raise RuntimeError("No output TOC specified")
+			raise RuntimeError("No output file for TOC specified")
 		with open(outtoc if outtoc!="" else self.outtoc, "a") as f:
 			for entry in self._gentries_:
 				f.write(entry)
 
 	def text_glossary_title(self):
-		return self._underline_text_(self.name)
+		return self._underline_text_(self.title, underlinechar="=")
 
-	def _underline_text_(self, text:str, underlinechar="="):
+	def _underline_text_(self, text:str, underlinechar="-"):
 		return [f"{text}\n", underlinechar * len(text)+"\n"]

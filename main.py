@@ -20,20 +20,14 @@ for glossary_object in gc.get_objects():
         dockstore_dictionary.add_entry(glossary_object)
 
 dockstore_dictionary.sort_entries()
-
 dockstore_dictionary.write_toc(contents)
+dockstore_dictionary.write_glossary(outfile)
 
-with open(contents, "a") as f:
-    for entry in list_entries:
-        # not using text_rst_bookmark() to make this more human-readable
-        # and so RST TOC doesn't have to process `.. _` and `:` bits
-        # if bookmark format ever changes this may need be adjusted
-        f.write(f"{entry.return_name()}\n") 
 
 with open(outfile, "a") as g:
     # generate RST page title
-    g.write("Dockstore Dictionary\n")
-    g.write("====================\n")
+    #g.write("Dockstore Dictionary\n")
+   # g.write("====================\n")
     # tell RST to make a local TOC from toc.txt
     g.write(".. hlist:: \n\t:columns: 3\n\n")
     with open(contents, "r") as h:
