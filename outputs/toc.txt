@@ -9,6 +9,7 @@ CGC
 CLI
 cloud computing
 Common Workflow Language
+container
 Cromwell
 CWL
 DAG
@@ -28,6 +29,7 @@ GCP
 immutable
 interoperable
 JSON
+kernel
 layer
 NCI
 NCPI
@@ -38,6 +40,7 @@ OICR
 ORCID
 parameter file
 preemptible
+Seven Bridges
 Spot Instance
 Terra
 TES

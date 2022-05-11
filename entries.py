@@ -80,6 +80,14 @@ CommonWorkflowLanguage = GlossEntry("Common Workflow Language",
 	pronunciation="", 
 	seealso="CWL")
 
+Container = GlossEntry("container", 
+	acronym_full="", 
+	definition="An emulated computer system that contains programs and their prerequisites, but does not contain the entire operating system. Unlike a [VM], a container shares the same kernel as the host OS. A well known type of container is a [Docker container].", 
+	furtherreading="", 
+	institute="", 
+	pronunciation='', 
+	seealso="")
+
 Cromwell = GlossEntry("Cromwell", 
 	acronym_full="", 
 	definition="An open-source [WDL] executor managed by the Broad Institute. Cromwell is the default executor for the [Dockstore CLI] and is the executor used by [Terra].", 
@@ -227,7 +235,15 @@ JSON = GlossEntry("JSON",
 	pronunciation='"jason"', 
 	seealso="YAML")
 
-layer = GlossEntry("layer", 
+Kernel = GlossEntry("kernel", 
+	acronym_full="", 
+	definition="An operating system's core program that is always loaded in memory, and modulates interactions between software and physical hardware, including but not limited to managing memory access for any program currently in RAM.", 
+	furtherreading="https://en.wikipedia.org/wiki/Kernel_(operating_system)", 
+	institute="", 
+	pronunciation='', 
+	seealso="")
+
+Layer = GlossEntry("layer", 
 	acronym_full="", 
 	definition="In the context of Docker, a layer is a component of a Docker image. Each `RUN`, `COPY`, and `ADD` instruction in a [Dockerfile] will lead to the creation of a layer.", 
 	furtherreading="", 
@@ -245,7 +261,7 @@ NCI = GlossEntry("NCI",
 
 NCPI = GlossEntry("NCPI", 
 	acronym_full="NIH Cloud Platform Interoperability", 
-	definition="An effort to connect five [NIH] cloud projects and ensure they are interoperable. The five projects covered under this are the [AnVIL Project], [BioData Catalyst], Cancer Research Data Commons, Kids First, and the National Center for Biotechnology Information.", 
+	definition="An effort to connect five [NIH] cloud projects and ensure they are interoperable. The five projects covered under this are the [AnVIL Project], [BioData Catalyst], Cancer Research Data Commons, Kids First, and the National Center for Biotechnology Information.",
 	furtherreading="https://datascience.nih.gov/nih-cloud-platform-interoperability-effort", 
 	institute="NIH", 
 	pronunciation='', 
@@ -307,6 +323,14 @@ Preemptible = GlossEntry("preemptible",
 	pronunciation='', 
 	seealso="spot instance")
 
+SevenBridges = GlossEntry("Seven Bridges", 
+	acronym_full="", 
+	definition="A cloud-based workflow execution platform developed by Seven Bridges Genomics. Seven Bridges supports the execution of [CWL] workflows and features a graph-based GUI to make workflow development easier. The computational backend of a Seven Bridges workspace can be selected by the user, with both [GCP] and [AWS] being supported. Dockstore supports directly importing [CWL] workflows into a Seven Bridges workspace. Seven Bridges is part of the [BioData Catalyst] grant.", 
+	furtherreading="https://www.sevenbridges.com/platform/", 
+	institute="", 
+	pronunciation='', 
+	seealso="Terra")
+
 SpotInstance = GlossEntry("Spot Instance", 
 	acronym_full="", 
 	definition="A type of [EC2] instance which is usually much cheaper than the typical on-demand EC2 cost. A spot instance is not guaranteed to be available at any given time, as it is based upon currently unused EC2 availability.", 
@@ -325,11 +349,11 @@ TES = GlossEntry("TES",
 
 Terra = GlossEntry("Terra", 
 	acronym_full="", 
-	definition="A cloud-based workflow execution platform developed by the Broad Institute. Terra supports the execution of [WDL] workflows, Jupyter/R notebooks, and integrated apps such as a DICOM-file viewer. The computational backend of Terra is based upon Google, allowing Google-specific features such as [preemptible] machines to be used in workflows. Dockstore supports directly importing [WDL] workflows into a Terra workspace. Terra is part of the [BioData Catalyst], [AnVIL Project], and [eLwazi] grants.", 
+	definition="A cloud-based workflow execution platform developed by the Broad Institute. Terra supports the execution of [WDL] workflows, Jupyter/R notebooks, and integrated apps such as a DICOM-file viewer. The computational backend of a Terra workspace is based upon Google, allowing Google-specific features such as [preemptible] machines to be used in workflows. Dockstore supports directly importing [WDL] workflows into a Terra workspace. Terra is part of the [BioData Catalyst], [AnVIL Project], and [eLwazi] grants.", 
 	furtherreading="https://terra.bio", 
 	institute="", 
 	pronunciation="", 
-	seealso="")
+	seealso="Seven Bridges")
 
 Tool = GlossEntry("tool", 
 	acronym_full="", 
