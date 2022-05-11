@@ -1,19 +1,43 @@
 import datetime
 import re
+import os
+
+class GreatGloss:
+	'''Object for an entire glossary'''
+	def __init__(self, outfile, outtoc, updated=datetime.date.today())
+		self.outfile: str = outfile
+		self.outtoc: str = outtoc
+		self.updated: datetime = updated
+		self.glosslist: list = []
+
+	def add_entry(self, entry:GlossEntry):
+		self.glosslist.append(entry)
+
+	def sort_entries(self, ignorecase=True):
+		if ignorecase:
+			self.glosslist.sort(key=lambda x: x.name.upper())
+		else:
+			self.glosslist.sort(key=lambda x: x.name)
+
+
 
 class GlossEntry:
+	'''Object for an individual glossary entry'''
 	def __init__(self, name, acronym_full="", definition="", furtherreading="", institute="", pronunciation="", seealso="", updated=datetime.date.today()):
-		# name - entry's name, make sure to use correct capitalization/lack thereof
-		# acronym_full - if acronym, what is the full name. if blank, assumed to not be an acronym.
-		# 	if acronym_full contains [brackets], then the acronym's explanation should link to another
-		#	entry instead of having its own definition.
-		# further_reading - URL to a webpage, usually an "official" one associated with the term
-		# institute - optional, which institution is the phrase associated with, if any?
-		#	for instance, Terra is associated with the Broad Institute. GCP is associated with Google.
-		# pronunciation - optional pronunciation (ex: wdl - "widdle")
-		# seealso - related but not equivalent entries, such as CLI being related to Dockstore CLI. 
-		#	should not be included if the entry lacks a definition (ie has acronym_full linking to another entry.)
-		# updated - when the entry was last updated
+		'''
+		name - entry's name
+		acronym_full - if acronym, what is the full name. if blank, assumed to not be an acronym.
+		further_reading - URL to a webpage, usually an "official" one associated with the term
+		institute - which institution is the phrase associated with?
+		pronunciation - optional pronunciation (ex: wdl - "widdle")
+		seealso - related but not equivalent entries, such as CLI being related to Dockstore CLI. 
+		updated - when the entry was last updated
+
+		When outputting to RST, acronym_full, seealso, & definition will replace text in [brackets] 
+		with a working internal hyperlink to another entry. For example, if self.definition="I use 
+		[Seven Bridges]", then the RST out will be "I use :ref:`dict Seven Bridges`" (although the
+		link will not be clickable if there is no
+		'''
 		self.name: str = name
 		self.acronym_full: str = acronym_full
 		self.definition: str = definition
