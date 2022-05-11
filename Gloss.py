@@ -216,7 +216,11 @@ class GreatGloss:
 
 	def _generate_entries_(self, asRSTlinks=False):
 		for entry in self.glosslist:
-			yield f"{entry.return_name()}\n"
+			if asRSTlinks:
+				# remember: _process_internal_link_brackets_() expects input as a list, not str!
+				yield entry._process_internal_link_brackets_([f"[{entry.return_name()}]"])
+			else:
+				yield f"{entry.return_name()}\n"
 
 	def sort_entries(self, ignorecase=True):
 		if ignorecase:
@@ -224,13 +228,33 @@ class GreatGloss:
 		else:
 			self.glosslist.sort(key=lambda x: x.name)
 
-	def write_glossary(self, outfile="", format="RST", skipTOC=False):
+	def make_toc(self, format="rst", columns=3):
+		'''generates a TOC
+		if columns>=1 && format=="rst": number of hlist columns to use
+		if columns<=0 && format=="rst": use Sphinx built in local TOC instead of hlist'''
+		TOC = []
+		if format=="rst" or format=="RST":
+			if columns<=0:
+				TOC.append(".. contents:: Table of Contents \n\t:local:\n\n")
+			else:
+				TOC.append(f".. hlist:: \n\t:columns: {columns}\n\n")
+			for entry in self._generate_entries_(asRSTlinks=True):
+				TOC.append(f"\t* {entry}\n")
+		else:
+			for entry in self._generate_entries_(asRSTlinks=False):
+				TOC.append(entry)
+		print(TOC)
+		return TOC
+
+
+	def write_glossary(self, outfile="", format="rst", skipTOC=False):
 		'''write a glossary to a file, in plaintext or RST formatting'''
 		if outfile=="" and self.outfile=="":
 			raise RuntimeError("No output file for glossary specified")
 		with open(outfile if outfile!="" else self.outfile, "a") as f:
 			f.write("".join(self.text_glossary_title()))
 			if not skipTOC:
+				f.write("".join(self.make_toc()))
 				#
 				#
 				# toc stuff
@@ -240,13 +264,12 @@ class GreatGloss:
 			for entry in self.glosslist:
 				entry.generate_RST()
 
-	def write_toc(self, outtoc=""):
-		'''write a human-readiable plaintext TOC to a file'''
+	def write_toc(self, outtoc="", format="txt"):
+		'''write a TOC to a file'''
 		if outtoc=="" and self.outtoc=="":
 			raise RuntimeError("No output file for TOC specified")
 		with open(outtoc if outtoc!="" else self.outtoc, "a") as f:
-			for entry in self._gentries_:
-				f.write(entry)
+			f.write("".join(self.make_toc(format=format)))
 
 	def text_glossary_title(self):
 		return self._underline_text_(self.title, underlinechar="=")

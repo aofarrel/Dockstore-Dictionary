@@ -1,6 +1,5 @@
 Dockstore Dictionary
 ====================
-
 .. hlist:: 
 	:columns: 3
 
@@ -58,4 +57,5 @@ Dockstore Dictionary
 	* :ref:`dict Workflow Description Language`
 	* :ref:`dict Workflow Execution Service`
 	* :ref:`dict YAML`
+
 
