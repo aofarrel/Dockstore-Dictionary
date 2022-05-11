@@ -2,24 +2,6 @@ import datetime
 import re
 import os
 
-class GreatGloss:
-	'''Object for an entire glossary'''
-	def __init__(self, outfile, outtoc, updated=datetime.date.today())
-		self.outfile: str = outfile
-		self.outtoc: str = outtoc
-		self.updated: datetime = updated
-		self.glosslist: list = []
-
-	def add_entry(self, entry:GlossEntry):
-		self.glosslist.append(entry)
-
-	def sort_entries(self, ignorecase=True):
-		if ignorecase:
-			self.glosslist.sort(key=lambda x: x.name.upper())
-		else:
-			self.glosslist.sort(key=lambda x: x.name)
-
-
 
 class GlossEntry:
 	'''Object for an individual glossary entry'''
@@ -98,6 +80,9 @@ class GlossEntry:
 		
 		return " ".join(words_processed)
 
+	def _underline_text_(self, text:str, underlinechar="-"):
+		return [f"{text}\n", underlinechar * len(text)+"\n"]
+
 	def text_rst_bookmark(self):
 		'''Generates an RST bookmark for the entry'''
 		return f".. _dict {self.return_name(nospaces=False)}:"
@@ -105,10 +90,9 @@ class GlossEntry:
 	def text_entry_title(self):
 		'''Return underlined title. Same in RST, Markdown, and plaintext.'''
 		entry_title = []
-		entry_title.append("\n\n")               # space between entries
-		entry_title.append(f"{self.name}\n")     # name
-		entry_title.append("-" * len(self.name)) # underline of name
-		entry_title.append("\n")                 # another newline
+		entry_title.append("\n\n")  # keep space between entries big enough to keep RST happy
+		print((lambda x: map(x, self._underline_text_(self.name))))
+		print(entry_title)
 		return "".join(entry_title)
 
 	def text_pronunciation(self, format="txt"):
@@ -213,3 +197,26 @@ class GlossEntry:
 		return "".join(rst)
 
 
+class GreatGloss:
+	'''Object for an entire glossary'''
+	def __init__(self, title, outfile, outtoc, updated=datetime.date.today()):
+		self.title: str = title
+		self.outfile: str = outfile
+		self.outtoc: str = outtoc
+		self.updated: datetime = updated
+		self.glosslist: list = []
+
+	def add_entry(self, entry:GlossEntry):
+		self.glosslist.append(entry)
+
+	def sort_entries(self, ignorecase=True):
+		if ignorecase:
+			self.glosslist.sort(key=lambda x: x.name.upper())
+		else:
+			self.glosslist.sort(key=lambda x: x.name)
+
+	def text_glossary_title(self):
+		return "\n".join(self._underline_text_(self.title))
+
+	def _underline_text_(self, text:str, underlinechar="="):
+		return [f"{text}\n", underlinechar * len(text)+"\n"]
