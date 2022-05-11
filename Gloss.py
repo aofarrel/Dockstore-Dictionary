@@ -91,8 +91,10 @@ class GlossEntry:
 		'''Return underlined title. Same in RST, Markdown, and plaintext.'''
 		entry_title = []
 		entry_title.append("\n\n")  # keep space between entries big enough to keep RST happy
-		print((lambda x: map(x, self._underline_text_(self.name))))
+		entry_title.append(list(map(lambda x: x, self._underline_text_(self.name))))
+		print("--")
 		print(entry_title)
+		print("--")
 		return "".join(entry_title)
 
 	def text_pronunciation(self, format="txt"):
