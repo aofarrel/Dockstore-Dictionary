@@ -22,9 +22,11 @@ Dockstore CLI
 DOI
 DS-I Africa
 EC2
+egress
 eLwazi
 FAIR
 GA4GH
+Galaxy
 GCP
 immutable
 interoperable
@@ -33,6 +35,7 @@ kernel
 layer
 NCI
 NCPI
+Nextflow
 NHGRI
 NHLBI
 NIH

@@ -9,6 +9,7 @@
  Upon committing, `outputs/output.rst` and `output/toc.txt` will be updated; see `hooks/pre-commit`
 
 ## Style Guide
+None of these are a requirement for using Gloss, these are just my recommendations.
  * Every GlossEntry object variable name should be capitalized, and may be referred to with shorthand, such as:
     * GCP
     * AnVIL
