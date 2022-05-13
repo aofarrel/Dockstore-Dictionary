@@ -9,6 +9,7 @@
  Upon committing, `outputs/output.rst` and `output/toc.txt` will be updated; see `hooks/pre-commit`
 
 ## Style Guide
+None of these are a requirement for using Gloss, these are just my recommendations.
  * Every GlossEntry object variable name should be capitalized, and may be referred to with shorthand, such as:
     * GCP
     * AnVIL
@@ -21,6 +22,8 @@
     * eLwazi <-- officially written in this manner; follows non-English capitalization rules
     * Spot Instance <-- trademark that Amazon writes as capitalized
     * container <-- not a proper noun nor a trademark, so not capitalized
+* If acronym_full contains [brackets], then the acronym's explanation should link to another entry instead of having its own definition.
+* seealso should not be included if the entry lacks a definition (ie has acronym_full linking to another entry.)
 
 ## Future Plans
- Get acronym internal links working
+ Make a superobject for GlossEntry
