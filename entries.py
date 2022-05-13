@@ -179,9 +179,17 @@ EC2 = GlossEntry("EC2",
 	pronunciation='', 
 	seealso="")
 
+Egress = GlossEntry("egress", 
+	acronym_full="", 
+	definition="The action of leaving a place. In the context of [cloud computing], an egress charge is a fee charged for downloading a file. Sometimes, the person hosting the file is charged for data egress. Other times, the person downloading the file is charged.", 
+	furtherreading="", 
+	institute="", 
+	pronunciation='"ee-gress", rhymes with aggress', 
+	seealso="")
+
 Elwazi = GlossEntry("eLwazi", 
 	acronym_full="", 
-	definition="An African-lead open data science platform funded as part of the [NIH]'s [DS-I Africa] program. Leverages [Gen3] and [Terra].", 
+	definition="An African-lead open data science platform funded as part of the [NIH]'s [DS-I Africa] program. Leverages Gen3 and [Terra].", 
 	furtherreading="https://elwazi.org/",
 	institute="", 
 	pronunciation='"el-woz-ee", derived from Xhosa word for knowledge', 
@@ -199,6 +207,14 @@ GA4GH = GlossEntry("GA4GH",
 	acronym_full="Global Alliance For Genomics and Health", 
 	definition="A network of public and private institutions which aims to accelerate progress in genomic research and human health by cultivating a common framework of standards and harmonized approaches for effective and responsible genomic and health-related data sharing.", 
 	furtherreading="https://www.ga4gh.org/", 
+	institute="", 
+	pronunciation='', 
+	seealso="")
+
+Galaxy = GlossEntry("Galaxy", 
+	acronym_full="", 
+	definition="An open-source platform that uses [FAIR] principles, most well-known for its web-based UI which can be used to run a variety of bioinformatics tools.", 
+	furtherreading="https://galaxyproject.org/", 
 	institute="", 
 	pronunciation='', 
 	seealso="")
@@ -264,6 +280,14 @@ NCPI = GlossEntry("NCPI",
 	definition="An effort to connect five [NIH] cloud projects and ensure they are interoperable. The five projects covered under this are the [AnVIL Project], [BioData Catalyst], Cancer Research Data Commons, Kids First, and the National Center for Biotechnology Information.",
 	furtherreading="https://datascience.nih.gov/nih-cloud-platform-interoperability-effort", 
 	institute="NIH", 
+	pronunciation='', 
+	seealso="")
+
+Nextflow = GlossEntry("Nextflow", 
+	acronym_full="", 
+	definition="A Java-based computational workflow engine. Dockstore supports the hosting of Nextflow workflows.", 
+	furtherreading="https://www.nextflow.io/", 
+	institute="", 
 	pronunciation='', 
 	seealso="")
 
