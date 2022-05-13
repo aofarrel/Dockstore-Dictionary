@@ -17,7 +17,7 @@ class GlossTxt:
 		'''Generates an RST bookmark for the entry'''
 		return f".. _dict {self.return_name(nospaces=False)}:"
 
-	def rst_brackets_to_internal_links(self, words:list):
+	def rst_process_brackets(self, words:list):
 		'''Turn [this] into an RST internal link, assuming the part being linked to
 		has a bookmark created with rst_bookmark(). Expects words to be a list of
 		strings, split upon spaces.'''
@@ -121,7 +121,7 @@ class GlossEntry(GlossTxt):
 			return f"abbreviation for {self.acronym_full}\n"
 		elif format == "rst":
 			words = self.acronym_full.split()
-			return f"*abbreviation for* {self.rst_brackets_to_internal_links(words)}  \n\n"
+			return f"*abbreviation for* {self.rst_process_brackets(words)}  \n\n"
 
 	def text_definition(self, format="txt"):
 		'''Return the definition of the entry.
@@ -131,7 +131,7 @@ class GlossEntry(GlossTxt):
 			return f"	{self.definition}\n"
 		elif format == "rst":
 			words = self.definition.split()
-			processed_with_links = self.rst_brackets_to_internal_links(words)
+			processed_with_links = self.rst_process_brackets(words)
 			return f"	{processed_with_links}  \n\n"
 
 	def text_institute(self, format="txt"):
@@ -234,12 +234,22 @@ class GreatGloss(GlossTxt):
 		for entry in entries:
 			self.add_entry(entry)
 
+	def add_source(self, format="rst"):
+		'''Include a note (as a comment if rst) on entry file to note it was created programatically'''
+		message = """This file was created using GreatGloss. It is highly recommended to update the
+		source file that this page was generated from rather than modifying it directly."""
+		if format == "rst":
+			return(f".. {message}\n\n")
+		else:
+			return message
+
 	def _generate_entry_names_(self, asRSTlinks=False):
-		'''Yield the name of every entry. If asRSTlinks==True, make them clickable internal links'''
+		'''Yield the name of every entry. If asRSTlinks==True, make them clickable internal links.
+		Instead of calling this externally, use make_toc() instead.'''
 		for entry in self.glosslist:
 			if asRSTlinks:
-				# remember: rst_brackets_to_internal_links() expects input as a list, not str!
-				yield entry.rst_brackets_to_internal_links([f"[{entry.return_name()}]"])
+				# remember: rst_process_brackets() expects input as a list, not str!
+				yield entry.rst_process_brackets([f"[{entry.return_name()}]"])
 			else:
 				yield f"{entry.return_name()}\n"
 
@@ -267,12 +277,14 @@ class GreatGloss(GlossTxt):
 				TOC.append(entry)
 		return TOC
 
-	def write_glossary(self, outfile="", format="rst", skipTOC=False):
+	def write_glossary(self, outfile="", format="rst", skipTOC=False, skipSource=False):
 		'''Write a glossary to a file, in plaintext or RST formatting.
 		will try to fall back on self.outfile if outfile not declared when calling this function'''
 		if outfile == "" and self.outfile == "":
 			raise RuntimeError("No output file for glossary specified")
 		with open(outfile if outfile != "" else self.outfile, "a") as f:
+			if not skipSource:
+				f.write(self.add_source(format=format))
 			f.write("".join(self.text_glossary_title()))
 			if not skipTOC:
 				f.write("".join(self.make_toc(format=format)))

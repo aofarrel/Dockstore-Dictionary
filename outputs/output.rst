@@ -1,3 +1,6 @@
+.. This file was created using GreatGloss. It is highly recommended to update the
+		source file that this page was generated from rather than modifying it directly.
+
 Dockstore Dictionary
 ====================
 .. hlist:: 
@@ -29,6 +32,7 @@ Dockstore Dictionary
 	* :ref:`dict EC2`
 	* :ref:`dict egress`
 	* :ref:`dict eLwazi`
+	* :ref:`dict entry`
 	* :ref:`dict FAIR`
 	* :ref:`dict GA4GH`
 	* :ref:`dict Galaxy`
@@ -401,6 +405,18 @@ Further reading: `<https://elwazi.org/>`_
 
 
 
+.. _dict entry:
+
+entry
+-----
+	A :ref:`dict tool` or :ref:`dict workflow` on Dockstore. A single entry on Dockstore has a description, a link to the original source-control repository, and at least one :ref:`dict descriptor file` which does some sort of computational task using :ref:`dict CWL`, :ref:`dict WDL`, :ref:`dict Nextflow`, or :ref:`dict Galaxy workflow` syntax. An entry can optionally include a :ref:`dict parameter file` that links to open-access test data. A single entry will include all versions of the tool or workflow that has been registered, with that versioning being based upon the versioning and branches of the source-control repository the descriptor file is hosted on (with the exception of :ref:`dict legacy tools`, which have versioning based upon their Docker image tags), and any version can be pinned as the default. Entries can be added to :ref:`dict collections` associated with a particular :ref:`dict organization`, or added to :ref:`dict categories` so they can be grouped with other entries that have a similar scientific purpose. Entries may also have :ref:`dict labels` attached to them to help them be found via Dockstore's :ref:`dict faceted search` feature. If the entry is registered using the :ref:`dict Dockstore GitHub App`, then the entry will stay in sync automatically with the source-control repository. Additionally, if an entry is a valid :ref:`dict workflow`, any user can use our :ref:`dict launch with` feature to import the workflow to one of our cloud compute partners.  
+
+.. note:: This term as we define it here is associated with Dockstore and may have different definitions in other contexts.  
+
+.. updated 2022-05-13  
+
+
+
 .. _dict FAIR:
 
 FAIR
@@ -527,6 +543,7 @@ layer
 
 legacy registration
 -------------------
+.. note:: This term as we define it here is associated with Dockstore and may have different definitions in other contexts.  
 
 .. updated 2022-05-13  
 
@@ -536,6 +553,8 @@ legacy registration
 
 legacy tool
 -----------
+	On Dockstore, we use this term to refer to a :ref:`dict tool` that is registered using a :ref:`dict legacy registration` method. Legacy tools are not automatically synchronized with their source control repository, but can be updated manually by the tool maintainer. Additionally, legacy tools require a :ref:`dict Dockerfile` to be registered, and are versioned based on the tags of their associated :ref:`dict Docker image`. A legacy tool can be converted into a :ref:`dict GitHub App tool` via the following process: <https://docs.dockstore.org/en/stable/getting-started/github-apps/migrating-tools-to-github-apps.html>  
+
 .. note:: This term as we define it here is associated with Dockstore and may have different definitions in other contexts.  
 
 .. updated 2022-05-13  
@@ -546,7 +565,7 @@ legacy tool
 
 legacy workflow
 ---------------
-	On Dockstore, we use this term to refer to a workflow that is registered using a :ref:`dict legacy registration` method. Legacy workflows are not automatically synchronized with their source control repository, but can be updated manually by the workflow maintainer. A legacy workflow can be converted into a :ref:`dict GitHub App workflows` via the following process: https://docs.dockstore.org/en/stable/getting-started/github-apps/migrating-workflows-to-github-apps.html  
+	On Dockstore, we use this term to refer to a :ref:`dict workflow` that is registered using a :ref:`dict legacy registration` method. Legacy workflows are not automatically synchronized with their source control repository, but can be updated manually by the workflow maintainer. A legacy workflow can be converted into a :ref:`dict GitHub App workflow` via the following process: <https://docs.dockstore.org/en/stable/getting-started/github-apps/migrating-workflows-to-github-apps.html>  
 
 .. note:: This term as we define it here is associated with Dockstore and may have different definitions in other contexts.  
 
@@ -561,8 +580,6 @@ NCI
 *abbreviation for* National Cancer Institute  
 
 	A division of the :ref:`dict NIH` focused on cancer research.  
-
-.. note:: This term as we define it here is associated with NIH and may have different definitions in other contexts.  
 
 Further reading: `<https://www.nih.gov/about-nih/what-we-do/nih-almanac/national-cancer-institute-nci>`_  
 
@@ -604,7 +621,7 @@ NFL
 ---
 *abbreviation for* :ref:`dict Nextflow`  
 
-	An uncommon acronym for Nextflow. Not used as often as CWL or WDL, but does see usage occasionally.  
+	An uncommon acronym for :ref:`dict Nextflow`. This abbreviation is not used as frequently as :ref:`dict CWL` or :ref:`dict WDL`, but does see usage occasionally.  
 
 
 .. updated 2022-05-13  

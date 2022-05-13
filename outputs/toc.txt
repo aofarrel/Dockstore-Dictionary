@@ -24,6 +24,7 @@ DS-I Africa
 EC2
 egress
 eLwazi
+entry
 FAIR
 GA4GH
 Galaxy
