@@ -41,7 +41,7 @@ BioDataCatalyst = GlossEntry("Biodata Catalyst",
 	acronym_full="", 
 	definition="An initiative funded by [NHLBI] to connect several cloud-based bioinformatics platforms together to increase reproducibility in bioinformatics. Involves Dockstore, [Terra], Seven Bridges, Gen3, and PIC-SURE.", 
 	furtherreading="https://biodatacatalyst.nhlbi.nih.gov/", 
-	institute="NIH", 
+	institute="", 
 	pronunciation="", 
 	seealso="")
 
@@ -183,7 +183,7 @@ Egress = GlossEntry("egress",
 	acronym_full="", 
 	definition="The action of leaving a place. In the context of [cloud computing], an egress charge is a fee charged for downloading a file. Sometimes, the person hosting the file is charged for data egress. Other times, the person downloading the file is charged.", 
 	furtherreading="", 
-	institute="", 
+	institute="cloud computing", 
 	pronunciation='"ee-gress", rhymes with aggress', 
 	seealso="")
 
@@ -419,6 +419,14 @@ Tool = GlossEntry("tool",
 	pronunciation='', 
 	seealso="workflow")
 
+UCSC = GlossEntry("UCSC", 
+	acronym_full="University of California, Santa Cruz", 
+	definition="A public university located in Santa Cruz that is focused on undergraduate and graduate education and research. The Genomics Institute, a branch of UCSC's engineering department, is one of the two institutes involved in the development of Dockstore, the other being [OICR].", 
+	furtherreading="https://ucsc.edu", 
+	institute="", 
+	pronunciation="", 
+	seealso="")
+
 VM = GlossEntry("VM", 
 	acronym_full="virtual machine", 
 	definition="An emulated computer system that runs on another computer system. Usually implies that an entire operating system(s) (the guest OS) is being run on top of another operating system (the host OS) via the host's hypervisor. The hypervisor manages the execution of processes of the guest operating system. This is in contrast to a [container], which do not involve hypervisors nor run entire guest operating systems.", 
@@ -447,14 +455,6 @@ Workflow_Description_Language = GlossEntry("Workflow Description Language",
 	furtherreading="https://openwdl.org/",
 	definition="A workflow language managed by the Open WDL Project that is designed to describe command-line tools. Usually written as [WDL]. WDL and [CWL] are relatively similar in principle, and code written in one language can often be translated into the other with some workarounds, but they are two different standards and each have unique features.",
 	seealso="WDL")
-
-UCSC = GlossEntry("UCSC", 
-	acronym_full="University of California, Santa Cruz", 
-	definition="A public university located in Santa Cruz that is focused on undergraduate and graduate education and research. The Genomics Institute, a branch of UCSC's engineering department, is one of the two institutes involved in the development of Dockstore, the other being [OICR].", 
-	furtherreading="https://ucsc.edu", 
-	institute="", 
-	pronunciation="", 
-	seealso="")
 
 YAML = GlossEntry("YAML", 
 	acronym_full="YAML Ain't Markup Language", 

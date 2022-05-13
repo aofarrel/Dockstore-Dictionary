@@ -138,8 +138,6 @@ Biodata Catalyst
 ----------------
 	An initiative funded by :ref:`dict NHLBI` to connect several cloud-based bioinformatics platforms together to increase reproducibility in bioinformatics. Involves Dockstore, :ref:`dict Terra`, Seven Bridges, Gen3, and PIC-SURE.  
 
-.. note:: This term as we define it here is associated with NIH and may have different definitions in other contexts.  
-
 Further reading: `<https://biodatacatalyst.nhlbi.nih.gov/>`_  
 
 .. updated 2022-05-13  
@@ -383,6 +381,7 @@ pronounced "ee-gress", rhymes with aggress
 
 	The action of leaving a place. In the context of :ref:`dict cloud computing`, an egress charge is a fee charged for downloading a file. Sometimes, the person hosting the file is charged for data egress. Other times, the person downloading the file is charged.  
 
+.. note:: This term as we define it here is associated with cloud computing and may have different definitions in other contexts.  
 
 .. updated 2022-05-13  
 
