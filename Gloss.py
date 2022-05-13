@@ -90,6 +90,10 @@ class GlossEntry:
 		'''Generates an RST bookmark for the entry'''
 		return f".. _dict {self.return_name(nospaces=False)}:"
 
+	def text_rst_url(self, url):
+		'''Generate an RST URL for further reading'''
+		return f"`<{url}>`_"
+
 	def text_entry_title(self):
 		'''Return underlined title. Same in RST, Markdown, and plaintext.'''
 		entry_title = []
@@ -153,9 +157,9 @@ class GlossEntry:
 			return f"Further reading: {self.furtherreading}\n"
 		elif format == "rst":
 			if self.seealso == "" and self.institute == "":
-				return f"Further reading: `<{self.furtherreading}>`_  \n"
+				return f"Further reading: {self.text_rst_url(self.furtherreading)}  \n"
 			else:
-				return f"\nFurther reading: `<{self.furtherreading}>`_  \n"
+				return f"\nFurther reading: {self.text_rst_url(self.furtherreading)}  \n"
 
 	def text_updated(self, format="txt"):
 		'''Return when entry was last updated (visibly if txt, as a comment if RST)
