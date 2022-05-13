@@ -4,17 +4,61 @@ import re
 
 class GlossTxt:
 	'''Handles RST-specific output'''
-	def text_rst_bookmark(self):
-		'''Generates an RST bookmark for the entry'''
-		return f".. _dict {self.return_name(nospaces=False)}:"
 
-	def text_rst_url(self, url):
+	def underline_text(self, text:str, underlinechar="-"):
+		'''Underlines text, used to create a valid rst header or make txt prettier'''
+		return [f"{text}\n", underlinechar * len(text) + "\n"]
+
+	def rst_url(self, url):
 		'''Generate an RST URL for further reading'''
 		return f"`<{url}>`_"
 
-	def underline_text(self, text:str, underlinechar="-"):
-		'''Underlines text in a RST-supported way'''
-		return [f"{text}\n", underlinechar * len(text) + "\n"]
+	def rst_bookmark(self):
+		'''Generates an RST bookmark for the entry'''
+		return f".. _dict {self.return_name(nospaces=False)}:"
+
+	def rst_brackets_to_internal_links(self, words:list):
+		'''Turn [this] into an RST internal link, assuming the part being linked to
+		has a bookmark created with rst_bookmark(). Expects words to be a list of
+		strings, split upon spaces.'''
+		words_processed = []
+		multi_word_flag = False
+		for word in words:
+			if re.search("][a-zA-Z]+", word):
+				print(f"""Warning: An entry will have an invalid internal link
+					due RST limitations. Put some sort of whitespace or punctuation before
+					any additional letters after the ending bracket. Problematic word: {word}""")
+
+			# This is the beginning of an internal RST link
+			elif word.startswith("["):
+				word = word[1:]  # strip [
+				if "]" in word:
+					multi_word_flag = False
+					word = word.replace("]", "`")
+					word = f":ref:`dict {word}"
+				else:
+					multi_word_flag = True
+					word = f":ref:`dict {word}"
+
+				words_processed.append(word)
+
+			# This is a continuation of a previous word's RST link
+			# will break on [Seven Br]idges] but that's not my problem
+			elif multi_word_flag is True:
+
+				if "]" in word:
+					multi_word_flag = False
+					word = word.replace("]", "`")
+					word = f"{word}"
+				else:
+					word = f"{word}"
+
+				words_processed.append(word)
+
+			else:
+				words_processed.append(word)
+
+		return " ".join(words_processed)
 
 
 class GlossEntry(GlossTxt):
@@ -56,47 +100,6 @@ class GlossEntry(GlossTxt):
 				processed_characters.append(character)
 			return "".join(processed_characters)
 
-	def _process_internal_link_brackets_(self, words:list):
-		'''For RST formatting, process internal hyperlinks, marked in entries.py as [this]'''
-		words_processed = []
-		multi_word_flag = False
-		for word in words:
-			if re.search("][a-zA-Z]+", word):
-				print(f"Warning: {self.return_name()} will have an invalid internal link"
-					"due RST limitations. Put some sort of whitespace or punctuation before"
-					"any additional letters after the ending bracket. Problematic word: {word}")
-
-			# This is the beginning of an internal RST link
-			elif word.startswith("["):
-				word = word[1:]  # strip [
-				if "]" in word:
-					multi_word_flag = False
-					word = word.replace("]", "`")
-					word = f":ref:`dict {word}"
-				else:
-					multi_word_flag = True
-					word = f":ref:`dict {word}"
-
-				words_processed.append(word)
-
-			# This is a continuation of a previous word's RST link
-			# will break on [Seven Br]idges] but that's not my problem
-			elif multi_word_flag is True:
-
-				if "]" in word:
-					multi_word_flag = False
-					word = word.replace("]", "`")
-					word = f"{word}"
-				else:
-					word = f"{word}"
-
-				words_processed.append(word)
-
-			else:
-				words_processed.append(word)
-
-		return " ".join(words_processed)
-
 	def text_entry_title(self):
 		'''Return underlined title. Same in RST, Markdown, and plaintext.'''
 		entry_title = []
@@ -118,7 +121,7 @@ class GlossEntry(GlossTxt):
 			return f"abbreviation for {self.acronym_full}\n"
 		elif format == "rst":
 			words = self.acronym_full.split()
-			return f"*abbreviation for* {self._process_internal_link_brackets_(words)}  \n\n"
+			return f"*abbreviation for* {self.rst_brackets_to_internal_links(words)}  \n\n"
 
 	def text_definition(self, format="txt"):
 		'''Return the definition of the entry.
@@ -128,7 +131,7 @@ class GlossEntry(GlossTxt):
 			return f"	{self.definition}\n"
 		elif format == "rst":
 			words = self.definition.split()
-			processed_with_links = self._process_internal_link_brackets_(words)
+			processed_with_links = self.rst_brackets_to_internal_links(words)
 			return f"	{processed_with_links}  \n\n"
 
 	def text_institute(self, format="txt"):
@@ -160,9 +163,9 @@ class GlossEntry(GlossTxt):
 			return f"Further reading: {self.furtherreading}\n"
 		elif format == "rst":
 			if self.seealso == "" and self.institute == "":
-				return f"Further reading: {self.text_rst_url(self.furtherreading)}  \n"
+				return f"Further reading: {self.rst_url(self.furtherreading)}  \n"
 			else:
-				return f"\nFurther reading: {self.text_rst_url(self.furtherreading)}  \n"
+				return f"\nFurther reading: {self.rst_url(self.furtherreading)}  \n"
 
 	def text_updated(self, format="txt"):
 		'''Return when entry was last updated (visibly if txt, as a comment if RST)
@@ -195,7 +198,7 @@ class GlossEntry(GlossTxt):
 	def generate_RST(self):
 		'''Generate RST output of this entry'''
 		rst = []
-		rst.append(self.text_rst_bookmark())
+		rst.append(self.rst_bookmark())
 		rst.append(self.text_entry_title())
 		if self.pronunciation != "":
 			rst.append(self.text_pronunciation(format="rst"))
@@ -235,8 +238,8 @@ class GreatGloss(GlossTxt):
 		'''Yield the name of every entry. If asRSTlinks==True, make them clickable internal links'''
 		for entry in self.glosslist:
 			if asRSTlinks:
-				# remember: _process_internal_link_brackets_() expects input as a list, not str!
-				yield entry._process_internal_link_brackets_([f"[{entry.return_name()}]"])
+				# remember: rst_brackets_to_internal_links() expects input as a list, not str!
+				yield entry.rst_brackets_to_internal_links([f"[{entry.return_name()}]"])
 			else:
 				yield f"{entry.return_name()}\n"
 
