@@ -41,7 +41,9 @@ class GlossEntry:
 		multi_word_flag = False
 		for word in words:
 			if re.search("][a-zA-Z]+", word):
-				print(f"Warning: {self.return_name()} will have an invalid internal link due RST limitations. Put some sort of whitespace or punctuation before any additional letters after the ending bracket. Problematic word: {word}")
+				print(f"""Warning: {self.return_name()} will have an invalid internal link due
+					to RST limitations. Put some sort of whitespace or punctuation before any
+					additional letters after the ending bracket. Problematic word: {word}""")
 			
 			# This is the beginning of an internal RST link
 			elif word.startswith("["):
