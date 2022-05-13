@@ -2,7 +2,22 @@ import datetime
 import re
 
 
-class GlossEntry:
+class GlossTxt:
+	'''Handles RST-specific output'''
+	def text_rst_bookmark(self):
+		'''Generates an RST bookmark for the entry'''
+		return f".. _dict {self.return_name(nospaces=False)}:"
+
+	def text_rst_url(self, url):
+		'''Generate an RST URL for further reading'''
+		return f"`<{url}>`_"
+
+	def underline_text(self, text:str, underlinechar="-"):
+		'''Underlines text in a RST-supported way'''
+		return [f"{text}\n", underlinechar * len(text) + "\n"]
+
+
+class GlossEntry(GlossTxt):
 	'''Object for an individual glossary entry'''
 	def __init__(self, name, acronym_full="", definition="", furtherreading="", institute="",
 		pronunciation="", seealso="", updated=datetime.date.today()):
@@ -50,7 +65,7 @@ class GlossEntry:
 				print(f"Warning: {self.return_name()} will have an invalid internal link"
 					"due RST limitations. Put some sort of whitespace or punctuation before"
 					"any additional letters after the ending bracket. Problematic word: {word}")
- 
+
 			# This is the beginning of an internal RST link
 			elif word.startswith("["):
 				word = word[1:]  # strip [
@@ -82,23 +97,11 @@ class GlossEntry:
 
 		return " ".join(words_processed)
 
-	def _underline_text_(self, text:str, underlinechar="-"):
-		'''Underlines text in a RST-supported way'''
-		return [f"{text}\n", underlinechar * len(text) + "\n"]
-
-	def text_rst_bookmark(self):
-		'''Generates an RST bookmark for the entry'''
-		return f".. _dict {self.return_name(nospaces=False)}:"
-
-	def text_rst_url(self, url):
-		'''Generate an RST URL for further reading'''
-		return f"`<{url}>`_"
-
 	def text_entry_title(self):
 		'''Return underlined title. Same in RST, Markdown, and plaintext.'''
 		entry_title = []
 		entry_title.append("\n\n")  # keep space between entries big enough to keep RST happy
-		entry_title.extend(self._underline_text_(self.name))
+		entry_title.extend(self.underline_text(self.name))
 		return "".join(entry_title)
 
 	def text_pronunciation(self, format="txt"):
@@ -210,7 +213,7 @@ class GlossEntry:
 		return "".join(rst)
 
 
-class GreatGloss:
+class GreatGloss(GlossTxt):
 	'''Object for an entire glossary'''
 	def __init__(self, title, outfile="", outtoc="", updated=datetime.date.today()):
 		self.title: str = title
@@ -286,8 +289,4 @@ class GreatGloss:
 
 	def text_glossary_title(self):
 		'''Generate the overall glossary's title'''
-		return self._underline_text_(self.title, underlinechar="=")
-
-	def _underline_text_(self, text:str, underlinechar="-"):
-		'''Underline text in a RST-supported way'''
-		return [f"{text}\n", underlinechar * len(text) + "\n"]
+		return self.underline_text(self.title, underlinechar="=")
