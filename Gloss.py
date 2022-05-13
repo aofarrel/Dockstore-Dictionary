@@ -50,7 +50,7 @@ class GlossEntry:
 				print(f"Warning: {self.return_name()} will have an invalid internal link"
 					"due RST limitations. Put some sort of whitespace or punctuation before"
 					"any additional letters after the ending bracket. Problematic word: {word}")
-
+ 
 			# This is the beginning of an internal RST link
 			elif word.startswith("["):
 				word = word[1:]  # strip [

@@ -267,6 +267,30 @@ Layer = GlossEntry("layer",
 	pronunciation="", 
 	seealso="")
 
+LegacyRegistration = GlossEntry("legacy registration", 
+	acronym_full="", 
+	definition="", 
+	furtherreading="", 
+	institute="", 
+	pronunciation='', 
+	seealso="")
+
+LegacyTool = GlossEntry("legacy tool", 
+	acronym_full="",
+	definition="", 
+	furtherreading="", 
+	institute="Dockstore", 
+	pronunciation='', 
+	seealso="")
+
+LegacyWorkflow = GlossEntry("legacy workflow", 
+	acronym_full="", 
+	definition="On Dockstore, we use this term to refer to a workflow that is registered using a [legacy registration] method. Legacy workflows are not automatically synchronized with their source control repository, but can be updated manually by the workflow maintainer. A legacy workflow can be converted into a [GitHub App workflows] via the following process: https://docs.dockstore.org/en/stable/getting-started/github-apps/migrating-workflows-to-github-apps.html", 
+	furtherreading="", 
+	institute="Dockstore", 
+	pronunciation='', 
+	seealso="")
+
 NCI = GlossEntry("NCI", 
 	acronym_full="National Cancer Institute ", 
 	definition="A division of the [NIH] focused on cancer research.", 
@@ -287,6 +311,14 @@ Nextflow = GlossEntry("Nextflow",
 	acronym_full="", 
 	definition="A Java-based computational workflow engine. Dockstore supports the hosting of Nextflow workflows.", 
 	furtherreading="https://www.nextflow.io/", 
+	institute="", 
+	pronunciation='', 
+	seealso="")
+
+NFL = GlossEntry("NFL", 
+	acronym_full="[Nextflow]", 
+	definition="An uncommon acronym for Nextflow. Not used as often as CWL or WDL, but does see usage occasionally.", 
+	furtherreading="", 
 	institute="", 
 	pronunciation='', 
 	seealso="")

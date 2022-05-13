@@ -33,9 +33,13 @@ interoperable
 JSON
 kernel
 layer
+legacy registration
+legacy tool
+legacy workflow
 NCI
 NCPI
 Nextflow
+NFL
 NHGRI
 NHLBI
 NIH

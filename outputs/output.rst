@@ -38,9 +38,13 @@ Dockstore Dictionary
 	* :ref:`dict JSON`
 	* :ref:`dict kernel`
 	* :ref:`dict layer`
+	* :ref:`dict legacy registration`
+	* :ref:`dict legacy tool`
+	* :ref:`dict legacy workflow`
 	* :ref:`dict NCI`
 	* :ref:`dict NCPI`
 	* :ref:`dict Nextflow`
+	* :ref:`dict NFL`
 	* :ref:`dict NHGRI`
 	* :ref:`dict NHLBI`
 	* :ref:`dict NIH`
@@ -520,6 +524,37 @@ layer
 
 
 
+.. _dict legacy registration:
+
+legacy registration
+-------------------
+
+.. updated 2022-05-12  
+
+
+
+.. _dict legacy tool:
+
+legacy tool
+-----------
+.. note:: This term as we define it here is associated with Dockstore and may have different definitions in other contexts.  
+
+.. updated 2022-05-12  
+
+
+
+.. _dict legacy workflow:
+
+legacy workflow
+---------------
+	On Dockstore, we use this term to refer to a workflow that is registered using a :ref:`dict legacy registration` method. Legacy workflows are not automatically synchronized with their source control repository, but can be updated manually by the workflow maintainer. A legacy workflow can be converted into a :ref:`dict GitHub App workflows` via the following process: https://docs.dockstore.org/en/stable/getting-started/github-apps/migrating-workflows-to-github-apps.html  
+
+.. note:: This term as we define it here is associated with Dockstore and may have different definitions in other contexts.  
+
+.. updated 2022-05-12  
+
+
+
 .. _dict NCI:
 
 NCI
@@ -559,6 +594,19 @@ Nextflow
 	A Java-based computational workflow engine. Dockstore supports the hosting of Nextflow workflows.  
 
 Further reading: `<https://www.nextflow.io/>`_  
+
+.. updated 2022-05-12  
+
+
+
+.. _dict NFL:
+
+NFL
+---
+*abbreviation for* :ref:`dict Nextflow`  
+
+	An uncommon acronym for Nextflow. Not used as often as CWL or WDL, but does see usage occasionally.  
+
 
 .. updated 2022-05-12  
 
