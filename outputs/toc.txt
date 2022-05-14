@@ -1,3 +1,4 @@
+.dockstore.yml
 AnVIL Project
 API
 AWS
@@ -5,9 +6,11 @@ BD Catalyst
 BDC
 Biodata Catalyst
 Cancer Genomics Cloud
+categories
 CGC
 CLI
 cloud computing
+collections
 Common Workflow Language
 container
 Cromwell
@@ -29,10 +32,12 @@ FAIR
 GA4GH
 Galaxy
 GCP
+GitHub App registration
 immutable
 interoperable
 JSON
 kernel
+labels
 layer
 legacy registration
 legacy tool

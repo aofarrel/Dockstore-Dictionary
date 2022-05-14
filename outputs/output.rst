@@ -6,6 +6,7 @@ Dockstore Dictionary
 .. hlist:: 
 	:columns: 3
 
+	* :ref:`dict .dockstore.yml`
 	* :ref:`dict AnVIL Project`
 	* :ref:`dict API`
 	* :ref:`dict AWS`
@@ -13,9 +14,11 @@ Dockstore Dictionary
 	* :ref:`dict BDC`
 	* :ref:`dict Biodata Catalyst`
 	* :ref:`dict Cancer Genomics Cloud`
+	* :ref:`dict categories`
 	* :ref:`dict CGC`
 	* :ref:`dict CLI`
 	* :ref:`dict cloud computing`
+	* :ref:`dict collections`
 	* :ref:`dict Common Workflow Language`
 	* :ref:`dict container`
 	* :ref:`dict Cromwell`
@@ -37,10 +40,12 @@ Dockstore Dictionary
 	* :ref:`dict GA4GH`
 	* :ref:`dict Galaxy`
 	* :ref:`dict GCP`
+	* :ref:`dict GitHub App registration`
 	* :ref:`dict immutable`
 	* :ref:`dict interoperable`
 	* :ref:`dict JSON`
 	* :ref:`dict kernel`
+	* :ref:`dict labels`
 	* :ref:`dict layer`
 	* :ref:`dict legacy registration`
 	* :ref:`dict legacy tool`
@@ -68,6 +73,17 @@ Dockstore Dictionary
 	* :ref:`dict Workflow Description Language`
 	* :ref:`dict Workflow Execution Service`
 	* :ref:`dict YAML`
+
+.. _dict .dockstore.yml:
+
+.dockstore.yml
+--------------
+	This file is part of :ref:`dict GitHub App registration`.  
+
+
+.. updated 2022-05-13  
+
+
 
 .. _dict AnVIL Project:
 
@@ -159,6 +175,17 @@ Cancer Genomics Cloud
 
 
 
+.. _dict categories:
+
+categories
+----------
+	A group of workflows or tools on Dockstore with a similar scientific purpose.  
+
+
+.. updated 2022-05-13  
+
+
+
 .. _dict CGC:
 
 CGC
@@ -191,6 +218,17 @@ cloud computing
 	Doing computational tasks on a remote machine that is made available on-demand without the user having to manage all aspects of it. Generally implies that the user is essentially renting computational resources from someone else. Well-known cloud providers include :ref:`dict GCP`, :ref:`dict AWS`, Microsoft Azure, and Alibaba Cloud.  
 
 Further reading: `<https://en.wikipedia.org/wiki/Cloud_computing>`_  
+
+.. updated 2022-05-13  
+
+
+
+.. _dict collections:
+
+collections
+-----------
+	A group of workflows or tools on Dockstore associated with a particular :ref:`dict organization`.  
+
 
 .. updated 2022-05-13  
 
@@ -409,7 +447,7 @@ Further reading: `<https://elwazi.org/>`_
 
 entry
 -----
-	A :ref:`dict tool` or :ref:`dict workflow` on Dockstore. A single entry on Dockstore has a description, a link to the original source-control repository, and at least one :ref:`dict descriptor file` which does some sort of computational task using :ref:`dict CWL`, :ref:`dict WDL`, :ref:`dict Nextflow`, or :ref:`dict Galaxy workflow` syntax. An entry can optionally include a :ref:`dict parameter file` that links to open-access test data. A single entry will include all versions of the tool or workflow that has been registered, with that versioning being based upon the versioning and branches of the source-control repository the descriptor file is hosted on (with the exception of :ref:`dict legacy tools`, which have versioning based upon their Docker image tags), and any version can be pinned as the default. Entries can be added to :ref:`dict collections` associated with a particular :ref:`dict organization`, or added to :ref:`dict categories` so they can be grouped with other entries that have a similar scientific purpose. Entries may also have :ref:`dict labels` attached to them to help them be found via Dockstore's :ref:`dict faceted search` feature. If the entry is registered using the :ref:`dict Dockstore GitHub App`, then the entry will stay in sync automatically with the source-control repository. Additionally, if an entry is a valid :ref:`dict workflow`, any user can use our :ref:`dict launch with` feature to import the workflow to one of our cloud compute partners.  
+	A :ref:`dict tool` or :ref:`dict workflow` on Dockstore. A single entry on Dockstore has a description, a link to the original source-control repository, and at least one :ref:`dict descriptor file` which does some sort of computational task using :ref:`dict CWL`, :ref:`dict WDL`, :ref:`dict Nextflow`, or :ref:`dict Galaxy workflow` syntax. An entry can optionally include a :ref:`dict parameter file` that links to open-access test data. A single entry will include all versions of the tool or workflow that has been registered, with that versioning being based upon the versioning and branches of the source-control repository the descriptor file is hosted on (with the exception of a :ref:`dict legacy tool`, which have versioning based upon their Docker image tags), and any version can be pinned as the default. Entries can be added to :ref:`dict collections` associated with a particular :ref:`dict organization`, or added to :ref:`dict categories` so they can be grouped with other entries that have a similar scientific purpose. Entries may also have :ref:`dict labels` attached to them to help them be found via Dockstore's :ref:`dict faceted search` feature. If the entry is registered using the :ref:`dict Dockstore GitHub App`, then the entry will stay in sync automatically with the source-control repository. Additionally, if an entry is a valid :ref:`dict workflow`, any user can use our :ref:`dict launch with` feature to import the workflow to one of our cloud compute partners.  
 
 .. note:: This term as we define it here is associated with Dockstore and may have different definitions in other contexts.  
 
@@ -475,6 +513,17 @@ Further reading: `<https://cloud.google.com/gcp>`_
 
 
 
+.. _dict GitHub App registration:
+
+GitHub App registration
+-----------------------
+	The recommended way to register a :ref:`dict tool` or :ref:`dict workflow` on Dockstore. This involves creating a :ref:`dict .dockstore.yml` file on the GitHub repository (other source-control methods are not supported) that hosts the tool or workflow, as well as installing the Dockstore GitHub App. This allows a Dockstore entry to remain in sync with the source-control repository automatically, including new branches, tagged commits, and releases created on GitHub after registration of the entry.  
+
+
+.. updated 2022-05-13  
+
+
+
 .. _dict immutable:
 
 immutable
@@ -527,6 +576,17 @@ Further reading: `<https://en.wikipedia.org/wiki/Kernel_(operating_system)>`_
 
 
 
+.. _dict labels:
+
+labels
+------
+	On Dockstore, we use labels to "tag" Dockstore entries with information about them.  
+
+
+.. updated 2022-05-13  
+
+
+
 .. _dict layer:
 
 layer
@@ -543,6 +603,8 @@ layer
 
 legacy registration
 -------------------
+	One of the two main ways of registering a :ref:`dict tool` or :ref:`dict workflow`. Legacy methods support a variety of source-control repositories, but new changes to the tool or workflow after registration will not be reflected on Dockstore until the maintainer of the Dockstore :ref:`dict entry` manually refreshes the tool or workflow in Dockstore's UI. For this reason, we generally recommend people use :ref:`dict GitHub App registration` instead.  
+
 .. note:: This term as we define it here is associated with Dockstore and may have different definitions in other contexts.  
 
 .. updated 2022-05-13  

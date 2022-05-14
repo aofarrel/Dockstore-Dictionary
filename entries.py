@@ -6,6 +6,14 @@
 
 from Gloss import GlossEntry
 
+dotDockstoredotYAML = GlossEntry(".dockstore.yml", 
+	acronym_full="", 
+	definition="This file is part of [GitHub App registration].", 
+	furtherreading="", 
+	institute="", 
+	pronunciation='', 
+	seealso="")
+
 AnVIL = GlossEntry("AnVIL Project", 
 	acronym_full="Analysis Visualization and Informatics Labspace", 
 	definition="A cloud-based ecosystem funded by [NHGRI], bringing together Dockstore, Gen3, [Terra], [NCPI], Galaxy, Jupyter, Seqr, and Bioconductor into an integrated platform. Sometimes referred to as just \"the AnVIL\" or \"AnVIL\".", 
@@ -68,6 +76,22 @@ CloudComputing = GlossEntry("cloud computing",
 	acronym_full="", 
 	definition="Doing computational tasks on a remote machine that is made available on-demand without the user having to manage all aspects of it. Generally implies that the user is essentially renting computational resources from someone else. Well-known cloud providers include [GCP], [AWS], Microsoft Azure, and Alibaba Cloud.", 
 	furtherreading="https://en.wikipedia.org/wiki/Cloud_computing", 
+	institute="", 
+	pronunciation='', 
+	seealso="")
+
+Catagories = GlossEntry("categories", 
+	acronym_full="", 
+	definition="A group of workflows or tools on Dockstore with a similar scientific purpose.", 
+	furtherreading="", 
+	institute="", 
+	pronunciation='', 
+	seealso="")
+
+Collections = GlossEntry("collections", 
+	acronym_full="", 
+	definition="A group of workflows or tools on Dockstore associated with a particular [organization].", 
+	furtherreading="", 
 	institute="", 
 	pronunciation='', 
 	seealso="")
@@ -197,7 +221,7 @@ Elwazi = GlossEntry("eLwazi",
 
 Entry = GlossEntry("entry", 
 	acronym_full="", 
-	definition="A [tool] or [workflow] on Dockstore. A single entry on Dockstore has a description, a link to the original source-control repository, and at least one [descriptor file] which does some sort of computational task using [CWL], [WDL], [Nextflow], or [Galaxy workflow] syntax. An entry can optionally include a [parameter file] that links to open-access test data. A single entry will include all versions of the tool or workflow that has been registered, with that versioning being based upon the versioning and branches of the source-control repository the descriptor file is hosted on (with the exception of [legacy tools], which have versioning based upon their Docker image tags), and any version can be pinned as the default. Entries can be added to [collections] associated with a particular [organization], or added to [categories] so they can be grouped with other entries that have a similar scientific purpose. Entries may also have [labels] attached to them to help them be found via Dockstore's [faceted search] feature. If the entry is registered using the [Dockstore GitHub App], then the entry will stay in sync automatically with the source-control repository. Additionally, if an entry is a valid [workflow], any user can use our [launch with] feature to import the workflow to one of our cloud compute partners.", 
+	definition="A [tool] or [workflow] on Dockstore. A single entry on Dockstore has a description, a link to the original source-control repository, and at least one [descriptor file] which does some sort of computational task using [CWL], [WDL], [Nextflow], or [Galaxy workflow] syntax. An entry can optionally include a [parameter file] that links to open-access test data. A single entry will include all versions of the tool or workflow that has been registered, with that versioning being based upon the versioning and branches of the source-control repository the descriptor file is hosted on (with the exception of a [legacy tool], which have versioning based upon their Docker image tags), and any version can be pinned as the default. Entries can be added to [collections] associated with a particular [organization], or added to [categories] so they can be grouped with other entries that have a similar scientific purpose. Entries may also have [labels] attached to them to help them be found via Dockstore's [faceted search] feature. If the entry is registered using the [Dockstore GitHub App], then the entry will stay in sync automatically with the source-control repository. Additionally, if an entry is a valid [workflow], any user can use our [launch with] feature to import the workflow to one of our cloud compute partners.", 
 	furtherreading="", 
 	institute="Dockstore", 
 	pronunciation='', 
@@ -235,6 +259,14 @@ GCP = GlossEntry("GCP",
 	pronunciation="", 
 	seealso="EC2")
 
+GitHubAppRegistration = GlossEntry("GitHub App registration", 
+	acronym_full="", 
+	definition="The recommended way to register a [tool] or [workflow] on Dockstore. This involves creating a [.dockstore.yml] file on the GitHub repository (other source-control methods are not supported) that hosts the tool or workflow, as well as installing the Dockstore GitHub App. This allows a Dockstore entry to remain in sync with the source-control repository automatically, including new branches, tagged commits, and releases created on GitHub after registration of the entry.", 
+	furtherreading="", 
+	institute="", 
+	pronunciation='', 
+	seealso="")
+
 Immutable = GlossEntry("immutable", 
 	acronym_full="", 
 	definition="Unchanging, unable to be modified. Immutability implies that an object cannot be updated.", 
@@ -267,6 +299,14 @@ Kernel = GlossEntry("kernel",
 	pronunciation='', 
 	seealso="")
 
+Labels = GlossEntry("labels", 
+	acronym_full="", 
+	definition="On Dockstore, we use labels to \"tag\" Dockstore entries with information about them.", 
+	furtherreading="", 
+	institute="", 
+	pronunciation='', 
+	seealso="")
+
 Layer = GlossEntry("layer", 
 	acronym_full="", 
 	definition="In the context of Docker, a layer is a component of a Docker image. Each `RUN`, `COPY`, and `ADD` instruction in a [Dockerfile] will lead to the creation of a layer.", 
@@ -277,7 +317,7 @@ Layer = GlossEntry("layer",
 
 LegacyRegistration = GlossEntry("legacy registration", 
 	acronym_full="", 
-	definition="", 
+	definition="One of the two main ways of registering a [tool] or [workflow]. Legacy methods support a variety of source-control repositories, but new changes to the tool or workflow after registration will not be reflected on Dockstore until the maintainer of the Dockstore [entry] manually refreshes the tool or workflow in Dockstore's UI. For this reason, we generally recommend people use [GitHub App registration] instead.", 
 	furtherreading="", 
 	institute="Dockstore", 
 	pronunciation='', 
