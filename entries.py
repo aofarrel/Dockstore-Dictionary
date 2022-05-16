@@ -8,15 +8,15 @@ from Gloss import GlossEntry
 
 dotDockstoredotYAML = GlossEntry(".dockstore.yml", 
 	acronym_full="", 
-	definition="This file is part of [GitHub App registration].", 
-	furtherreading="", 
+	definition="This file is part of [GitHub App registration]. It indexes workflows or tools within a repository, including their optional test parameter files, and the author(s) of said workflows or tools.", 
+	furtherreading="https://docs.dockstore.org/en/stable/assets/templates/template.html", 
 	institute="", 
 	pronunciation='', 
 	seealso="")
 
 AnVIL = GlossEntry("AnVIL Project", 
 	acronym_full="Analysis Visualization and Informatics Labspace", 
-	definition="A cloud-based ecosystem funded by [NHGRI], bringing together Dockstore, Gen3, [Terra], [NCPI], Galaxy, Jupyter, Seqr, and Bioconductor into an integrated platform. Sometimes referred to as just \"the AnVIL\" or \"AnVIL\".", 
+	definition="A cloud-based ecosystem funded by [NHGRI], bringing together Dockstore, [Gen3], [Terra], [NCPI], [Galaxy], [Jupyter], Seqr, and Bioconductor into an integrated platform. Sometimes referred to as just \"the AnVIL\" or \"AnVIL\".", 
 	furtherreading="https://anvilproject.org/", 
 	institute="", 
 	pronunciation="", 
@@ -179,6 +179,14 @@ DockstoreCLI = GlossEntry("Dockstore CLI",
 	pronunciation="", 
 	seealso="CLI")
 
+DockstoreGHA = GlossEntry("Dockstore GitHub App", 
+	acronym_full="", 
+	definition="The GitHub App that allows for Dockstore to communicate with GitHub repositories.", 
+	furtherreading="", 
+	institute="", 
+	pronunciation='', 
+	seealso="GitHub App registration")
+
 DOI = GlossEntry("DOI", 
 	acronym_full="Digital Object Identifier", 
 	definition="An identifier that provides a long-lasting link to some sort of [immutable] digital object. On Dockstore, you can use Zenodo to mint a DOI of your workflows and tools to increase reproducibility.", 
@@ -213,10 +221,10 @@ Egress = GlossEntry("egress",
 
 Elwazi = GlossEntry("eLwazi", 
 	acronym_full="", 
-	definition="An African-lead open data science platform funded as part of the [NIH]'s [DS-I Africa] program. Leverages Gen3 and [Terra].", 
+	definition="An African-lead open data science platform funded as part of the [NIH]'s [DS-I Africa] program. Leverages [Gen3] and [Terra].", 
 	furtherreading="https://elwazi.org/",
 	institute="", 
-	pronunciation='"el-woz-ee", derived from Xhosa word for knowledge', 
+	pronunciation='"el-woz-ee", derived from the Xhosa word for knowledge (uLwazi) and the Luganda word for rock symbolizing robustness (Olwazi)', 
 	seealso="")
 
 Entry = GlossEntry("entry", 
@@ -224,6 +232,14 @@ Entry = GlossEntry("entry",
 	definition="A [tool] or [workflow] on Dockstore. A single entry on Dockstore has a description, a link to the original source-control repository, and at least one [descriptor file] which does some sort of computational task using [CWL], [WDL], [Nextflow], or [Galaxy workflow] syntax. An entry can optionally include a [parameter file] that links to open-access test data. A single entry will include all versions of the tool or workflow that has been registered, with that versioning being based upon the versioning and branches of the source-control repository the descriptor file is hosted on (with the exception of a [legacy tool], which have versioning based upon their Docker image tags), and any version can be pinned as the default. Entries can be added to [collections] associated with a particular [organization], or added to [categories] so they can be grouped with other entries that have a similar scientific purpose. Entries may also have [labels] attached to them to help them be found via Dockstore's [faceted search] feature. If the entry is registered using the [Dockstore GitHub App], then the entry will stay in sync automatically with the source-control repository. Additionally, if an entry is a valid [workflow], any user can use our [launch with] feature to import the workflow to one of our cloud compute partners.", 
 	furtherreading="", 
 	institute="Dockstore", 
+	pronunciation='', 
+	seealso="")
+
+FacetedSearch = GlossEntry("faceted search", 
+	acronym_full="", 
+	definition="A type of search which allows users to narrow down their results based upon certain aspects of the things being searched. On Dockstore, our faceted search at <https://dockstore.org/search> allows users to narrow down their search to a particular workflow language, author, or other fields.", 
+	furtherreading="https://en.wikipedia.org/wiki/Faceted_search", 
+	institute="", 
 	pronunciation='', 
 	seealso="")
 
@@ -251,6 +267,14 @@ Galaxy = GlossEntry("Galaxy",
 	pronunciation='', 
 	seealso="")
 
+GalaxyWorkflow = GlossEntry("Galaxy workflow", 
+	acronym_full="", 
+	definition="A type of [workflow] that follows the standards of the [Galaxy] execution system. Dockstore supports the registration of Galaxy workflows with the file extension .ga", 
+	furtherreading="https://galaxyproject.org/learn/advanced-workflow/", 
+	institute="", 
+	pronunciation='', 
+	seealso="")
+
 GCP = GlossEntry("GCP", 
 	acronym_full="Google Cloud Platform", 
 	definition="A backend used for cloud computing and cloud storage hosted by Google. [Terra] is an example of a system that runs on a GCP backend. When running workflows on these backends, make sure to account for the storage needed for your workflow, as GCP compute backends do not automatically scale their storage size at runtime. GCP backends allow you to make use of Google's [preemptible] feature, which may reduce the cost of running workflows.", 
@@ -259,13 +283,37 @@ GCP = GlossEntry("GCP",
 	pronunciation="", 
 	seealso="EC2")
 
+Gen3 = GlossEntry("Gen3", 
+	acronym_full="", 
+	definition="A data science platform affiliated with the University of Chicago. Hosts phenotypic and genotypic data for the [BD Catalyst], [AnVIL Project], [Kids First], and [eLwazi] grants.", 
+	furtherreading="https://gen3.org/", 
+	institute="", 
+	pronunciation='', 
+	seealso="")
+
 GitHubAppRegistration = GlossEntry("GitHub App registration", 
 	acronym_full="", 
 	definition="The recommended way to register a [tool] or [workflow] on Dockstore. This involves creating a [.dockstore.yml] file on the GitHub repository (other source-control methods are not supported) that hosts the tool or workflow, as well as installing the Dockstore GitHub App. This allows a Dockstore entry to remain in sync with the source-control repository automatically, including new branches, tagged commits, and releases created on GitHub after registration of the entry.", 
 	furtherreading="", 
-	institute="", 
+	institute="Dockstore", 
 	pronunciation='', 
 	seealso="")
+
+GitHubAppTool = GlossEntry("GitHub App tool", 
+	acronym_full="", 
+	definition="A [tool] registered using the Dockstore GitHub App.", 
+	furtherreading="", 
+	institute="Dockstore", 
+	pronunciation='', 
+	seealso="GitHub App registration")
+
+GitHubAppWorkflow = GlossEntry("GitHub App workflow", 
+	acronym_full="", 
+	definition="A [workflow] registered with the Dockstore GitHub App.", 
+	furtherreading="", 
+	institute="Dockstore", 
+	pronunciation='', 
+	seealso="GitHub App registration")
 
 Immutable = GlossEntry("immutable", 
 	acronym_full="", 
@@ -291,6 +339,14 @@ JSON = GlossEntry("JSON",
 	pronunciation='"jason"', 
 	seealso="YAML")
 
+Jupyter = GlossEntry("Jupyter", 
+	acronym_full="", 
+	definition="A project focused on developing \"notebooks\" for programming languages, most famously Python due to it starting as a splinter of iPython in the early 2010s, but including other languages as well such as R. Jupyter notebooks allow for blocks of code to be nestled between markdown text, allowing for easy documentation of the code blocks and reproducibility of analysis.", 
+	furtherreading="https://jupyter.org/", 
+	institute="", 
+	pronunciation='"Jupiter" like the planet', 
+	seealso="")
+
 Kernel = GlossEntry("kernel", 
 	acronym_full="", 
 	definition="An operating system's core program that is always loaded in memory, and modulates interactions between software and physical hardware, including but not limited to managing memory access for any program currently in RAM.", 
@@ -299,9 +355,29 @@ Kernel = GlossEntry("kernel",
 	pronunciation='', 
 	seealso="")
 
+# I am purposely choosing the word "birth abnormalities" instead of "birth defects" and would prefer this
+# definition not be changed to "birth defects" due to the fact Kids First also studies intersexuality.
+# The concept of intersexuality as being a defect to always be "corrected" has lead to serious issues
+# regarding bodily autonomy, gender identity, and informed consent.
+KidsFirst = GlossEntry("Kids First", 
+	acronym_full="Gabriella Miller Kids First Program", 
+	definition="An [NIH] program, supported by the NIH Common Fund, relating to the influence of genomics on pediatric health, with a focus on pediatric cancer and structural birth abnormalities (such as cleft palate).", 
+	furtherreading="https://commonfund.nih.gov/kidsfirst/highlights", 
+	institute="", 
+	pronunciation='', 
+	seealso="")
+
 Labels = GlossEntry("labels", 
 	acronym_full="", 
-	definition="On Dockstore, we use labels to \"tag\" Dockstore entries with information about them.", 
+	definition="On Dockstore, we use labels to \"tag\" Dockstore entries with information about them. You can add labels to a Dockstore [entry] page that you have edit access to. Labels cannot contain spaces.", 
+	furtherreading="", 
+	institute="", 
+	pronunciation='', 
+	seealso="")
+
+LaunchWith = GlossEntry("launch with", 
+	acronym_full="", 
+	definition="On Dockstore, this refers to the functionality of exporting a [workflow] to one of our cloud execution partners.", 
 	furtherreading="", 
 	institute="", 
 	pronunciation='', 
@@ -310,7 +386,7 @@ Labels = GlossEntry("labels",
 Layer = GlossEntry("layer", 
 	acronym_full="", 
 	definition="In the context of Docker, a layer is a component of a Docker image. Each `RUN`, `COPY`, and `ADD` instruction in a [Dockerfile] will lead to the creation of a layer.", 
-	furtherreading="", 
+	furtherreading="https://docs.docker.com/storage/storagedriver/#images-and-layers", 
 	institute="Docker", 
 	pronunciation="", 
 	seealso="")
@@ -409,6 +485,14 @@ ORCID = GlossEntry("ORCID",
 	furtherreading="https://info.orcid.org/what-is-orcid/", 
 	institute="", 
 	pronunciation='"or-kid", rhymes with kid', 
+	seealso="")
+
+Organization = GlossEntry("organization", 
+	acronym_full="", 
+	definition="In the context of Dockstore, an organization is a representation of some sort of institute, grant, project, or company. Organizations are created by Dockstore admins, but any user with at least two external accounts linked to their Dockstore account can request the creation of an organization on Dockstore.", 
+	furtherreading="https://dockstore.org/organizations", 
+	institute="", 
+	pronunciation='', 
 	seealso="")
 
 ParameterFile = GlossEntry("parameter file", 
