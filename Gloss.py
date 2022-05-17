@@ -236,7 +236,7 @@ class GreatGloss(GlossTxt):
 
 	def add_source(self, format="rst"):
 		'''Include a note (as a comment if rst) on entry file to note it was created programatically'''
-		message = """This file was created using GreatGloss. It is highly recommended to update the
+		message = """DO NOT UPDATE THIS FILE.\nThis file was created using GreatGloss. Update the
 		source file that this page was generated from rather than modifying it directly."""
 		if format == "rst":
 			return(f".. {message}\n\n")
