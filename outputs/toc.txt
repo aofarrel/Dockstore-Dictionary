@@ -4,7 +4,7 @@ API
 AWS
 BD Catalyst
 BDC
-Biodata Catalyst
+BioData Catalyst
 Cancer Genomics Cloud
 categories
 CGC

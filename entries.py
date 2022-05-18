@@ -9,7 +9,7 @@ from Gloss import GlossEntry
 dotDockstoredotYAML = GlossEntry(".dockstore.yml", 
 	acronym_full="", 
 	definition="This file is part of [GitHub App registration]. It indexes workflows or tools within a repository, including their optional test parameter files, and the author(s) of said workflows or tools.", 
-	furtherreading="https://docs.dockstore.org/en/stable/assets/templates/template.html", 
+	furtherreading="./assets/templates/template.html", 
 	institute="", 
 	pronunciation='', 
 	seealso="")
@@ -32,20 +32,20 @@ API = GlossEntry("API",
 
 AWS = GlossEntry("AWS", 
 	acronym_full="Amazon Web Services", 
-	definition="A provider of cloud services, most notably cloud computing and cloud storage, available on-demand and hosted by Amazon. [Seven Bridges] is an example of a system that is powered by AWS, and can launch workflows on [EC2] instances.", 
+	definition="A provider of cloud services, most notably cloud computing and cloud storage, available on-demand and hosted by Amazon. Netflix and AirBnB are examples of a system that is powered by AWS. Some bioinformatics systems such as [Seven Bridges] can leverage AWS by launching workflows on [EC2] instances.", 
 	furtherreading="https://docs.aws.amazon.com/index.html?nc2=h_ql_doc_do", 
 	institute="", 
 	pronunciation="", 
 	seealso="GCP")
 
 BDC = GlossEntry("BDC", 
-	acronym_full="[Biodata Catalyst]", 
+	acronym_full="[BioData Catalyst]", 
 	pronunciation='"bee-dee-see"')
 
 BDCatalyst = GlossEntry("BD Catalyst", 
 	acronym_full="[BioData Catalyst]")
 
-BioDataCatalyst = GlossEntry("Biodata Catalyst", 
+BioDataCatalyst = GlossEntry("BioData Catalyst", 
 	acronym_full="", 
 	definition="An initiative funded by [NHLBI] to connect several cloud-based bioinformatics platforms together to increase reproducibility in bioinformatics. Involves Dockstore, [Terra], Seven Bridges, Gen3, and PIC-SURE.", 
 	furtherreading="https://biodatacatalyst.nhlbi.nih.gov/", 
@@ -189,7 +189,7 @@ DockstoreGHA = GlossEntry("Dockstore GitHub App",
 
 DOI = GlossEntry("DOI", 
 	acronym_full="Digital Object Identifier", 
-	definition="An identifier that provides a long-lasting link to some sort of [immutable] digital object. On Dockstore, you can use Zenodo to mint a DOI of your workflows and tools to increase reproducibility.", 
+	definition="An identifier that provides a long-lasting link to some sort of [immutable] digital object. On Dockstore, you can use Zenodo to mint a DOI of your workflows and tools to increase reproducibility. ", 
 	furtherreading="", 
 	institute="", 
 	pronunciation="", 
@@ -369,7 +369,7 @@ KidsFirst = GlossEntry("Kids First",
 
 Labels = GlossEntry("labels", 
 	acronym_full="", 
-	definition="On Dockstore, we use labels to \"tag\" Dockstore entries with information about them. You can add labels to a Dockstore [entry] page that you have edit access to. Labels cannot contain spaces.", 
+	definition="On Dockstore, we use labels to \"tag\" Dockstore entries with information about them. Workflow or tool developers can add labels to a Dockstore [entry] page that they have edit access to. Labels cannot contain spaces.", 
 	furtherreading="", 
 	institute="", 
 	pronunciation='', 
@@ -481,7 +481,7 @@ OICR = GlossEntry("OICR",
 
 ORCID = GlossEntry("ORCID", 
 	acronym_full="Open Researcher and Contributor ID", 
-	definition="ID used to identify researchers and their work in a way that doesn't solely rely on names.", 
+	definition="A unique ID used to identify researchers and their work in a way that doesn't solely rely on names.", 
 	furtherreading="https://info.orcid.org/what-is-orcid/", 
 	institute="", 
 	pronunciation='"or-kid", rhymes with kid', 
@@ -569,7 +569,7 @@ VM = GlossEntry("VM",
 
 WDL = GlossEntry("WDL",
 	acronym_full="[Workflow Description Language]",
-	pronunciation='"widdle", rhymes with little')
+	pronunciation='"widdle", rhymes with riddle')
 
 WES = GlossEntry("Workflow Execution Service",
 	definition="A standardized API developed by [GA4GH] for describing a standard programmatic way to run and manage workflows.",
@@ -593,5 +593,5 @@ YAML = GlossEntry("YAML",
 	definition="Human-readable data-serialization language. Commonly used for configuration files.", 
 	furtherreading="https://yaml.org/", 
 	institute="", 
-	pronunciation="", 
+	pronunciation='"yah-mul", rhymes with camel', 
 	seealso="JSON")
